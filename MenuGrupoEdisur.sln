@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Menu Edisur", "WindowsApplication1\Menu Edisur.vbproj", "{BC2636B8-2871-4566-BD6D-6F31109EE19F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC2636B8-2871-4566-BD6D-6F31109EE19F}.Debug|x86.ActiveCfg = Debug|x86
+		{BC2636B8-2871-4566-BD6D-6F31109EE19F}.Debug|x86.Build.0 = Debug|x86
+		{BC2636B8-2871-4566-BD6D-6F31109EE19F}.Release|x86.ActiveCfg = Release|x86
+		{BC2636B8-2871-4566-BD6D-6F31109EE19F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
