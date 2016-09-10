@@ -15,3 +15,5 @@ C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\D
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Inicio.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPropiedad.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ModificarPropiedad.resources

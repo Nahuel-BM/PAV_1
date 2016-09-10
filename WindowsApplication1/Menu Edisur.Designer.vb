@@ -602,4 +602,23 @@ Partial Class Inicio
     Friend WithEvents ListarProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 
+    Private Sub AltaPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaPropiedadToolStripMenuItem.Click
+        Dim frm As New AltaPropiedad()
+        frm.Show()
+    End Sub
+
+    Private Sub ModificacionPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificacionPropiedadToolStripMenuItem.Click
+        Dim frm As New ModificarPropiedad()
+        frm.Show()
+    End Sub
+
+    Private Sub ConsultaPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaPropiedadToolStripMenuItem.Click
+        Dim frm As New ConsultarPropiedad()
+        frm.Show()
+    End Sub
+
+    Private Sub BajaPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaPropiedadToolStripMenuItem.Click
+        Dim frm As New BajaPropiedad()
+        frm.Show()
+    End Sub
 End Class

@@ -141,9 +141,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AltaPropiedad.resx">
+      <DependentUpon>AltaPropiedad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu Edisur.resx">
       <DependentUpon>Menu Edisur.vb</DependentUpon>
       <Link>Menu Edisur.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarPropiedad.resx">
+      <DependentUpon>ModificarPropiedad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
