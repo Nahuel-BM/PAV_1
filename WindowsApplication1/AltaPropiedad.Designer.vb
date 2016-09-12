@@ -69,6 +69,10 @@ Partial Class AltaPropiedad
         Me.apellido_encontrado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.num_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.chk_ascensor = New System.Windows.Forms.CheckBox()
+        Me.txt_total_departamento = New System.Windows.Forms.MaskedTextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid_propietarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,24 +100,28 @@ Partial Class AltaPropiedad
         '
         'btn_crearPropiedad
         '
-        Me.btn_crearPropiedad.Location = New System.Drawing.Point(469, 511)
+        Me.btn_crearPropiedad.Location = New System.Drawing.Point(469, 545)
         Me.btn_crearPropiedad.Name = "btn_crearPropiedad"
         Me.btn_crearPropiedad.Size = New System.Drawing.Size(97, 23)
-        Me.btn_crearPropiedad.TabIndex = 11
+        Me.btn_crearPropiedad.TabIndex = 19
         Me.btn_crearPropiedad.Text = "Crear Propiedad"
         Me.btn_crearPropiedad.UseVisualStyleBackColor = True
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(11, 511)
+        Me.btn_cancelar.Location = New System.Drawing.Point(11, 545)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancelar.TabIndex = 12
+        Me.btn_cancelar.TabIndex = 18
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txt_total_departamento)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.chk_ascensor)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.cmb_encargado)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.cmb_moneda)
@@ -140,7 +148,7 @@ Partial Class AltaPropiedad
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(554, 180)
+        Me.GroupBox1.Size = New System.Drawing.Size(554, 214)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Inmueble"
@@ -152,7 +160,7 @@ Partial Class AltaPropiedad
         Me.cmb_encargado.Location = New System.Drawing.Point(404, 150)
         Me.cmb_encargado.Name = "cmb_encargado"
         Me.cmb_encargado.Size = New System.Drawing.Size(143, 21)
-        Me.cmb_encargado.TabIndex = 23
+        Me.cmb_encargado.TabIndex = 11
         '
         'Label14
         '
@@ -170,7 +178,7 @@ Partial Class AltaPropiedad
         Me.cmb_moneda.Location = New System.Drawing.Point(96, 150)
         Me.cmb_moneda.Name = "cmb_moneda"
         Me.cmb_moneda.Size = New System.Drawing.Size(143, 21)
-        Me.cmb_moneda.TabIndex = 21
+        Me.cmb_moneda.TabIndex = 10
         '
         'Label13
         '
@@ -184,12 +192,11 @@ Partial Class AltaPropiedad
         'txt_monto
         '
         Me.txt_monto.Location = New System.Drawing.Point(95, 124)
-        Me.txt_monto.Mask = "999999999"
+        Me.txt_monto.Mask = "###########.00"
         Me.txt_monto.Name = "txt_monto"
         Me.txt_monto.Size = New System.Drawing.Size(144, 20)
-        Me.txt_monto.TabIndex = 19
+        Me.txt_monto.TabIndex = 8
         Me.txt_monto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_monto.ValidatingType = GetType(Integer)
         '
         'Label12
         '
@@ -206,7 +213,7 @@ Partial Class AltaPropiedad
         Me.txt_denominacion_departamento.Mask = "L"
         Me.txt_denominacion_departamento.Name = "txt_denominacion_departamento"
         Me.txt_denominacion_departamento.Size = New System.Drawing.Size(144, 20)
-        Me.txt_denominacion_departamento.TabIndex = 17
+        Me.txt_denominacion_departamento.TabIndex = 9
         Me.txt_denominacion_departamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
@@ -221,10 +228,10 @@ Partial Class AltaPropiedad
         'txt_superficie
         '
         Me.txt_superficie.Location = New System.Drawing.Point(95, 98)
-        Me.txt_superficie.Mask = "99999"
+        Me.txt_superficie.Mask = "###########.00"
         Me.txt_superficie.Name = "txt_superficie"
         Me.txt_superficie.Size = New System.Drawing.Size(144, 20)
-        Me.txt_superficie.TabIndex = 15
+        Me.txt_superficie.TabIndex = 6
         Me.txt_superficie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_superficie.ValidatingType = GetType(Integer)
         '
@@ -240,10 +247,10 @@ Partial Class AltaPropiedad
         'txt_piso
         '
         Me.txt_piso.Location = New System.Drawing.Point(404, 98)
-        Me.txt_piso.Mask = "09"
+        Me.txt_piso.Mask = "0999"
         Me.txt_piso.Name = "txt_piso"
         Me.txt_piso.Size = New System.Drawing.Size(144, 20)
-        Me.txt_piso.TabIndex = 13
+        Me.txt_piso.TabIndex = 7
         Me.txt_piso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
@@ -271,7 +278,7 @@ Partial Class AltaPropiedad
         Me.cmb_tipo_propiedad.Location = New System.Drawing.Point(95, 72)
         Me.cmb_tipo_propiedad.Name = "cmb_tipo_propiedad"
         Me.cmb_tipo_propiedad.Size = New System.Drawing.Size(144, 21)
-        Me.cmb_tipo_propiedad.TabIndex = 11
+        Me.cmb_tipo_propiedad.TabIndex = 4
         '
         'txt_denominacion_catastral
         '
@@ -279,7 +286,7 @@ Partial Class AltaPropiedad
         Me.txt_denominacion_catastral.Mask = "????????????????????"
         Me.txt_denominacion_catastral.Name = "txt_denominacion_catastral"
         Me.txt_denominacion_catastral.Size = New System.Drawing.Size(144, 20)
-        Me.txt_denominacion_catastral.TabIndex = 10
+        Me.txt_denominacion_catastral.TabIndex = 5
         Me.txt_denominacion_catastral.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -297,7 +304,7 @@ Partial Class AltaPropiedad
         Me.txt_numeroCalle.Mask = "099999"
         Me.txt_numeroCalle.Name = "txt_numeroCalle"
         Me.txt_numeroCalle.Size = New System.Drawing.Size(144, 20)
-        Me.txt_numeroCalle.TabIndex = 4
+        Me.txt_numeroCalle.TabIndex = 3
         Me.txt_numeroCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -315,7 +322,7 @@ Partial Class AltaPropiedad
         Me.txt_calle.Mask = "????????????????????"
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.Size = New System.Drawing.Size(143, 20)
-        Me.txt_calle.TabIndex = 3
+        Me.txt_calle.TabIndex = 2
         Me.txt_calle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -348,7 +355,7 @@ Partial Class AltaPropiedad
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.grid_propietarios)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 377)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 411)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(554, 128)
         Me.GroupBox2.TabIndex = 6
@@ -365,7 +372,8 @@ Partial Class AltaPropiedad
         Me.grid_propietarios.Name = "grid_propietarios"
         Me.grid_propietarios.ReadOnly = True
         Me.grid_propietarios.Size = New System.Drawing.Size(542, 97)
-        Me.grid_propietarios.TabIndex = 10
+        Me.grid_propietarios.TabIndex = 99998
+        Me.grid_propietarios.TabStop = False
         '
         'id
         '
@@ -408,7 +416,7 @@ Partial Class AltaPropiedad
         Me.GroupBox3.Controls.Add(Me.txt_numeroBusquedaDocumento)
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.grid_Busqueda)
-        Me.GroupBox3.Location = New System.Drawing.Point(11, 198)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 232)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(555, 173)
         Me.GroupBox3.TabIndex = 7
@@ -421,7 +429,7 @@ Partial Class AltaPropiedad
         Me.btn_add.Location = New System.Drawing.Point(473, 144)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(75, 23)
-        Me.btn_add.TabIndex = 9
+        Me.btn_add.TabIndex = 17
         Me.btn_add.Text = "Añadir"
         Me.btn_add.UseVisualStyleBackColor = True
         '
@@ -432,14 +440,14 @@ Partial Class AltaPropiedad
         Me.cmb_tipoDocumento.Location = New System.Drawing.Point(341, 13)
         Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
         Me.cmb_tipoDocumento.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_tipoDocumento.TabIndex = 6
+        Me.cmb_tipoDocumento.TabIndex = 15
         '
         'btn_buscar
         '
         Me.btn_buscar.Location = New System.Drawing.Point(474, 11)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscar.TabIndex = 7
+        Me.btn_buscar.TabIndex = 16
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -458,7 +466,7 @@ Partial Class AltaPropiedad
         Me.txt_numeroBusquedaDocumento.Mask = "99999999"
         Me.txt_numeroBusquedaDocumento.Name = "txt_numeroBusquedaDocumento"
         Me.txt_numeroBusquedaDocumento.Size = New System.Drawing.Size(121, 20)
-        Me.txt_numeroBusquedaDocumento.TabIndex = 5
+        Me.txt_numeroBusquedaDocumento.TabIndex = 14
         Me.txt_numeroBusquedaDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
@@ -477,10 +485,12 @@ Partial Class AltaPropiedad
         Me.grid_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_busqueda, Me.nombre_encontrados, Me.apellido_encontrado, Me.num_documento, Me.tipo_documento})
         Me.grid_Busqueda.Location = New System.Drawing.Point(6, 40)
+        Me.grid_Busqueda.MultiSelect = False
         Me.grid_Busqueda.Name = "grid_Busqueda"
         Me.grid_Busqueda.ReadOnly = True
         Me.grid_Busqueda.Size = New System.Drawing.Size(542, 98)
-        Me.grid_Busqueda.TabIndex = 8
+        Me.grid_Busqueda.TabIndex = 999999
+        Me.grid_Busqueda.TabStop = False
         '
         'id_busqueda
         '
@@ -513,11 +523,48 @@ Partial Class AltaPropiedad
         Me.tipo_documento.Name = "tipo_documento"
         Me.tipo_documento.ReadOnly = True
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(39, 180)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(51, 13)
+        Me.Label15.TabIndex = 25
+        Me.Label15.Text = "Ascensor"
+        '
+        'chk_ascensor
+        '
+        Me.chk_ascensor.AutoSize = True
+        Me.chk_ascensor.Location = New System.Drawing.Point(96, 179)
+        Me.chk_ascensor.Name = "chk_ascensor"
+        Me.chk_ascensor.Size = New System.Drawing.Size(56, 17)
+        Me.chk_ascensor.TabIndex = 12
+        Me.chk_ascensor.Text = "Posee"
+        Me.chk_ascensor.UseVisualStyleBackColor = True
+        '
+        'txt_total_departamento
+        '
+        Me.txt_total_departamento.Location = New System.Drawing.Point(405, 177)
+        Me.txt_total_departamento.Mask = "0099"
+        Me.txt_total_departamento.Name = "txt_total_departamento"
+        Me.txt_total_departamento.Size = New System.Drawing.Size(144, 20)
+        Me.txt_total_departamento.TabIndex = 13
+        Me.txt_total_departamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(282, 183)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(117, 13)
+        Me.Label16.TabIndex = 28
+        Me.Label16.Text = "Departamentos Totales"
+        '
         'AltaPropiedad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(579, 540)
+        Me.ClientSize = New System.Drawing.Size(579, 580)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -582,4 +629,8 @@ Partial Class AltaPropiedad
     Friend WithEvents apellido_encontrado As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents num_documento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipo_documento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chk_ascensor As System.Windows.Forms.CheckBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents txt_total_departamento As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class
