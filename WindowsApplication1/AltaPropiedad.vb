@@ -35,7 +35,7 @@ Public Class AltaPropiedad
         Me.cargar_combo(Me.cmb_encargado, "Persona", "Nombre", "id", "")
 
         Me.cargarMonedas(Me.cmb_moneda)
-        Me.AddButtonColumn()
+        Me.AddButtonColumn(Me.grid_propietarios, 4)
 
     End Sub
 
@@ -53,8 +53,8 @@ Public Class AltaPropiedad
 
         If Me.validar = True Then
 
-            Dim alturaCalle As Integer = Integer.Parse(Me.txt_numeroCalle.Text)
-            Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Me.txt_calle.Text & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
+            Dim alturaCalle As Integer = Integer.Parse(Me.QuitarEspacios(Me.txt_numeroCalle.Text))
+            Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Me.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
 
             'Ejecutar consulta "sqlDomicilio"
 
@@ -65,9 +65,9 @@ Public Class AltaPropiedad
 
             If Me.idTipoPropiedad = 1 Then
                 'Si es un edificio..
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Me.txt_denominacion_catastral.Text & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Me.txt_total_departamento.Text) & "," & Double.Parse(Me.txt_superficie.Text) & "," & chk_ascensor.CheckState & ")"
+                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Me.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Me.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Me.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
             Else
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Me.txt_denominacion_catastral.Text & "'," & idDomicilio & ");"
+                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Me.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
             End If
 
             'Ejecutar consulta "sqlInmueble"
@@ -90,9 +90,9 @@ Public Class AltaPropiedad
 
 
             Dim sqlPropiedad As String = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
-                                         & idInmueble & "," & Me.txt_piso.Text & ",'" & Me.txt_denominacion_departamento.Text & "'," & Me.cmb_tipo_propiedad.SelectedValue & "," _
-                                         & Me.txt_superficie.Text.Replace(",", ".") & "," _
-                                         & Me.txt_monto.Text.Replace(",", ".") & ", '" _
+                                         & idInmueble & ", " & Me.QuitarEspacios(Me.txt_piso.Text) & ", '" & Me.QuitarEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
+                                         & Me.QuitarEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
+                                         & Me.QuitarEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
                                          & moneda & "');"
 
 
@@ -104,7 +104,7 @@ Public Class AltaPropiedad
 
             For Each dgitem As DataGridViewRow In Me.grid_propietarios.Rows
 
-                Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & "," & dgitem.Cells(0).Value & ");"
+                Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & ", " & dgitem.Cells(0).Value & ");"
                 '"dgitem.Cells(0).Value" corresponde al id de la persona 
                 Me.ejecutarInsert(sqlDuenio)
                 
@@ -446,7 +446,7 @@ Public Class AltaPropiedad
 
 
 
-    Private Sub AddButtonColumn()
+    Private Sub AddButtonColumn(ByRef grid As DataGridView, Optional ByRef posicion As Integer = 0)
         Dim buttons As New DataGridViewButtonColumn()
         With buttons
             .HeaderText = "Accion"
@@ -458,7 +458,9 @@ Public Class AltaPropiedad
             .DisplayIndex = 0
         End With
 
-        Me.grid_propietarios.Columns.Add(buttons)
+        buttons.DisplayIndex = posicion
+
+        grid.Columns.Add(buttons)
 
     End Sub
 
@@ -466,4 +468,9 @@ Public Class AltaPropiedad
         Me.Close()
 
     End Sub
+
+    Private Function QuitarEspacios(ByVal cadena As String) As String
+        Return LTrim(RTrim(cadena))
+    End Function
+
 End Class

@@ -34,7 +34,6 @@ Partial Class BajaPropiedad
         Me.ID_PROPIEDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.designacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +92,7 @@ Partial Class BajaPropiedad
         Me.grid_grilla.AllowUserToAddRows = False
         Me.grid_grilla.AllowUserToDeleteRows = False
         Me.grid_grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DOMICILIO, Me.ID_INMUEBLE, Me.ID_PROPIEDAD, Me.Domicilio, Me.designacion, Me.Eliminar})
+        Me.grid_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DOMICILIO, Me.ID_INMUEBLE, Me.ID_PROPIEDAD, Me.Domicilio, Me.designacion})
         Me.grid_grilla.Location = New System.Drawing.Point(9, 19)
         Me.grid_grilla.Name = "grid_grilla"
         Me.grid_grilla.ReadOnly = True
@@ -147,12 +146,6 @@ Partial Class BajaPropiedad
         Me.designacion.ReadOnly = True
         Me.designacion.Width = 163
         '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Accion"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        '
         'BajaPropiedad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -182,5 +175,4 @@ Partial Class BajaPropiedad
     Friend WithEvents ID_PROPIEDAD As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Domicilio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents designacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
 End Class
