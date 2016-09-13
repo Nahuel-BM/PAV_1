@@ -28,12 +28,14 @@ Partial Class BajaPropiedad
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.grid_grilla = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.ID_DOMICILIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_INMUEBLE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_PROPIEDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.designacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmb_TipoInmueble = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +52,8 @@ Partial Class BajaPropiedad
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cmb_TipoInmueble)
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -74,7 +78,7 @@ Partial Class BajaPropiedad
         Me.MaskedTextBox1.Location = New System.Drawing.Point(121, 19)
         Me.MaskedTextBox1.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(415, 20)
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(204, 20)
         Me.MaskedTextBox1.TabIndex = 1
         '
         'GroupBox2
@@ -98,15 +102,6 @@ Partial Class BajaPropiedad
         Me.grid_grilla.ReadOnly = True
         Me.grid_grilla.Size = New System.Drawing.Size(608, 185)
         Me.grid_grilla.TabIndex = 0
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(560, 288)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Aceptar"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'ID_DOMICILIO
         '
@@ -146,6 +141,33 @@ Partial Class BajaPropiedad
         Me.designacion.ReadOnly = True
         Me.designacion.Width = 163
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(560, 288)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(331, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(74, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Tipo Inmueble"
+        '
+        'cmb_TipoInmueble
+        '
+        Me.cmb_TipoInmueble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_TipoInmueble.FormattingEnabled = True
+        Me.cmb_TipoInmueble.Location = New System.Drawing.Point(411, 19)
+        Me.cmb_TipoInmueble.Name = "cmb_TipoInmueble"
+        Me.cmb_TipoInmueble.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_TipoInmueble.TabIndex = 4
+        '
         'BajaPropiedad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -175,4 +197,6 @@ Partial Class BajaPropiedad
     Friend WithEvents ID_PROPIEDAD As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Domicilio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents designacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmb_TipoInmueble As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
