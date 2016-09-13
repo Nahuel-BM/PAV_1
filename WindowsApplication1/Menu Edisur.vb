@@ -23,4 +23,10 @@
     Private Sub ResumenExpensasMensualToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
+
+    Private Sub AltaDueñoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDueñoToolStripMenuItem.Click
+        'AltaPersonas
+        Dim frm As New AltaPersonas()
+        frm.Show()
+    End Sub
 End Class

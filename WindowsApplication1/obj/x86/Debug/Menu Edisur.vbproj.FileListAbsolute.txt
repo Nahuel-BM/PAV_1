@@ -36,3 +36,21 @@ C:\Users\PC-LIS-10\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.I
 C:\Users\PC-LIS-10\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ModificarPropiedad.resources
 C:\Users\PC-LIS-10\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Resources.resources
 C:\Users\PC-LIS-10\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbproj.GenerateResource.Cache
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.pdb
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.xml
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.CodeAnalysisLog.xml
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.lastcodeanalysissucceeded
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\MySql.Data.dll
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\bin\Debug\MySql.Data.xml
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbprojResolveAssemblyReference.cache
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPropiedad.resources
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaPropiedad.resources
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Inicio.resources
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ModificarPropiedad.resources
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Resources.resources
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbproj.GenerateResource.Cache
+D:\DATOS\Documentos\Visual Studio 2013\Projects\Proyectos Remotos\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPersonas.resources
