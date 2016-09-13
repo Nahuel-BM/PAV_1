@@ -145,6 +145,9 @@
     <EmbeddedResource Include="AltaPropiedad.resx">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BajaPropiedad.resx">
+      <DependentUpon>BajaPropiedad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu Edisur.resx">
       <DependentUpon>Menu Edisur.vb</DependentUpon>
       <Link>Menu Edisur.resx</Link>

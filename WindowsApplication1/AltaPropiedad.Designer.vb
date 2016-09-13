@@ -27,6 +27,10 @@ Partial Class AltaPropiedad
         Me.btn_crearPropiedad = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_total_departamento = New System.Windows.Forms.MaskedTextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.chk_ascensor = New System.Windows.Forms.CheckBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.cmb_encargado = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cmb_moneda = New System.Windows.Forms.ComboBox()
@@ -51,11 +55,6 @@ Partial Class AltaPropiedad
         Me.cmb_provincia = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.grid_propietarios = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.numeroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.cmb_tipoDocumento = New System.Windows.Forms.ComboBox()
@@ -66,13 +65,12 @@ Partial Class AltaPropiedad
         Me.grid_Busqueda = New System.Windows.Forms.DataGridView()
         Me.id_busqueda = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_encontrados = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.apellido_encontrado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.num_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.chk_ascensor = New System.Windows.Forms.CheckBox()
-        Me.txt_total_departamento = New System.Windows.Forms.MaskedTextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numeroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid_propietarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,6 +150,43 @@ Partial Class AltaPropiedad
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Inmueble"
+        '
+        'txt_total_departamento
+        '
+        Me.txt_total_departamento.Location = New System.Drawing.Point(405, 177)
+        Me.txt_total_departamento.Mask = "0099"
+        Me.txt_total_departamento.Name = "txt_total_departamento"
+        Me.txt_total_departamento.Size = New System.Drawing.Size(144, 20)
+        Me.txt_total_departamento.TabIndex = 13
+        Me.txt_total_departamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(282, 183)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(117, 13)
+        Me.Label16.TabIndex = 28
+        Me.Label16.Text = "Departamentos Totales"
+        '
+        'chk_ascensor
+        '
+        Me.chk_ascensor.AutoSize = True
+        Me.chk_ascensor.Location = New System.Drawing.Point(96, 179)
+        Me.chk_ascensor.Name = "chk_ascensor"
+        Me.chk_ascensor.Size = New System.Drawing.Size(56, 17)
+        Me.chk_ascensor.TabIndex = 12
+        Me.chk_ascensor.Text = "Posee"
+        Me.chk_ascensor.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(39, 180)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(51, 13)
+        Me.Label15.TabIndex = 25
+        Me.Label15.Text = "Ascensor"
         '
         'cmb_encargado
         '
@@ -367,45 +402,13 @@ Partial Class AltaPropiedad
         Me.grid_propietarios.AllowUserToAddRows = False
         Me.grid_propietarios.AllowUserToDeleteRows = False
         Me.grid_propietarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_propietarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.nombre, Me.apellido, Me.numeroDocumento, Me.tipoDocumento})
+        Me.grid_propietarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.nombre, Me.numeroDocumento, Me.tipoDocumento})
         Me.grid_propietarios.Location = New System.Drawing.Point(6, 19)
         Me.grid_propietarios.Name = "grid_propietarios"
         Me.grid_propietarios.ReadOnly = True
         Me.grid_propietarios.Size = New System.Drawing.Size(542, 97)
         Me.grid_propietarios.TabIndex = 99998
         Me.grid_propietarios.TabStop = False
-        '
-        'id
-        '
-        Me.id.HeaderText = "id"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        '
-        'apellido
-        '
-        Me.apellido.HeaderText = "Apellido"
-        Me.apellido.Name = "apellido"
-        Me.apellido.ReadOnly = True
-        '
-        'numeroDocumento
-        '
-        Me.numeroDocumento.HeaderText = "Num Documento"
-        Me.numeroDocumento.Name = "numeroDocumento"
-        Me.numeroDocumento.ReadOnly = True
-        '
-        'tipoDocumento
-        '
-        Me.tipoDocumento.HeaderText = "Tipo Doc."
-        Me.tipoDocumento.Name = "tipoDocumento"
-        Me.tipoDocumento.ReadOnly = True
-        Me.tipoDocumento.Width = 75
         '
         'GroupBox3
         '
@@ -483,7 +486,7 @@ Partial Class AltaPropiedad
         Me.grid_Busqueda.AllowUserToAddRows = False
         Me.grid_Busqueda.AllowUserToDeleteRows = False
         Me.grid_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_busqueda, Me.nombre_encontrados, Me.apellido_encontrado, Me.num_documento, Me.tipo_documento})
+        Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_busqueda, Me.nombre_encontrados, Me.num_documento, Me.tipo_documento})
         Me.grid_Busqueda.Location = New System.Drawing.Point(6, 40)
         Me.grid_Busqueda.MultiSelect = False
         Me.grid_Busqueda.Name = "grid_Busqueda"
@@ -504,12 +507,7 @@ Partial Class AltaPropiedad
         Me.nombre_encontrados.HeaderText = "Nombre"
         Me.nombre_encontrados.Name = "nombre_encontrados"
         Me.nombre_encontrados.ReadOnly = True
-        '
-        'apellido_encontrado
-        '
-        Me.apellido_encontrado.HeaderText = "Apellido"
-        Me.apellido_encontrado.Name = "apellido_encontrado"
-        Me.apellido_encontrado.ReadOnly = True
+        Me.nombre_encontrados.Width = 290
         '
         'num_documento
         '
@@ -523,42 +521,31 @@ Partial Class AltaPropiedad
         Me.tipo_documento.Name = "tipo_documento"
         Me.tipo_documento.ReadOnly = True
         '
-        'Label15
+        'id
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(39, 180)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(51, 13)
-        Me.Label15.TabIndex = 25
-        Me.Label15.Text = "Ascensor"
+        Me.id.HeaderText = "id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
-        'chk_ascensor
+        'nombre
         '
-        Me.chk_ascensor.AutoSize = True
-        Me.chk_ascensor.Location = New System.Drawing.Point(96, 179)
-        Me.chk_ascensor.Name = "chk_ascensor"
-        Me.chk_ascensor.Size = New System.Drawing.Size(56, 17)
-        Me.chk_ascensor.TabIndex = 12
-        Me.chk_ascensor.Text = "Posee"
-        Me.chk_ascensor.UseVisualStyleBackColor = True
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 290
         '
-        'txt_total_departamento
+        'numeroDocumento
         '
-        Me.txt_total_departamento.Location = New System.Drawing.Point(405, 177)
-        Me.txt_total_departamento.Mask = "0099"
-        Me.txt_total_departamento.Name = "txt_total_departamento"
-        Me.txt_total_departamento.Size = New System.Drawing.Size(144, 20)
-        Me.txt_total_departamento.TabIndex = 13
-        Me.txt_total_departamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.numeroDocumento.HeaderText = "Num Doc."
+        Me.numeroDocumento.Name = "numeroDocumento"
+        Me.numeroDocumento.ReadOnly = True
         '
-        'Label16
+        'tipoDocumento
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(282, 183)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(117, 13)
-        Me.Label16.TabIndex = 28
-        Me.Label16.Text = "Departamentos Totales"
+        Me.tipoDocumento.HeaderText = "Tipo Doc."
+        Me.tipoDocumento.Name = "tipoDocumento"
+        Me.tipoDocumento.ReadOnly = True
         '
         'AltaPropiedad
         '
@@ -603,11 +590,6 @@ Partial Class AltaPropiedad
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents grid_Busqueda As System.Windows.Forms.DataGridView
     Friend WithEvents btn_add As System.Windows.Forms.Button
-    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents apellido As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents numeroDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tipoDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cmb_tipo_propiedad As System.Windows.Forms.ComboBox
     Friend WithEvents txt_denominacion_catastral As System.Windows.Forms.MaskedTextBox
@@ -624,13 +606,16 @@ Partial Class AltaPropiedad
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents txt_monto As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents id_busqueda As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents nombre_encontrados As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents apellido_encontrado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents num_documento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tipo_documento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents chk_ascensor As System.Windows.Forms.CheckBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents txt_total_departamento As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents numeroDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tipoDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_busqueda As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre_encontrados As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents num_documento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tipo_documento As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

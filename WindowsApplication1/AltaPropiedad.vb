@@ -25,10 +25,6 @@ Public Class AltaPropiedad
 
     ReadOnly ConnectionString As String = "server=" & Servidor & ";" & "user id=" & Usuario & ";" & "password=" & Password & ";" & "port=" & Puerto & ";" & "database=" & BaseDatos & ";"
 
-
-
-
-
     Private Sub AltaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargar_combo(Me.cmb_provincia, "Provincia", "Nombre", "id", "")
         Me.cargar_combo(Me.cmb_localidad, "Localidad", "Nombre", "id", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
@@ -39,12 +35,13 @@ Public Class AltaPropiedad
         Me.cargar_combo(Me.cmb_encargado, "Persona", "Nombre", "id", "")
 
         Me.cargarMonedas(Me.cmb_moneda)
+        Me.AddButtonColumn()
 
     End Sub
 
     Private Sub EventoEliminarPropietario(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_propietarios.CellClick
         ' elimino la fila
-        If e.ColumnIndex = 5 Then
+        If e.ColumnIndex = 4 Then
             Dim result As Integer = MessageBox.Show("¿Realmente desea quitar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
             If result = DialogResult.OK Then
                 Me.grid_propietarios.Rows.RemoveAt(e.RowIndex)
@@ -57,16 +54,11 @@ Public Class AltaPropiedad
         If Me.validar = True Then
 
             Dim alturaCalle As Integer = Integer.Parse(Me.txt_numeroCalle.Text)
-
             Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Me.txt_calle.Text & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
-
-
-
 
             'Ejecutar consulta "sqlDomicilio"
 
             Me.ejecutarInsert(sqlDomicilio)
-
 
             Dim idDomicilio As Integer = Me.ultimoIdInsertado()
             Dim sqlInmueble As String
@@ -74,21 +66,15 @@ Public Class AltaPropiedad
             If Me.idTipoPropiedad = 1 Then
                 'Si es un edificio..
                 sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Me.txt_denominacion_catastral.Text & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Me.txt_total_departamento.Text) & "," & Double.Parse(Me.txt_superficie.Text) & "," & chk_ascensor.CheckState & ")"
-
             Else
                 sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Me.txt_denominacion_catastral.Text & "'," & idDomicilio & ");"
             End If
-
-            '  MsgBox(sqlDomicilio)
-            '  MsgBox(sqlInmueble)
 
             'Ejecutar consulta "sqlInmueble"
 
             Me.ejecutarInsert(sqlInmueble)
 
-
             Dim idInmueble As Integer = Me.ultimoIdInsertado()
-
             Dim moneda As String = ""
 
             If Me.cmb_moneda.SelectedValue = 0 Then
@@ -145,7 +131,7 @@ Public Class AltaPropiedad
             Else
 
                 For Each dgitem As DataGridViewRow In Me.grid_propietarios.Rows
-                    If Not dgitem.Cells(3).Value.Equals(fila.Cells(3).Value) Then
+                    If Not dgitem.Cells(2).Value.Equals(fila.Cells(2).Value) Then
                         Me.grid_propietarios.Rows.Add(fila)
                     Else
                         MsgBox("La Persona ya es Propietaria del inmueble.")
@@ -245,7 +231,7 @@ Public Class AltaPropiedad
 
             Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
 
-            sql = " SELECT * FROM Persona WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
+            sql = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
 
             Dim cmd As New MySqlCommand
             cmd.Connection = conexion
@@ -262,9 +248,7 @@ Public Class AltaPropiedad
             Dim recorrido As Integer = 0
             For recorrido = 0 To tabla.Rows.Count() - 1
                 Me.grid_Busqueda.Rows.Add()
-                Me.grid_Busqueda.Rows(recorrido).Cells("nombre_encontrados").Value = tabla.Rows(recorrido)("Nombre")
-                Me.grid_Busqueda.Rows(recorrido).Cells("apellido_encontrado").Value = tabla.Rows(recorrido)("Apellido")
-
+                Me.grid_Busqueda.Rows(recorrido).Cells("nombre_encontrados").Value = tabla.Rows(recorrido)("Nombre") & ", " & tabla.Rows(recorrido)("Apellido")
                 Me.grid_Busqueda.Rows(recorrido).Cells("num_documento").Value = tabla.Rows(recorrido)("Documento")
                 Me.grid_Busqueda.Rows(recorrido).Cells("tipo_documento").Value = tabla.Rows(recorrido)("Tipo_Documento")
             Next
@@ -462,6 +446,24 @@ Public Class AltaPropiedad
 
 
 
+    Private Sub AddButtonColumn()
+        Dim buttons As New DataGridViewButtonColumn()
+        With buttons
+            .HeaderText = "Accion"
+            .Text = "Eliminar"
+            .UseColumnTextForButtonValue = True
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .FlatStyle = FlatStyle.Standard
+            .CellTemplate.Style.BackColor = Color.Honeydew
+            .DisplayIndex = 0
+        End With
 
+        Me.grid_propietarios.Columns.Add(buttons)
 
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        Me.Close()
+
+    End Sub
 End Class
