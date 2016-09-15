@@ -92,16 +92,34 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaPersona.Designer.vb">
+      <DependentUpon>AltaPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AltaPropiedad.Designer.vb">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </Compile>
     <Compile Include="AltaPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BajaPersona.Designer.vb">
+      <DependentUpon>BajaPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BajaPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BajaPropiedad.Designer.vb">
       <DependentUpon>BajaPropiedad.vb</DependentUpon>
     </Compile>
     <Compile Include="BajaPropiedad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarPersona.Designer.vb">
+      <DependentUpon>ConsultarPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarPersona.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultarPropiedad.Designer.vb">
@@ -114,6 +132,12 @@
       <DependentUpon>Inicial.vb</DependentUpon>
     </Compile>
     <Compile Include="Inicial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarPersona.Designer.vb">
+      <DependentUpon>ModificarPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarPersona.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificarPropiedad.Designer.vb">
