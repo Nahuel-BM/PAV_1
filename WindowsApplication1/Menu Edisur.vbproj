@@ -92,60 +92,62 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaPersona.Designer.vb">
+    <Compile Include="Clases\Coneccion.vb" />
+    <Compile Include="Formularios\Persona\AltaPersona.Designer.vb">
       <DependentUpon>AltaPersona.vb</DependentUpon>
     </Compile>
-    <Compile Include="AltaPersona.vb">
+    <Compile Include="Formularios\Persona\AltaPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaPropiedad.Designer.vb">
+    <Compile Include="Formularios\Propiedad\AltaPropiedad.Designer.vb">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </Compile>
-    <Compile Include="AltaPropiedad.vb">
+    <Compile Include="Formularios\Propiedad\AltaPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BajaPersona.Designer.vb">
+    <Compile Include="Formularios\Persona\BajaPersona.Designer.vb">
       <DependentUpon>BajaPersona.vb</DependentUpon>
     </Compile>
-    <Compile Include="BajaPersona.vb">
+    <Compile Include="Formularios\Persona\BajaPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BajaPropiedad.Designer.vb">
+    <Compile Include="Formularios\Propiedad\BajaPropiedad.Designer.vb">
       <DependentUpon>BajaPropiedad.vb</DependentUpon>
     </Compile>
-    <Compile Include="BajaPropiedad.vb">
+    <Compile Include="Formularios\Propiedad\BajaPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarPersona.Designer.vb">
+    <Compile Include="Formularios\Persona\ConsultarPersona.Designer.vb">
       <DependentUpon>ConsultarPersona.vb</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarPersona.vb">
+    <Compile Include="Formularios\Persona\ConsultarPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarPropiedad.Designer.vb">
+    <Compile Include="Formularios\Propiedad\ConsultarPropiedad.Designer.vb">
       <DependentUpon>ConsultarPropiedad.vb</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarPropiedad.vb">
+    <Compile Include="Formularios\Propiedad\ConsultarPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicial.Designer.vb">
+    <Compile Include="Formularios\Menu\Inicial.Designer.vb">
       <DependentUpon>Inicial.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inicial.vb">
+    <Compile Include="Formularios\Menu\Inicial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarPersona.Designer.vb">
+    <Compile Include="Formularios\Persona\ModificarPersona.Designer.vb">
       <DependentUpon>ModificarPersona.vb</DependentUpon>
     </Compile>
-    <Compile Include="ModificarPersona.vb">
+    <Compile Include="Formularios\Persona\ModificarPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarPropiedad.Designer.vb">
+    <Compile Include="Formularios\Propiedad\ModificarPropiedad.Designer.vb">
       <DependentUpon>ModificarPropiedad.vb</DependentUpon>
     </Compile>
-    <Compile Include="ModificarPropiedad.vb">
+    <Compile Include="Formularios\Propiedad\ModificarPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Constantes.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -163,16 +165,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AltaPropiedad.resx">
+    <EmbeddedResource Include="Formularios\Propiedad\AltaPropiedad.resx">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BajaPropiedad.resx">
+    <EmbeddedResource Include="Formularios\Propiedad\BajaPropiedad.resx">
       <DependentUpon>BajaPropiedad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicial.resx">
+    <EmbeddedResource Include="Formularios\Menu\Inicial.resx">
       <DependentUpon>Inicial.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarPropiedad.resx">
+    <EmbeddedResource Include="Formularios\Propiedad\ModificarPropiedad.resx">
       <DependentUpon>ModificarPropiedad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -218,6 +220,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\Operacion Inmobiliaria\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
