@@ -1,1 +1,3 @@
 WindowsApplication1/bin/
+**/Thumbs.db
+**/obj/**
