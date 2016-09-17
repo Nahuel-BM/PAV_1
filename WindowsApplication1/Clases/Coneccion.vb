@@ -90,6 +90,18 @@ Public Class Coneccion
 
 
 
+    Public Sub cargarComboTipo(ByRef combo As ComboBox, ByVal NombreTabla As String, Optional ByVal Opciones As String = "")
+        Dim tabla As New Data.DataTable
+
+        tabla = Me.ejecutar("SELECT * FROM " & NombreTabla & " " & Opciones)
+
+        combo.DataSource = tabla
+        combo.DisplayMember = "Nombre"
+        combo.ValueMember = "id"
+    End Sub
+
+
+
     Private Function ejecutar(ByRef sql As String) As DataTable
 
         Dim tabla As New DataTable
@@ -106,18 +118,58 @@ Public Class Coneccion
     End Function
 
 
-    Private Sub Conectar()
-        Me.conexion.ConnectionString = Me.cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
+    Public Sub ejecutarInsert(ByVal sql)
 
+        Try
+            Me.Conectar()
+            Me.cmd.CommandText = sql
+            cmd.ExecuteNonQuery()
+
+            Me.Cerrar()
+        Catch ex As Exception
+            MsgBox("Error al Ejecutar Insert " &
+                   vbCrLf & vbCrLf & ex.Message,
+                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+        End Try
+
+    End Sub
+
+
+    Private Sub Conectar()
+        Try
+            Me.conexion.ConnectionString = Me.cadena_conexion
+            conexion.Open()
+            cmd.Connection = conexion
+            cmd.CommandType = CommandType.Text
+
+        Catch ex As Exception
+            MsgBox("Error al Crear Conexion " &
+                   vbCrLf & vbCrLf & ex.Message,
+                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     Private Sub Cerrar()
-        Me.conexion.Close()
+        Try
+            Me.conexion.Close()
+        Catch ex As Exception
+            MsgBox("Error al Cerrar Conexion " &
+                   vbCrLf & vbCrLf & ex.Message,
+                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+        End Try
     End Sub
 
+
+    Public Function ultimoIdInsertado() As Integer
+        Dim retorno As Integer
+        Dim sql As String = "SELECT LAST_INSERT_ID() AS LASTID;"
+
+        Dim tabla As New Data.DataTable
+        tabla = Me.ejecutar(sql)
+        retorno = Integer.Parse(tabla(0)("LASTID").ToString())
+
+        Return retorno
+    End Function
 
 
     'Fin de clase!

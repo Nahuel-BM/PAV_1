@@ -1,18 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
-
-
-Public Class AltaPropiedad
-
-    ReadOnly Servidor As String = "52.37.245.6"
-    ReadOnly Usuario As String = "PAV_1"
-    ReadOnly Password As String = "pass"
-    ReadOnly BaseDatos As String = "PAV_1"
-    ReadOnly Puerto As Integer = 3306
+﻿Public Class AltaPropiedad
 
     Dim idTipoPropiedad As Integer = 0
     Dim encontrado As Boolean = False
-
-
+    Dim Coneccion As New Coneccion
+    Dim Funciones As New FuncionesUtiles
 
     Enum monedas
         peso
@@ -20,22 +11,20 @@ Public Class AltaPropiedad
         euro
     End Enum
 
-
-    Friend conexion As MySqlConnection
-
-    ReadOnly ConnectionString As String = "server=" & Servidor & ";" & "user id=" & Usuario & ";" & "password=" & Password & ";" & "port=" & Puerto & ";" & "database=" & BaseDatos & ";"
-
     Private Sub AltaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.cargar_combo(Me.cmb_provincia, "Provincia", "Nombre", "id", "")
-        Me.cargar_combo(Me.cmb_localidad, "Localidad", "Nombre", "id", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
+
+
+
+        Coneccion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        Coneccion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
         'Cargo las localidades de Buenos aires (Provincia = 1) ya que es el que primero se selecciona..
 
-        Me.cargar_combo(Me.cmb_tipoDocumento, "Tipo_Documento", "Nombre", "id", "")
-        Me.cargar_combo(Me.cmb_tipo_propiedad, "Tipo_Propiedad", "Nombre", "id", "")
-        Me.cargar_combo(Me.cmb_encargado, "Persona", "Nombre", "id", "")
+        Coneccion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+        Coneccion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
+        Coneccion.cargarComboTipo(Me.cmb_encargado, "Persona")
 
         Me.cargarMonedas(Me.cmb_moneda)
-        Me.AddButtonColumn(Me.grid_propietarios, 4)
+        Funciones.AddButtonColumn(Me.grid_propietarios, "Accion", "Eliminar", 4)
 
     End Sub
 
@@ -53,14 +42,14 @@ Public Class AltaPropiedad
 
         If Me.validar = True Then
 
-            Dim alturaCalle As Integer = Integer.Parse(Me.QuitarEspacios(Me.txt_numeroCalle.Text))
+            Dim alturaCalle As Integer = Integer.Parse(Funciones.QuitarEspacios(Me.txt_numeroCalle.Text))
             Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Me.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
 
             'Ejecutar consulta "sqlDomicilio"
 
-            Me.ejecutarInsert(sqlDomicilio)
+            Coneccion.ejecutarInsert(sqlDomicilio)
 
-            Dim idDomicilio As Integer = Me.ultimoIdInsertado()
+            Dim idDomicilio As Integer = Coneccion.ultimoIdInsertado()
             Dim sqlInmueble As String
 
             If Me.idTipoPropiedad = 1 Then
@@ -72,9 +61,9 @@ Public Class AltaPropiedad
 
             'Ejecutar consulta "sqlInmueble"
 
-            Me.ejecutarInsert(sqlInmueble)
+            Coneccion.ejecutarInsert(sqlInmueble)
 
-            Dim idInmueble As Integer = Me.ultimoIdInsertado()
+            Dim idInmueble As Integer = Coneccion.ultimoIdInsertado()
             Dim moneda As String = ""
 
             If Me.cmb_moneda.SelectedValue = 0 Then
@@ -90,15 +79,15 @@ Public Class AltaPropiedad
 
 
             Dim sqlPropiedad As String = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
-                                         & idInmueble & ", " & Me.QuitarEspacios(Me.txt_piso.Text) & ", '" & Me.QuitarEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
-                                         & Me.QuitarEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
-                                         & Me.QuitarEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
+                                         & idInmueble & ", " & Funciones.QuitarEspacios(Me.txt_piso.Text) & ", '" & Funciones.QuitarEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
+                                         & Funciones.QuitarEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
+                                         & Funciones.QuitarEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
                                          & moneda & "');"
 
 
-            Me.ejecutarInsert(sqlPropiedad)
+            Coneccion.ejecutarInsert(sqlPropiedad)
 
-            Dim idPropiedad As Integer = Me.ultimoIdInsertado()
+            Dim idPropiedad As Integer = Coneccion.ultimoIdInsertado()
 
             'por cada dueño una consulta..
 
@@ -106,8 +95,8 @@ Public Class AltaPropiedad
 
                 Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & ", " & dgitem.Cells(0).Value & ");"
                 '"dgitem.Cells(0).Value" corresponde al id de la persona 
-                Me.ejecutarInsert(sqlDuenio)
-                
+                Coneccion.ejecutarInsert(sqlDuenio)
+
             Next
 
         End If
@@ -126,7 +115,7 @@ Public Class AltaPropiedad
             Me.txt_numeroBusquedaDocumento.Text = ""
             Me.btn_add.Enabled = False
 
-            If Me.IsDataGridViewEmpty(Me.grid_propietarios) Then
+            If Funciones.IsDataGridViewEmpty(Me.grid_propietarios) Then
                 Me.grid_propietarios.Rows.Add(fila)
             Else
 
@@ -144,40 +133,6 @@ Public Class AltaPropiedad
 
     End Sub
 
-    Private Sub cargar_combo(ByRef combo As ComboBox, ByVal nombre_tabla As String, ByVal descripcion As String, ByVal pk As String, ByVal filtro As String)
-
-        Try
-            conexion = New MySqlConnection()
-            conexion.ConnectionString = Me.ConnectionString
-            conexion.Open()
-
-            Dim adapter As New MySqlDataAdapter
-            Dim sql As String
-
-            Dim tabla As New Data.DataTable
-
-            sql = " SELECT * FROM " + nombre_tabla + " " + filtro
-            Dim cmd As New MySqlCommand
-            cmd.Connection = conexion
-            cmd.CommandText = sql
-            adapter.SelectCommand = cmd
-
-            tabla.Load(cmd.ExecuteReader())
-            conexion.Close()
-
-            combo.DataSource = tabla
-            combo.DisplayMember = descripcion
-            combo.ValueMember = pk
-
-        Catch ex As Exception
-            MsgBox("Error al conectar al servidor MySQL " &
-                   vbCrLf & vbCrLf & ex.Message,
-                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
-        End Try
-    End Sub
-
-
-
     Private Sub cambiarProvinciaSeleccionada(ByVal sender As Object, ByVal e As EventArgs) Handles cmb_provincia.SelectionChangeCommitted
 
         Dim senderComboBox As ComboBox = CType(sender, ComboBox)
@@ -185,7 +140,7 @@ Public Class AltaPropiedad
         Dim sql2 As String = "WHERE Provincia = " + idProvincia.ToString + " ORDER BY Nombre ASC;"
 
 
-        Me.cargar_combo(Me.cmb_localidad, "Localidad", "Nombre", "id", sql2)
+        Coneccion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
 
     End Sub
 
@@ -216,31 +171,16 @@ Public Class AltaPropiedad
 
 
 
- 
+
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Try
-            conexion = New MySqlConnection()
-            conexion.ConnectionString = Me.ConnectionString
-            conexion.Open()
-
-            Dim adapter As New MySqlDataAdapter
-            Dim sql As String
-
+            Dim Sql As String = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
             Dim tabla As New Data.DataTable
 
+            tabla = Coneccion.Consulta(Sql)
+
             Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
-
-            sql = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
-
-            Dim cmd As New MySqlCommand
-            cmd.Connection = conexion
-            cmd.CommandText = sql
-            adapter.SelectCommand = cmd
-
-            tabla.Load(cmd.ExecuteReader())
-            conexion.Close()
-
 
             Me.grid_Busqueda.Rows.Clear()
 
@@ -266,58 +206,12 @@ Public Class AltaPropiedad
 
 
         Catch ex As Exception
-            MsgBox("Error al conectar al servidor MySQL " &
+            MsgBox("Error " &
                    vbCrLf & vbCrLf & ex.Message,
                    MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
         End Try
     End Sub
 
-
-
-
-    Public Function IsDataGridViewEmpty(ByRef dataGridView As DataGridView) As Boolean
-        Dim isEmpty As Boolean
-        isEmpty = True
-        For Each row As DataGridViewRow In dataGridView.Rows
-            For Each cell As DataGridViewCell In row.Cells
-                If Not String.IsNullOrEmpty(cell.Value) Then
-                    ' Check if the string only consists of spaces
-                    If Not String.IsNullOrEmpty(Trim(cell.Value.ToString())) Then
-                        isEmpty = False
-                        Exit For
-                    End If
-                End If
-            Next
-        Next
-        Return isEmpty
-    End Function
-
-
-    Public Function ultimoIdInsertado() As Integer
-        Dim retorno As Integer
-        Dim sql As String = "SELECT LAST_INSERT_ID() AS LASTID;"
-
-
-        conexion = New MySqlConnection()
-        conexion.ConnectionString = Me.ConnectionString
-        conexion.Open()
-
-        Dim adapter As New MySqlDataAdapter
-
-        Dim cmd As New MySqlCommand
-        cmd.Connection = conexion
-        cmd.CommandText = sql
-        adapter.SelectCommand = cmd
-
-        Dim sqlReader As MySqlDataReader = cmd.ExecuteReader()
-        sqlReader.Read()
-
-        retorno = Integer.Parse(sqlReader("LASTID").ToString())
-
-        conexion.Close()
-
-        Return retorno
-    End Function
 
 
 
@@ -377,8 +271,8 @@ Public Class AltaPropiedad
 
         'Separador de ratón..
 
-        If Me.IsDataGridViewEmpty(Me.grid_propietarios) Then
-            MessageBox.Show("La propiedad debe tener al menos un propietario.\n Busque uno.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+        If Funciones.IsDataGridViewEmpty(Me.grid_propietarios) Then
+            MessageBox.Show("La propiedad debe tener al menos un propietario. Busque uno.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             Me.txt_numeroBusquedaDocumento.Focus()
             Return False
         End If
@@ -421,56 +315,10 @@ Public Class AltaPropiedad
     End Sub
 
 
-    Private Sub ejecutarInsert(ByVal sql)
-
-        Try
-        conexion = New MySqlConnection()
-        conexion.ConnectionString = Me.ConnectionString
-        conexion.Open()
-
-        Dim cmd As New MySqlCommand
-
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-        cmd.ExecuteNonQuery()
-
-        conexion.Close()
-         Catch ex As Exception
-            MsgBox("Error al Ejecutar consulta MySQL " &
-                   vbCrLf & vbCrLf & ex.Message,
-                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
-        End Try
-
-    End Sub
-
-
-
-    Private Sub AddButtonColumn(ByRef grid As DataGridView, Optional ByRef posicion As Integer = 0)
-        Dim buttons As New DataGridViewButtonColumn()
-        With buttons
-            .HeaderText = "Accion"
-            .Text = "Eliminar"
-            .UseColumnTextForButtonValue = True
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-            .FlatStyle = FlatStyle.Standard
-            .CellTemplate.Style.BackColor = Color.Honeydew
-            .DisplayIndex = 0
-        End With
-
-        buttons.DisplayIndex = posicion
-
-        grid.Columns.Add(buttons)
-
-    End Sub
-
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Close()
-
     End Sub
 
-    Private Function QuitarEspacios(ByVal cadena As String) As String
-        Return LTrim(RTrim(cadena))
-    End Function
+
 
 End Class
