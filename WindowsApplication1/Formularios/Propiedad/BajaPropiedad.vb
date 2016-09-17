@@ -10,10 +10,12 @@ Public Class BajaPropiedad
 
     Friend conexion As MySqlConnection
 
+    Dim FuncionesUtiles As FuncionesUtiles = New FuncionesUtiles
+
     ReadOnly ConnectionString As String = "server=" & Servidor & ";" & "user id=" & Usuario & ";" & "password=" & Password & ";" & "port=" & Puerto & ";" & "database=" & BaseDatos & ";"
 
     Private Sub BajaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.AddButtonColumn(Me.grid_grilla, 5)
+        FuncionesUtiles.AddButtonColumn(Me.grid_grilla, "Eliminar", "Acción", 5)
     End Sub
 
 
@@ -67,25 +69,6 @@ Public Class BajaPropiedad
 
     End Sub
 
-    Private Sub AddButtonColumn(ByRef grid As DataGridView, Optional ByRef posicion As Integer = 0)
-        Dim buttons As New DataGridViewButtonColumn()
-        With buttons
-            .HeaderText = "Accion"
-            .Text = "Eliminar"
-            .UseColumnTextForButtonValue = True
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-            .FlatStyle = FlatStyle.Standard
-            .CellTemplate.Style.BackColor = Color.Honeydew
-            .DisplayIndex = 0
-        End With
-
-        buttons.DisplayIndex = posicion
-
-        grid.Columns.Add(buttons)
-
-    End Sub
-
-
     Private Sub EventoEliminarPropietario(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_grilla.CellClick
         ' elimino la fila
         If e.ColumnIndex = 5 Then
@@ -109,7 +92,7 @@ Public Class BajaPropiedad
     End Sub
 
 
-    Private Sub BorrarPropiedad(ByRef ID_DOMICILIO As Integer, ByRef ID_INMUEBLE As Integer, ByRef ID_PROPIEDAD As Integer)
+    Private Sub BorrarPropiedad(ByVal ID_DOMICILIO As Integer, ByVal ID_INMUEBLE As Integer, ByVal ID_PROPIEDAD As Integer)
 
         Dim sqlTotalDeptos As String = "SELECT COUNT(*) AS `TOTAL` FROM `Propiedad` WHERE `Id_Inmueble`= " & ID_INMUEBLE & ";"
 

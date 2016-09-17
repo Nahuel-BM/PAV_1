@@ -24,17 +24,17 @@ Partial Class Inicial
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaPropiedadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaPropiedadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MdoficarPropiedadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPropiedadesPorLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPropiedadesPorTipoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,30 +53,6 @@ Partial Class Inicial
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(73, 20)
         Me.ToolStripMenuItem1.Text = "Propiedad"
-        '
-        'PersonasToolStripMenuItem
-        '
-        Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
-        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.PersonasToolStripMenuItem.Text = "Persona"
-        '
-        'OperacionInmobiliariaToolStripMenuItem
-        '
-        Me.OperacionInmobiliariaToolStripMenuItem.Name = "OperacionInmobiliariaToolStripMenuItem"
-        Me.OperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
-        Me.OperacionInmobiliariaToolStripMenuItem.Text = "Operacion Inmobiliaria"
-        '
-        'ProveedorToolStripMenuItem
-        '
-        Me.ProveedorToolStripMenuItem.Name = "ProveedorToolStripMenuItem"
-        Me.ProveedorToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
-        Me.ProveedorToolStripMenuItem.Text = "Proveedor"
-        '
-        'GAstosToolStripMenuItem
-        '
-        Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
-        Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.GAstosToolStripMenuItem.Text = "Gastos"
         '
         'AltaPropiedadToolStripMenuItem
         '
@@ -103,12 +79,6 @@ Partial Class Inicial
         Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
         '
-        'EstadisticasToolStripMenuItem
-        '
-        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
-        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
-        '
         'ListarPropiedadesPorLocalidadToolStripMenuItem
         '
         Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Name = "ListarPropiedadesPorLocalidadToolStripMenuItem"
@@ -120,6 +90,36 @@ Partial Class Inicial
         Me.ListarPropiedadesPorTipoToolStripMenuItem.Name = "ListarPropiedadesPorTipoToolStripMenuItem"
         Me.ListarPropiedadesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(245, 22)
         Me.ListarPropiedadesPorTipoToolStripMenuItem.Text = "Listar Propiedades por Tipo"
+        '
+        'EstadisticasToolStripMenuItem
+        '
+        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
+        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
+        '
+        'PersonasToolStripMenuItem
+        '
+        Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
+        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.PersonasToolStripMenuItem.Text = "Persona"
+        '
+        'OperacionInmobiliariaToolStripMenuItem
+        '
+        Me.OperacionInmobiliariaToolStripMenuItem.Name = "OperacionInmobiliariaToolStripMenuItem"
+        Me.OperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
+        Me.OperacionInmobiliariaToolStripMenuItem.Text = "Operacion Inmobiliaria"
+        '
+        'ProveedorToolStripMenuItem
+        '
+        Me.ProveedorToolStripMenuItem.Name = "ProveedorToolStripMenuItem"
+        Me.ProveedorToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.ProveedorToolStripMenuItem.Text = "Proveedor"
+        '
+        'GAstosToolStripMenuItem
+        '
+        Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
+        Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.GAstosToolStripMenuItem.Text = "Gastos"
         '
         'Inicial
         '

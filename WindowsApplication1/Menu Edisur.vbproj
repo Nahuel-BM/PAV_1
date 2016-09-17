@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Coneccion.vb" />
+    <Compile Include="Clases\FuncionesUtiles.vb" />
     <Compile Include="Formularios\Operacion Inmobiliaria\AltaOperacionInmobiliaria.Designer.vb">
       <DependentUpon>AltaOperacionInmobiliaria.vb</DependentUpon>
     </Compile>
