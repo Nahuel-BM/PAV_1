@@ -24,19 +24,21 @@ Partial Class BajaPropiedad
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.txt_denominacionCatastral = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.grid_grilla = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.grid_resultadosBusqueda = New System.Windows.Forms.DataGridView()
         Me.ID_DOMICILIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_INMUEBLE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_PROPIEDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Domicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.designacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmb_tipoPropiedad = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_resultadosBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,8 +52,10 @@ Partial Class BajaPropiedad
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox1.Controls.Add(Me.cmb_tipoPropiedad)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.btn_buscar)
+        Me.GroupBox1.Controls.Add(Me.txt_denominacionCatastral)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -60,26 +64,26 @@ Partial Class BajaPropiedad
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Propiedad"
         '
-        'Button1
+        'btn_buscar
         '
-        Me.Button1.Location = New System.Drawing.Point(542, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_buscar.Location = New System.Drawing.Point(542, 17)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_buscar.TabIndex = 2
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = True
         '
-        'MaskedTextBox1
+        'txt_denominacionCatastral
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(121, 19)
-        Me.MaskedTextBox1.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(415, 20)
-        Me.MaskedTextBox1.TabIndex = 1
+        Me.txt_denominacionCatastral.Location = New System.Drawing.Point(121, 19)
+        Me.txt_denominacionCatastral.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.txt_denominacionCatastral.Name = "txt_denominacionCatastral"
+        Me.txt_denominacionCatastral.Size = New System.Drawing.Size(199, 20)
+        Me.txt_denominacionCatastral.TabIndex = 1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.grid_grilla)
+        Me.GroupBox2.Controls.Add(Me.grid_resultadosBusqueda)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 72)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(623, 210)
@@ -87,26 +91,17 @@ Partial Class BajaPropiedad
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Resultados"
         '
-        'grid_grilla
+        'grid_resultadosBusqueda
         '
-        Me.grid_grilla.AllowUserToAddRows = False
-        Me.grid_grilla.AllowUserToDeleteRows = False
-        Me.grid_grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DOMICILIO, Me.ID_INMUEBLE, Me.ID_PROPIEDAD, Me.Domicilio, Me.designacion})
-        Me.grid_grilla.Location = New System.Drawing.Point(9, 19)
-        Me.grid_grilla.Name = "grid_grilla"
-        Me.grid_grilla.ReadOnly = True
-        Me.grid_grilla.Size = New System.Drawing.Size(608, 185)
-        Me.grid_grilla.TabIndex = 0
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(560, 288)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Aceptar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.grid_resultadosBusqueda.AllowUserToAddRows = False
+        Me.grid_resultadosBusqueda.AllowUserToDeleteRows = False
+        Me.grid_resultadosBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_resultadosBusqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DOMICILIO, Me.ID_INMUEBLE, Me.ID_PROPIEDAD, Me.Domicilio, Me.designacion})
+        Me.grid_resultadosBusqueda.Location = New System.Drawing.Point(9, 19)
+        Me.grid_resultadosBusqueda.Name = "grid_resultadosBusqueda"
+        Me.grid_resultadosBusqueda.ReadOnly = True
+        Me.grid_resultadosBusqueda.Size = New System.Drawing.Size(608, 185)
+        Me.grid_resultadosBusqueda.TabIndex = 0
         '
         'ID_DOMICILIO
         '
@@ -146,12 +141,38 @@ Partial Class BajaPropiedad
         Me.designacion.ReadOnly = True
         Me.designacion.Width = 163
         '
+        'btn_salir
+        '
+        Me.btn_salir.Location = New System.Drawing.Point(560, 288)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(75, 23)
+        Me.btn_salir.TabIndex = 3
+        Me.btn_salir.Text = "Salir"
+        Me.btn_salir.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(326, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Tipo Propiedad"
+        '
+        'cmb_tipoPropiedad
+        '
+        Me.cmb_tipoPropiedad.FormattingEnabled = True
+        Me.cmb_tipoPropiedad.Location = New System.Drawing.Point(415, 19)
+        Me.cmb_tipoPropiedad.Name = "cmb_tipoPropiedad"
+        Me.cmb_tipoPropiedad.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoPropiedad.TabIndex = 4
+        '
         'BajaPropiedad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(647, 321)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "BajaPropiedad"
@@ -159,20 +180,22 @@ Partial Class BajaPropiedad
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_resultadosBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents btn_buscar As System.Windows.Forms.Button
+    Friend WithEvents txt_denominacionCatastral As System.Windows.Forms.MaskedTextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents grid_grilla As System.Windows.Forms.DataGridView
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents grid_resultadosBusqueda As System.Windows.Forms.DataGridView
+    Friend WithEvents btn_salir As System.Windows.Forms.Button
     Friend WithEvents ID_DOMICILIO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ID_INMUEBLE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ID_PROPIEDAD As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Domicilio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents designacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmb_tipoPropiedad As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

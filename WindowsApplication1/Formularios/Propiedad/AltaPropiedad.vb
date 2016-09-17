@@ -2,7 +2,7 @@
 
     Dim idTipoPropiedad As Integer = 0
     Dim encontrado As Boolean = False
-    Dim Conexion As New Conexion
+    Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
 
     Enum monedas
@@ -43,7 +43,7 @@
         If Me.validar = True Then
 
             Dim alturaCalle As Integer = Integer.Parse(Funciones.QuitarEspacios(Me.txt_numeroCalle.Text))
-            Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Me.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
+            Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
 
             'Ejecutar consulta "sqlDomicilio"
 
@@ -54,9 +54,9 @@
 
             If Me.idTipoPropiedad = 1 Then
                 'Si es un edificio..
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Me.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Me.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Me.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
+                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
             Else
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Me.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
+                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
             End If
 
             'Ejecutar consulta "sqlInmueble"
@@ -175,12 +175,12 @@
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Try
+            Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
+
             Dim Sql As String = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
             Dim tabla As New Data.DataTable
 
             tabla = Conexion.Consulta(Sql)
-
-            Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
 
             Me.grid_Busqueda.Rows.Clear()
 

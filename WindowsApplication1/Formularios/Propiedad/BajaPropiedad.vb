@@ -2,48 +2,45 @@
 
 Public Class BajaPropiedad
 
-    Dim Conexion As New Conexion
-    Dim Funciones As New FuncionesUtiles
+    Dim Conexion As Conexion = Constantes.accesoMySQL
+    Dim Funciones As New FuncionesUtiles()
 
     Private Sub BajaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Funciones.AddButtonColumn(Me.grid_grilla, "Eliminar", "Acción", 5)
+        Funciones.AddButtonColumn(Me.grid_resultadosBusqueda, "Eliminar", "Acción", 5)
+        Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
     End Sub
 
 
 
 
-    Private Sub Buscar_Inmueble_Por_Designacion_Catastral(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Buscar_Inmueble_Por_Designacion_Catastral(sender As Object, e As EventArgs) Handles btn_buscar.Click
 
-        Dim TrimString As String = Funciones.QuitarEspacios(Me.MaskedTextBox1.Text)
+        Dim DenominacionCatastral As String = Funciones.QuitarEspacios(Me.txt_denominacionCatastral.Text)
 
-        Dim sqlConsulta As String = "SELECT  `Domicilio`.`id` AS `ID_DOMICILIO`, `Inmueble`.`id` AS `ID_INMUEBLE` , `Propiedad`.`id` AS `ID_PROPIEDAD`, `Domicilio`.`Calle`, `Domicilio`.`Numero` , `Localidad`.`Nombre` AS `Localidad` , `Provincia`.`Nombre` AS `Provincia`, `Inmueble`.`Designacion_Catastral` FROM  `Propiedad` LEFT JOIN  `Inmueble` ON  `Propiedad`.`Id_Inmueble` =  `Inmueble`.`id` LEFT JOIN `Domicilio` ON `Inmueble`.`Domicilio` = `Domicilio`.`id`  LEFT JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` LEFT JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE  `Inmueble`.`Designacion_Catastral` LIKE  '%" & TrimString & "%' AND `Propiedad`.`borrado`= 0;"
+        Dim sqlConsulta As String = "SELECT  `Domicilio`.`id` AS `ID_DOMICILIO`, `Inmueble`.`id` AS `ID_INMUEBLE` , `Propiedad`.`id` AS `ID_PROPIEDAD`, `Domicilio`.`Calle`, `Domicilio`.`Numero` , `Localidad`.`Nombre` AS `Localidad` , `Provincia`.`Nombre` AS `Provincia`, `Inmueble`.`Designacion_Catastral` FROM  `Propiedad` LEFT JOIN  `Inmueble` ON  `Propiedad`.`Id_Inmueble` =  `Inmueble`.`id` LEFT JOIN `Domicilio` ON `Inmueble`.`Domicilio` = `Domicilio`.`id`  LEFT JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` LEFT JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE  `Inmueble`.`Designacion_Catastral` LIKE  '%" & DenominacionCatastral & "%' AND `Propiedad`.`borrado`= 0 AND `Propiedad`.`Tipo_Propiedad` = " & Me.cmb_tipoPropiedad.SelectedIndex & ";"
 
 
         Dim tabla As New Data.DataTable
         tabla = Conexion.Consulta(sqlConsulta)
 
-        Me.grid_grilla.Rows.Clear()
+        Me.grid_resultadosBusqueda.Rows.Clear()
 
 
         Dim recorrido As Integer = 0
         For recorrido = 0 To tabla.Rows.Count() - 1
-            Me.grid_grilla.Rows.Add()
-            Me.grid_grilla.Rows(recorrido).Cells("ID_DOMICILIO").Value = tabla.Rows(recorrido)("ID_DOMICILIO")
-            Me.grid_grilla.Rows(recorrido).Cells("ID_INMUEBLE").Value = tabla.Rows(recorrido)("ID_INMUEBLE")
-            Me.grid_grilla.Rows(recorrido).Cells("ID_PROPIEDAD").Value = tabla.Rows(recorrido)("ID_PROPIEDAD")
-            Me.grid_grilla.Rows(recorrido).Cells("Domicilio").Value = tabla.Rows(recorrido)("Calle") & " " & tabla.Rows(recorrido)("Numero") & ", " & tabla.Rows(recorrido)("Localidad") & ", " & tabla.Rows(recorrido)("Provincia") & "."
+            Me.grid_resultadosBusqueda.Rows.Add()
+            Me.grid_resultadosBusqueda.Rows(recorrido).Cells("ID_DOMICILIO").Value = tabla.Rows(recorrido)("ID_DOMICILIO")
+            Me.grid_resultadosBusqueda.Rows(recorrido).Cells("ID_INMUEBLE").Value = tabla.Rows(recorrido)("ID_INMUEBLE")
+            Me.grid_resultadosBusqueda.Rows(recorrido).Cells("ID_PROPIEDAD").Value = tabla.Rows(recorrido)("ID_PROPIEDAD")
+            Me.grid_resultadosBusqueda.Rows(recorrido).Cells("Domicilio").Value = tabla.Rows(recorrido)("Calle") & " " & tabla.Rows(recorrido)("Numero") & ", " & tabla.Rows(recorrido)("Localidad") & ", " & tabla.Rows(recorrido)("Provincia") & "."
 
-            Me.grid_grilla.Rows(recorrido).Cells("designacion").Value = tabla.Rows(recorrido)("Designacion_Catastral")
+            Me.grid_resultadosBusqueda.Rows(recorrido).Cells("designacion").Value = tabla.Rows(recorrido)("Designacion_Catastral")
             'designacion
 
         Next
-
-
-
-
     End Sub
 
-    Private Sub EventoEliminarPropietario(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_grilla.CellClick
+    Private Sub EventoEliminarPropietario(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_resultadosBusqueda.CellClick
         ' elimino la fila
         If e.ColumnIndex = 5 Then
             Dim result As Integer = MessageBox.Show("¿Realmente desea Eliminar la Propiedad?", "Alerta", MessageBoxButtons.OKCancel)
@@ -53,14 +50,14 @@ Public Class BajaPropiedad
                 'Comprobar si es departamento si es depto fijarse si hay otro 
                 'que apunte a inmueble.
                 '
-                Dim Id_Domicilio As Integer = Integer.Parse(Me.grid_grilla.Rows(e.RowIndex).Cells(0).Value.ToString)
-                Dim Id_Inmueble As Integer = Integer.Parse(Me.grid_grilla.Rows(e.RowIndex).Cells(1).Value.ToString)
-                Dim Id_Propiedad As Integer = Integer.Parse(Me.grid_grilla.Rows(e.RowIndex).Cells(2).Value.ToString)
+                Dim Id_Domicilio As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(0).Value.ToString)
+                Dim Id_Inmueble As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(1).Value.ToString)
+                Dim Id_Propiedad As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(2).Value.ToString)
 
 
                 Me.BorrarPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
 
-                Me.grid_grilla.Rows.RemoveAt(e.RowIndex)
+                Me.grid_resultadosBusqueda.Rows.RemoveAt(e.RowIndex)
             End If
         End If
     End Sub

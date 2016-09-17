@@ -16,8 +16,8 @@ Public Class Conexion
     'Inicio de clase!
 
     Enum motores
-        sqlserver
         mysql
+        sqlserver
     End Enum
 
     Dim cadena_conexion As String = ""
@@ -56,23 +56,6 @@ Public Class Conexion
     End Property
 
 
-    Public Sub New()
-
-        Select Case Me.motor
-            Case motores.sqlserver
-                Me.conexion = New OleDb.OleDbConnection
-                Me.cmd = New OleDb.OleDbCommand
-
-            Case motores.mysql
-                Me.conexion = New MySqlConnection
-                Me.cmd = New MySqlCommand
-
-        End Select
-
-    End Sub
-
-
-
     Public Function Consulta(ByVal sql As String) As DataTable
         Return Me.ejecutar(sql)
     End Function
@@ -102,7 +85,7 @@ Public Class Conexion
 
 
 
-    Private Function ejecutar(ByRef sql As String) As DataTable
+    Private Function ejecutar(ByVal sql As String) As DataTable
 
         Dim tabla As New DataTable
 
@@ -137,6 +120,18 @@ Public Class Conexion
 
     Private Sub Conectar()
         Try
+
+            Select Case Me.motor
+                Case motores.mysql
+                    Me.conexion = New MySqlConnection()
+                    Me.cmd = New MySqlCommand()
+
+                Case motores.sqlserver
+                    Me.conexion = New OleDb.OleDbConnection()
+                    Me.cmd = New OleDb.OleDbCommand()
+
+            End Select
+
             Me.conexion.ConnectionString = Me.cadena_conexion
             conexion.Open()
             cmd.Connection = conexion

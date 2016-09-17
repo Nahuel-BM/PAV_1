@@ -41,4 +41,28 @@
         Return LTrim(RTrim(cadena))
     End Function
 
+    Public Function ValidarComboBox(ByRef combo As ComboBox) As Boolean
+        If combo.SelectedIndex = -1 Then
+            combo.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Public Function ValidarTextBox(ByRef textBox As TextBox) As Boolean
+        If Me.QuitarEspacios(textBox.Text) = "" Then
+            textBox.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Public Function ValidarTextBox(ByRef textBox As MaskedTextBox) As Boolean
+        If Me.QuitarEspacios(textBox.Text) = "" Then
+            textBox.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
 End Class
