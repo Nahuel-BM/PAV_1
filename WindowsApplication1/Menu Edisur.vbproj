@@ -94,6 +94,30 @@
   <ItemGroup>
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\FuncionesUtiles.vb" />
+    <Compile Include="Formularios\Gastos\AltaGastos.Designer.vb">
+      <DependentUpon>AltaGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Gastos\AltaGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Gastos\BajaGastos.Designer.vb">
+      <DependentUpon>BajaGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Gastos\BajaGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Gastos\ConsultarGastos.Designer.vb">
+      <DependentUpon>ConsultarGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Gastos\ConsultarGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Gastos\ModificarGastos.Designer.vb">
+      <DependentUpon>ModificarGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Gastos\ModificarGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Operacion Inmobiliaria\AltaOperacionInmobiliaria.Designer.vb">
       <DependentUpon>AltaOperacionInmobiliaria.vb</DependentUpon>
     </Compile>
@@ -104,6 +128,12 @@
       <DependentUpon>BajaOperacionInmobiliaria.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Operacion Inmobiliaria\BajaOperacionInmobiliaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.Designer.vb">
+      <DependentUpon>ConsultarOperacionInmobiliaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Operacion Inmobiliaria\ModificarOperacionInmobiliaria.Designer.vb">
@@ -184,6 +214,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.resx">
+      <DependentUpon>ConsultarOperacionInmobiliaria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\AltaPropiedad.resx">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </EmbeddedResource>
