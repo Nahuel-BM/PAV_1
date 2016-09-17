@@ -5,15 +5,52 @@
     Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
 
+    'Parametros de carga,identifican que es una edicion..
+    Dim Id_Domicilio_parametro As Integer = 0
+    Dim Id_Inmueble_parametro As Integer = 0
+    Dim Id_Propiedad_parametro As Integer = 0
+    Dim Edicion As Boolean = False
+    Dim tablaDatos As DataTable
+    'Fin parametros de carga.
+
+
     Enum monedas
         peso
         dolar
         euro
     End Enum
 
+
+
+
+
+    Sub New(ByVal id_domicilio As Integer, ByVal id_inmueble As Integer, ByVal id_propiedad As Integer)
+
+        InitializeComponent() 'es necesario que lleve esta linea
+
+        Me.Id_Domicilio_parametro = id_domicilio
+        Me.Id_Inmueble_parametro = id_inmueble
+        Me.Id_Propiedad_parametro = id_propiedad
+
+        Edicion = True
+
+        Me.btn_crearPropiedad.Text = "Editar Propiedad"
+        Me.Text = "Edicion de Propiedad"
+
+    End Sub
+
+    Sub New()
+        InitializeComponent()
+    End Sub
+
+    Sub New(ByVal datos As DataTable)
+        InitializeComponent()
+        Me.tablaDatos = datos
+        Me.Edicion = True
+    End Sub
+
+
     Private Sub AltaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
 
         Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
@@ -25,6 +62,12 @@
 
         Me.cargarMonedas(Me.cmb_moneda)
         Funciones.AddButtonColumn(Me.grid_propietarios, "Accion", "Eliminar", 4)
+
+        If Edicion Then
+            Me.CargarDatosDeEdicion()
+        End If
+
+
 
     End Sub
 
@@ -39,69 +82,90 @@
     End Sub
 
     Private Sub GuardarEnBaseDeDatos()
+        Try
+            If Me.validar = True Then
 
-        If Me.validar = True Then
+                Dim alturaCalle As Integer = Integer.Parse(Funciones.QuitarEspacios(Me.txt_numeroCalle.Text))
+                Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
 
-            Dim alturaCalle As Integer = Integer.Parse(Funciones.QuitarEspacios(Me.txt_numeroCalle.Text))
-            Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
+                'Ejecutar consulta "sqlDomicilio"
 
-            'Ejecutar consulta "sqlDomicilio"
+                Conexion.ejecutarInsert(sqlDomicilio)
 
-            Conexion.ejecutarInsert(sqlDomicilio)
+                Dim idDomicilio As Integer = Conexion.ultimoIdInsertado()
+                Dim sqlInmueble As String
 
-            Dim idDomicilio As Integer = Conexion.ultimoIdInsertado()
-            Dim sqlInmueble As String
+                If Me.idTipoPropiedad = 1 Then
+                    'Si es un edificio..
+                    sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
+                Else
+                    sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
+                End If
 
-            If Me.idTipoPropiedad = 1 Then
-                'Si es un edificio..
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
-            Else
-                sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
-            End If
+                'Ejecutar consulta "sqlInmueble"
 
-            'Ejecutar consulta "sqlInmueble"
+                Conexion.ejecutarInsert(sqlInmueble)
 
-            Conexion.ejecutarInsert(sqlInmueble)
+                Dim idInmueble As Integer = Conexion.ultimoIdInsertado()
+                Dim moneda As String = ""
 
-            Dim idInmueble As Integer = Conexion.ultimoIdInsertado()
-            Dim moneda As String = ""
-
-            If Me.cmb_moneda.SelectedValue = 0 Then
-                moneda = "Peso"
-            End If
-            If Me.cmb_moneda.SelectedValue = 1 Then
-                moneda = "Dolar"
-            End If
-            If Me.cmb_moneda.SelectedValue = 2 Then
-                moneda = "Euro"
-            End If
-
-
-
-            Dim sqlPropiedad As String = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
-                                         & idInmueble & ", " & Funciones.QuitarEspacios(Me.txt_piso.Text) & ", '" & Funciones.QuitarEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
-                                         & Funciones.QuitarEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
-                                         & Funciones.QuitarEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
-                                         & moneda & "');"
+                If Me.cmb_moneda.SelectedValue = 0 Then
+                    moneda = "Peso"
+                End If
+                If Me.cmb_moneda.SelectedValue = 1 Then
+                    moneda = "Dolar"
+                End If
+                If Me.cmb_moneda.SelectedValue = 2 Then
+                    moneda = "Euro"
+                End If
 
 
-            Conexion.ejecutarInsert(sqlPropiedad)
 
-            Dim idPropiedad As Integer = Conexion.ultimoIdInsertado()
+                Dim sqlPropiedad As String = ""
 
-            'por cada dueño una consulta..
 
-            For Each dgitem As DataGridViewRow In Me.grid_propietarios.Rows
+                If idTipoPropiedad = 1 Then
+                    sqlPropiedad = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
+                                            & idInmueble & ", " & Funciones.QuitarTodosLosEspacios(Me.txt_piso.Text) & ", '" & Funciones.QuitarTodosLosEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
+                                            & Funciones.QuitarTodosLosEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
+                                            & Funciones.QuitarTodosLosEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
+                                            & moneda & "');"
 
-                Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & ", " & dgitem.Cells(0).Value & ");"
-                '"dgitem.Cells(0).Value" corresponde al id de la persona 
-                Conexion.ejecutarInsert(sqlDuenio)
+                Else
+                    sqlPropiedad = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
+                                            & idInmueble & ", " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
+                                            & Funciones.QuitarTodosLosEspacios(Me.txt_superficie.Text.Replace(",", ".")) & ", " _
+                                            & Funciones.QuitarTodosLosEspacios(Me.txt_monto.Text.Replace(",", ".")) & ", '" _
+                                            & moneda & "');"
 
-            Next
+                End If
+
+                Conexion.ejecutarInsert(sqlPropiedad)
+
+                Dim idPropiedad As Integer = Conexion.ultimoIdInsertado()
+
+                'por cada dueño una consulta..
+
+                Dim Codigo As String
+                For Each row As DataGridViewRow In Me.grid_propietarios.Rows
+                    'obtenemos el valor de la columna en la variable declarada
+                    Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer
+
+                    Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & ", " & Codigo & ");"
+                    Conexion.ejecutarInsert(sqlDuenio)
+                Next
+
+                MsgBox("¡Propiedad creada con exito!")
+
+           
+
 
         End If
 
+        Catch e As Exception
+            MsgBox("Error al Guardar Datos")
 
+        End Try
 
     End Sub
 
@@ -120,10 +184,10 @@
             Else
 
                 For Each dgitem As DataGridViewRow In Me.grid_propietarios.Rows
-                    If Not dgitem.Cells(2).Value.Equals(fila.Cells(2).Value) Then
+                    If Not dgitem.Cells(0).Value.Equals(fila.Cells(0).Value) Then
                         Me.grid_propietarios.Rows.Add(fila)
                     Else
-                        MsgBox("La Persona ya es Propietaria del inmueble.")
+                        'MsgBox("La Persona ya es Propietaria del inmueble.")
                     End If
                 Next
 
@@ -177,7 +241,7 @@
         Try
             Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
 
-            Dim Sql As String = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
+            Dim Sql As String = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento LIKE '%" & Me.txt_numeroBusquedaDocumento.Text & "%' AND Tipo_Documento = " & idTipoDoc & ";"
             Dim tabla As New Data.DataTable
 
             tabla = Conexion.Consulta(Sql)
@@ -188,6 +252,7 @@
             Dim recorrido As Integer = 0
             For recorrido = 0 To tabla.Rows.Count() - 1
                 Me.grid_Busqueda.Rows.Add()
+                Me.grid_Busqueda.Rows(recorrido).Cells("id_Buscados").Value = tabla.Rows(recorrido)("id")
                 Me.grid_Busqueda.Rows(recorrido).Cells("nombre_encontrados").Value = tabla.Rows(recorrido)("Nombre") & ", " & tabla.Rows(recorrido)("Apellido")
                 Me.grid_Busqueda.Rows(recorrido).Cells("num_documento").Value = tabla.Rows(recorrido)("Documento")
                 Me.grid_Busqueda.Rows(recorrido).Cells("tipo_documento").Value = tabla.Rows(recorrido)("Tipo_Documento")
@@ -282,7 +347,12 @@
 
 
     Private Sub btn_crearPropiedad_Click(sender As Object, e As EventArgs) Handles btn_crearPropiedad.Click
-        Me.GuardarEnBaseDeDatos()
+        If Edicion Then
+            'Actualizar campos
+        Else
+            Me.GuardarEnBaseDeDatos()
+        End If
+
     End Sub
 
     Private Sub cargarMonedas(ByRef cmbmoneda)
@@ -319,6 +389,74 @@
         Me.Close()
     End Sub
 
+
+    Private Sub CargarDatosDeEdicion()
+        'Datos Domicilio
+        Dim datosDomicilio As DataTable = Conexion.Consulta("SELECT `Domicilio`.* , `Localidad`.`Nombre` AS `LocalidadN`, `Provincia`.`Nombre` AS `ProvinciaN` FROM `Domicilio` JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE `Domicilio`.`id` = " & Me.Id_Domicilio_parametro & ";")
+        Me.cmb_provincia.SelectedIndex = Me.cmb_provincia.FindStringExact(datosDomicilio(0)("LocalidadN"))
+        Me.cmb_provincia.SelectedIndex = Me.cmb_provincia.FindStringExact(datosDomicilio(0)("ProvinciaN"))
+
+
+        Me.txt_calle.Text = datosDomicilio(0)("Calle")
+
+
+
+        Me.txt_numeroCalle.Text = datosDomicilio(0)("Numero")
+        'Datos Propiedad
+
+        Dim datosPropiedad As DataTable = Conexion.Consulta("SELECT `Propiedad`.`Piso`, `Propiedad`.`Moneda`, `Propiedad`.`Denominacion`,`Propiedad`.`Superficie`, `Propiedad`.`Monto`, `Tipo_Propiedad`.`Nombre` FROM `Propiedad` JOIN `Tipo_Propiedad` ON `Propiedad`.`Tipo_Propiedad` = `Tipo_Propiedad`.`id` WHERE `Propiedad`.`id`= " & Me.Id_Propiedad_parametro)
+
+        Me.txt_piso.Text = "" & datosPropiedad(0)("Piso")
+        Me.txt_denominacion_departamento.Text = datosPropiedad(0)("Denominacion")
+
+        ' Me.txt_superficie.RightToLeft = Windows.Forms.RightToLeft.Yes
+        Me.txt_superficie.Text = Funciones.RellenarConEspacios(datosPropiedad(0)("Superficie"))
+
+        Me.txt_monto.Text = Funciones.RellenarConEspacios(datosPropiedad(0)("Monto"))
+
+        Me.cmb_tipo_propiedad.SelectedIndex = Me.cmb_tipo_propiedad.FindStringExact(datosPropiedad(0)("Nombre"))
+
+        Me.cmb_moneda.SelectedIndex = Me.cmb_moneda.FindStringExact(datosPropiedad(0)("Moneda"))
+        'Datos Inmueble
+
+        Dim datosInmueble As DataTable
+        If datosPropiedad(0)("Nombre") = "DEPARTAMENTO" Then
+            datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor`, `Persona`.`Nombre` AS `Encargado`, `Persona`.`Apellido` AS `Encargado_Apellido` FROM `Inmueble` JOIN `Persona` ON `Inmueble`.`Encargado` = `Persona`.`id` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
+
+            Me.txt_total_departamento.Text = datosInmueble(0)("Cantidad_Departamentos")
+            'encargado
+
+            Me.cmb_encargado.SelectedIndex = Me.cmb_moneda.FindStringExact(datosInmueble(0)("Encargado"))
+
+            'ascensor
+            If datosInmueble(0)("Designacion_Catastral") = 1 Then
+                Me.chk_ascensor.CheckState = CheckState.Checked
+            End If
+
+
+
+            Me.cmb_encargado.Enabled = True
+            Me.txt_denominacion_departamento.Enabled = True
+            Me.txt_piso.Enabled = True
+            Me.txt_total_departamento.Enabled = True
+            Me.chk_ascensor.Enabled = True
+
+        Else
+
+        Me.cmb_encargado.Enabled = False
+        Me.txt_denominacion_departamento.Enabled = False
+        Me.txt_piso.Enabled = False
+        Me.txt_total_departamento.Enabled = False
+        Me.chk_ascensor.Enabled = False
+
+
+        datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor` FROM `Inmueble` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
+        End If
+        'datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor`, `Persona`.`Nombre` AS `Encargado`, `Persona`.`Apellido` AS `Encargado_Apellido` FROM `Inmueble` JOIN `Persona` ON `Inmueble`.`Encargado` = `Persona`.`id` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
+
+        Me.txt_denominacion_catastral.Text = datosInmueble(0)("Designacion_Catastral")
+
+    End Sub
 
 
 End Class

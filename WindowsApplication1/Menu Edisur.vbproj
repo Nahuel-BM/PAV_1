@@ -172,6 +172,12 @@
     <Compile Include="Formularios\Persona\ConsultarPersona.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Propiedad\BuscarPropiedad.Designer.vb">
+      <DependentUpon>BuscarPropiedad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Propiedad\BuscarPropiedad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Propiedad\ConsultarPropiedad.Designer.vb">
       <DependentUpon>ConsultarPropiedad.vb</DependentUpon>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu\Inicial.resx">
       <DependentUpon>Inicial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Propiedad\BuscarPropiedad.resx">
+      <DependentUpon>BuscarPropiedad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\ModificarPropiedad.resx">
       <DependentUpon>ModificarPropiedad.vb</DependentUpon>

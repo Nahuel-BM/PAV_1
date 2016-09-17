@@ -41,6 +41,10 @@
         Return LTrim(RTrim(cadena))
     End Function
 
+    Public Function QuitarTodosLosEspacios(ByVal cadena As String) As String
+        Return (QuitarEspacios(cadena)).Replace(" ", "")
+    End Function
+
     Public Function ValidarComboBox(ByRef combo As ComboBox) As Boolean
         If combo.SelectedIndex = -1 Then
             combo.Focus()
@@ -64,5 +68,13 @@
         End If
         Return True
     End Function
+
+
+    Public Function RellenarConEspacios(ByVal cadena As String) As String
+        Dim retorno As Double = Double.Parse(cadena)
+        Dim fmt As String = "00000000000.00"
+        Return retorno.ToString(fmt)
+    End Function
+
 
 End Class

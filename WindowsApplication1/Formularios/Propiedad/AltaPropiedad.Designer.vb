@@ -55,6 +55,10 @@ Partial Class AltaPropiedad
         Me.cmb_provincia = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.grid_propietarios = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numeroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.cmb_tipoDocumento = New System.Windows.Forms.ComboBox()
@@ -63,14 +67,10 @@ Partial Class AltaPropiedad
         Me.txt_numeroBusquedaDocumento = New System.Windows.Forms.MaskedTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.grid_Busqueda = New System.Windows.Forms.DataGridView()
-        Me.id_busqueda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_Buscados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_encontrados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.num_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.numeroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid_propietarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -410,6 +410,32 @@ Partial Class AltaPropiedad
         Me.grid_propietarios.TabIndex = 99998
         Me.grid_propietarios.TabStop = False
         '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 290
+        '
+        'numeroDocumento
+        '
+        Me.numeroDocumento.HeaderText = "Num Doc."
+        Me.numeroDocumento.Name = "numeroDocumento"
+        Me.numeroDocumento.ReadOnly = True
+        '
+        'tipoDocumento
+        '
+        Me.tipoDocumento.HeaderText = "Tipo Doc."
+        Me.tipoDocumento.Name = "tipoDocumento"
+        Me.tipoDocumento.ReadOnly = True
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.btn_add)
@@ -486,7 +512,7 @@ Partial Class AltaPropiedad
         Me.grid_Busqueda.AllowUserToAddRows = False
         Me.grid_Busqueda.AllowUserToDeleteRows = False
         Me.grid_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_busqueda, Me.nombre_encontrados, Me.num_documento, Me.tipo_documento})
+        Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_Buscados, Me.nombre_encontrados, Me.num_documento, Me.tipo_documento})
         Me.grid_Busqueda.Location = New System.Drawing.Point(6, 40)
         Me.grid_Busqueda.MultiSelect = False
         Me.grid_Busqueda.Name = "grid_Busqueda"
@@ -495,12 +521,12 @@ Partial Class AltaPropiedad
         Me.grid_Busqueda.TabIndex = 999999
         Me.grid_Busqueda.TabStop = False
         '
-        'id_busqueda
+        'id_Buscados
         '
-        Me.id_busqueda.HeaderText = "id"
-        Me.id_busqueda.Name = "id_busqueda"
-        Me.id_busqueda.ReadOnly = True
-        Me.id_busqueda.Visible = False
+        Me.id_Buscados.HeaderText = "id"
+        Me.id_Buscados.Name = "id_Buscados"
+        Me.id_Buscados.ReadOnly = True
+        Me.id_Buscados.Visible = False
         '
         'nombre_encontrados
         '
@@ -520,32 +546,6 @@ Partial Class AltaPropiedad
         Me.tipo_documento.HeaderText = "Tipo Doc."
         Me.tipo_documento.Name = "tipo_documento"
         Me.tipo_documento.ReadOnly = True
-        '
-        'id
-        '
-        Me.id.HeaderText = "id"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Width = 290
-        '
-        'numeroDocumento
-        '
-        Me.numeroDocumento.HeaderText = "Num Doc."
-        Me.numeroDocumento.Name = "numeroDocumento"
-        Me.numeroDocumento.ReadOnly = True
-        '
-        'tipoDocumento
-        '
-        Me.tipoDocumento.HeaderText = "Tipo Doc."
-        Me.tipoDocumento.Name = "tipoDocumento"
-        Me.tipoDocumento.ReadOnly = True
         '
         'AltaPropiedad
         '
@@ -614,7 +614,7 @@ Partial Class AltaPropiedad
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents numeroDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipoDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents id_busqueda As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_Buscados As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre_encontrados As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents num_documento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipo_documento As System.Windows.Forms.DataGridViewTextBoxColumn

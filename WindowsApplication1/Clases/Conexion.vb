@@ -113,6 +113,11 @@ Public Class Conexion
             MsgBox("Error al Ejecutar Insert " &
                    vbCrLf & vbCrLf & ex.Message,
                    MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+
+            MsgBox(sql)
+
+            Throw ex
+
         End Try
 
     End Sub

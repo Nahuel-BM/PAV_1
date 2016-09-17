@@ -57,26 +57,26 @@ Partial Class Inicial
         'AltaPropiedadToolStripMenuItem
         '
         Me.AltaPropiedadToolStripMenuItem.Name = "AltaPropiedadToolStripMenuItem"
-        Me.AltaPropiedadToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.AltaPropiedadToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.AltaPropiedadToolStripMenuItem.Text = "Alta Propiedad"
         '
         'BajaPropiedadToolStripMenuItem
         '
         Me.BajaPropiedadToolStripMenuItem.Name = "BajaPropiedadToolStripMenuItem"
-        Me.BajaPropiedadToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.BajaPropiedadToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.BajaPropiedadToolStripMenuItem.Text = "Baja Propiedad"
         '
         'MdoficarPropiedadToolStripMenuItem
         '
         Me.MdoficarPropiedadToolStripMenuItem.Name = "MdoficarPropiedadToolStripMenuItem"
-        Me.MdoficarPropiedadToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.MdoficarPropiedadToolStripMenuItem.Text = "Mdoficar Propiedad"
+        Me.MdoficarPropiedadToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.MdoficarPropiedadToolStripMenuItem.Text = "Modificar Propiedad"
         '
         'ListadosToolStripMenuItem
         '
         Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarPropiedadesPorLocalidadToolStripMenuItem, Me.ListarPropiedadesPorTipoToolStripMenuItem})
         Me.ListadosToolStripMenuItem.Name = "ListadosToolStripMenuItem"
-        Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
         '
         'ListarPropiedadesPorLocalidadToolStripMenuItem
@@ -94,7 +94,7 @@ Partial Class Inicial
         'EstadisticasToolStripMenuItem
         '
         Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
-        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
         '
         'PersonasToolStripMenuItem
