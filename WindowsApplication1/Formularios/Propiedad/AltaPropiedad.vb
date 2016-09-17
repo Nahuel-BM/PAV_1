@@ -2,7 +2,7 @@
 
     Dim idTipoPropiedad As Integer = 0
     Dim encontrado As Boolean = False
-    Dim Coneccion As New Coneccion
+    Dim Conexion As New Conexion
     Dim Funciones As New FuncionesUtiles
 
     Enum monedas
@@ -15,13 +15,13 @@
 
 
 
-        Coneccion.cargarComboTipo(Me.cmb_provincia, "Provincia")
-        Coneccion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
+        Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
         'Cargo las localidades de Buenos aires (Provincia = 1) ya que es el que primero se selecciona..
 
-        Coneccion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
-        Coneccion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
-        Coneccion.cargarComboTipo(Me.cmb_encargado, "Persona")
+        Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+        Conexion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
+        Conexion.cargarComboTipo(Me.cmb_encargado, "Persona")
 
         Me.cargarMonedas(Me.cmb_moneda)
         Funciones.AddButtonColumn(Me.grid_propietarios, "Accion", "Eliminar", 4)
@@ -47,9 +47,9 @@
 
             'Ejecutar consulta "sqlDomicilio"
 
-            Coneccion.ejecutarInsert(sqlDomicilio)
+            Conexion.ejecutarInsert(sqlDomicilio)
 
-            Dim idDomicilio As Integer = Coneccion.ultimoIdInsertado()
+            Dim idDomicilio As Integer = Conexion.ultimoIdInsertado()
             Dim sqlInmueble As String
 
             If Me.idTipoPropiedad = 1 Then
@@ -61,9 +61,9 @@
 
             'Ejecutar consulta "sqlInmueble"
 
-            Coneccion.ejecutarInsert(sqlInmueble)
+            Conexion.ejecutarInsert(sqlInmueble)
 
-            Dim idInmueble As Integer = Coneccion.ultimoIdInsertado()
+            Dim idInmueble As Integer = Conexion.ultimoIdInsertado()
             Dim moneda As String = ""
 
             If Me.cmb_moneda.SelectedValue = 0 Then
@@ -85,9 +85,9 @@
                                          & moneda & "');"
 
 
-            Coneccion.ejecutarInsert(sqlPropiedad)
+            Conexion.ejecutarInsert(sqlPropiedad)
 
-            Dim idPropiedad As Integer = Coneccion.ultimoIdInsertado()
+            Dim idPropiedad As Integer = Conexion.ultimoIdInsertado()
 
             'por cada dueño una consulta..
 
@@ -95,7 +95,7 @@
 
                 Dim sqlDuenio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & ", " & dgitem.Cells(0).Value & ");"
                 '"dgitem.Cells(0).Value" corresponde al id de la persona 
-                Coneccion.ejecutarInsert(sqlDuenio)
+                Conexion.ejecutarInsert(sqlDuenio)
 
             Next
 
@@ -140,7 +140,7 @@
         Dim sql2 As String = "WHERE Provincia = " + idProvincia.ToString + " ORDER BY Nombre ASC;"
 
 
-        Coneccion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
+        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
 
     End Sub
 
@@ -178,7 +178,7 @@
             Dim Sql As String = " SELECT `Tipo_Documento`.`Nombre` AS `Tipo_Documento`, `Persona`.`Nombre`, `Persona`.`Apellido`, `Persona`.`id`, `Persona`.`Documento` FROM Persona LEFT JOIN `Tipo_Documento` ON `Persona`.`Tipo_Documento` = `Tipo_Documento`.`id` WHERE Documento = '" & Me.txt_numeroBusquedaDocumento.Text & "' AND Tipo_Documento = " & idTipoDoc & ";"
             Dim tabla As New Data.DataTable
 
-            tabla = Coneccion.Consulta(Sql)
+            tabla = Conexion.Consulta(Sql)
 
             Dim idTipoDoc As Integer = Me.cmb_tipoDocumento.SelectedValue
 

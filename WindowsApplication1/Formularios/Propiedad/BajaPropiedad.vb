@@ -2,7 +2,7 @@
 
 Public Class BajaPropiedad
 
-    Dim Coneccion As New Coneccion
+    Dim Conexion As New Conexion
     Dim Funciones As New FuncionesUtiles
 
     Private Sub BajaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -20,7 +20,7 @@ Public Class BajaPropiedad
 
 
         Dim tabla As New Data.DataTable
-        tabla = Coneccion.Consulta(sqlConsulta)
+        tabla = Conexion.Consulta(sqlConsulta)
 
         Me.grid_grilla.Rows.Clear()
 

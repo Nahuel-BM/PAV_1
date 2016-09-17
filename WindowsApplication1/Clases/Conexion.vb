@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Coneccion
+Public Class Conexion
 
     '1._ Cadena de conexion.
     '2._ Definicion de propiedades publicas.

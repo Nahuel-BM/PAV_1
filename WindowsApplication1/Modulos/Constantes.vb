@@ -1,11 +1,11 @@
 ﻿Module Constantes
 
-    Public accesoSQL As New Coneccion With {._motor = Coneccion.motores.sqlserver _
+    Public accesoSQL As New Conexion With {._motor = Conexion.motores.sqlserver _
           , ._cadena_conexion = "Provider=SQLNCLI11;Data Source=maquis;User ID=avisuales1;Initial Catalog=_BD_PERSONAS_; PASSWORD=avisuales1"}
 
 
 
-    Public accesoMySQL As New Coneccion With {._motor = Coneccion.motores.mysql, ._cadena_conexion = ConnectionString}
+    Public accesoMySQL As New Conexion With {._motor = Conexion.motores.mysql, ._cadena_conexion = ConnectionString}
 
     Public ReadOnly HOST As String = "52.37.245.6"
     Public ReadOnly PORT As Integer = 3306
