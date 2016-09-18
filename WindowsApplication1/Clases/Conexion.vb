@@ -175,4 +175,39 @@ Public Class Conexion
     'Fin de clase!
 
 
+    Public Function CrearDomicilio(ByVal NombreCalle As String, ByVal NumeroCalle As Integer, ByVal Localidad As Integer) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & NombreCalle & "', " & NumeroCalle & "," & Localidad & ");"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarDomicilio(ByVal idDomicilio As Integer, ByVal NombreCalle As String, ByVal NumeroCalle As Integer, ByVal Localidad As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Domicilio` SET `Calle`='" & NombreCalle & "',`Numero`= " & NumeroCalle & ",`Localidad`= " & Localidad & " WHERE `id` = " & idDomicilio & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarDomicilio(ByVal idDomicilio As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Domicilio` WHERE `id` = " & idDomicilio & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Persona
+
+    Public Function CrearPersona(ByVal idDomicilio As Integer, ByVal NumeroDocumento As Integer, ByVal TipoDocumento As Integer, ByVal Nombre As String, ByVal Apellido As String) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Persona`(`Domicilio`, `Documento`, `Tipo_Documento`, `Nombre`, `Apellido`) VALUES (" & idDomicilio & "," & NumeroDocumento & "," & TipoDocumento & ",'" & Nombre & "','" & Apellido & "');"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarPersona(ByVal idPersona As Integer, ByVal idDomicilio As Integer, ByVal NumeroDocumento As Integer, ByVal TipoDocumento As Integer, ByVal Nombre As String, ByVal Apellido As String)
+        Dim sqlDomicilio As String = "UPDATE `Persona` SET `Domicilio`= " & idDomicilio & ",`Documento`= " & NumeroDocumento & ",`Tipo_Documento`=" & TipoDocumento & ",`Nombre`='" & Nombre & "',`Apellido`='" & Apellido & "' WHERE `id` = " & idPersona & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarPersona(ByVal idPersona As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Persona` WHERE `id` = " & idPersona & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+
 End Class
