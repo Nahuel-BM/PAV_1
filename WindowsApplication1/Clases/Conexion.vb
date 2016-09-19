@@ -172,8 +172,7 @@ Public Class Conexion
     End Function
 
 
-    'Fin de clase!
-
+    'Domicilio
 
     Public Function CrearDomicilio(ByVal NombreCalle As String, ByVal NumeroCalle As Integer, ByVal Localidad As Integer) As Integer
         Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & NombreCalle & "', " & NumeroCalle & "," & Localidad & ");"
@@ -206,6 +205,161 @@ Public Class Conexion
 
     Public Sub BorrarPersona(ByVal idPersona As Integer)
         Dim sqlDomicilio As String = "DELETE FROM `Persona` WHERE `id` = " & idPersona & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Busquedas en tablas
+    Public Function BusquedaExactaEnTabla(ByVal NombreTabla As String, ByVal CampoDeBusqueda As String, ByVal valor1 As String, Optional ByVal valor2 As Integer = 0) As DataTable
+        Dim sql As String
+        If valor2 = 0 Then
+            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` = '" & valor1 & "'; "
+        Else
+            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` = " & valor2 & "; "
+        End If
+        Return Me.Consulta(sql)
+    End Function
+
+    Public Function BusquedaGeneralEnTabla(ByVal NombreTabla As String, ByVal CampoDeBusqueda As String, ByVal valor1 As String, Optional ByVal valor2 As Integer = 0) As DataTable
+        Dim sql As String
+        If valor2 = 0 Then
+            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE '%" & valor1 & "%'; "
+        Else
+            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE %" & valor2 & "%; "
+        End If
+        Return Me.Consulta(sql)
+    End Function
+    'Fin Busquedas
+
+    'Proveedor
+    Public Function CrearProveedor(ByVal Nombre As String) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Proveedor`(`Nombre`) VALUES ('" & Nombre & "');"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarProveedor(ByVal idProveedor As Integer, ByVal Nombre As String)
+        Dim sqlDomicilio As String = "UPDATE `Proveedor` SET `Nombre`='" & Nombre & "' WHERE `id` = " & idProveedor & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarProveedor(ByVal idProveedor As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Proveedor` WHERE `id` = " & idProveedor & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+
+    'Gastos
+
+    Public Function CrearGasto(ByVal idEdificio As Integer, ByVal Fecha As DateTime, ByVal Concepto As String, ByVal Proveedor As Integer, ByVal NumeroComprobante As Integer, ByVal Monto As Double) As Integer
+
+        'Dim date1 As New Date(2012, 12, 16, 12, 0, 0)
+        ' 16/12/2012 12:00:00
+        'DateTime constructor: parameters year, month, day, hour, min, sec
+        ' Formato MySQL YYYY-MM-DD
+
+
+        Dim sql As String = "INSERT INTO `Gastos`(`Edificio`, `Fecha`, `Concepto`, `Proveedor`, `Numero_Comprobante`, `Importe`) VALUES (" & idEdificio & ",'" & Fecha.Year & "-" & Fecha.Month & "-" & Fecha.Day & "', '" & Concepto & "'," & Proveedor & "," & NumeroComprobante & "," & Monto & ");"
+        Me.ejecutarInsert(sql)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarGasto(ByVal idGasto As Integer, ByVal idEdificio As Integer, ByVal Fecha As DateTime, ByVal Concepto As String, ByVal Proveedor As Integer, ByVal NumeroComprobante As Integer, ByVal Monto As Double)
+        Dim sqlDomicilio As String = "UPDATE `Gastos` SET `Edificio`= " & idEdificio & ",`Fecha`='" & Fecha.Year & "-" & Fecha.Month & "-" & Fecha.Day & "',`Concepto`='" & Concepto & "',`Proveedor`=" & Proveedor & ",`Numero_Comprobante`=" & NumeroComprobante & ",`Importe`=" & Monto & " WHERE `id` = " & idGasto & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarGasto(ByVal idGastos As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Gastos` WHERE `id` = " & idGastos & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Duenio
+    Public Function CrearDuenio(ByVal idPropiedad As Integer, ByVal idPersona As Integer) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Duenios`(`Propiedad`, `Duenio`) VALUES (" & idPropiedad & "," & idPersona & ");"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarDuenio(ByVal idDuenio As Integer, ByVal idPropiedad As Integer, ByVal idPersona As Integer, Optional ByVal Borrado As Integer = 0)
+        Dim sqlDomicilio As String = "UPDATE `Duenios` SET `Propiedad`=" & idPropiedad & ",`Duenio`=" & idPersona & ",`borrado`=" & Borrado & " WHERE `id` = " & idDuenio & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarDuenio(ByVal idDuenio As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Duenios` SET `Borrado` = 1 WHERE `id` = " & idDuenio & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Interesado
+
+    Public Function CrearInteresado(ByVal idPropiedad As Integer, ByVal idPersona As Integer) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Interesados`(`Propiedad`, `Interesado`) VALUES (" & idPropiedad & "," & idPersona & ");"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarInteresado(ByVal idInteresado As Integer, ByVal idPropiedad As Integer, ByVal idPersona As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Interesados` SET `Propiedad`=" & idPropiedad & ",`Interesado`=" & idPersona & " WHERE `id` = " & idInteresado & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarInteresado(ByVal idInteresado As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Interesados` WHERE `id` = " & idInteresado & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Propiedad
+    Public Function CrearPropiedad(ByVal idInmueble As Integer, ByVal Piso As Integer, ByVal Denominacion As String, ByVal TipoPropiedad As Integer, ByVal Superficie As Double, ByVal Monto As Double, ByVal Moneda As String) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`)" _
+                                     & " VALUES (" & idInmueble & "," & Piso & ", '" & Denominacion & "' , " & TipoPropiedad & "," & Superficie & ", " & Superficie & ",'" & Moneda & "');"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarPropiedad(ByVal idPropiedad As Integer, ByVal idInmueble As Integer, ByVal Piso As Integer, ByVal Denominacion As String, ByVal TipoPropiedad As Integer, ByVal Superficie As Double, ByVal Monto As Double, ByVal Moneda As String, Optional ByVal Borrado As Integer = 0)
+        Dim sqlDomicilio As String = "UPDATE `Propiedad` SET `Id_Inmueble`= " & idInmueble & ",`Piso`= " & Piso & ",`Denominacion`= '" & Denominacion & "' ,`Tipo_Propiedad`=" & TipoPropiedad & ",`Superficie`=" & Superficie & ",`Monto`= " & Monto & ",`Moneda`= '" & Moneda & "',`borrado`= " & Borrado & " WHERE `id` = " & idPropiedad & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarPropiedad(ByVal idPropiedad As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Propiedad` SET `Borrado` = 1 WHERE `id` = " & idPropiedad & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+
+    'Inmueble
+    Public Function CrearInmueble(ByVal DesignacionCatastral As String, ByVal IdDomicilio As Integer, ByVal IdPersona As Integer, ByVal CantidadDepartamentos As Integer, ByVal Ascensor As Boolean) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Ascensor`) VALUES ('" & DesignacionCatastral & "'," & IdDomicilio & "," & IdPersona & "," & CantidadDepartamentos & "," & Convert.ToInt32(Ascensor) & ")"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarInmueble(ByVal idInmueble As Integer, ByVal DesignacionCatastral As String, ByVal IdDomicilio As Integer, ByVal IdPersona As Integer, ByVal CantidadDepartamentos As Integer, ByVal Ascensor As Boolean, Optional ByVal Borrado As Integer = 0)
+        Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Designacion_Catastral`='" & DesignacionCatastral & "',`Domicilio`= " & IdDomicilio & ",`Encargado`= " & IdPersona & ",`Cantidad_Departamentos`=" & CantidadDepartamentos & ",`Ascensor`=" & Convert.ToInt32(Ascensor) & ",`borrado`= " & Borrado & " WHERE `id` = " & idInmueble & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarInmueble(ByVal idInmueble As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Borrado` = 1 WHERE `id` = " & idInmueble & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Factura
+    'INSERT INTO `Factura`(`id`, `Persona`, `Monto`, `Moneda`, `Concepto`, `borrado`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
+
+    Public Function CrearFactura(ByVal idPersona As Integer, ByVal Monto As Double, ByVal Moneda As String, ByVal Concepto As String) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Factura`(`Persona`, `Monto`, `Moneda`, `Concepto`) VALUES (" & idPersona & "," & Monto & ",'" & Moneda & "','" & Concepto & "');"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    'Public Sub ActualizarFActura(ByVal idInmueble As Integer, ByVal DesignacionCatastral As String, ByVal IdDomicilio As Integer, ByVal IdPersona As Integer, ByVal CantidadDepartamentos As Integer, ByVal Ascensor As Boolean, Optional ByVal Borrado As Integer = 0)
+    'Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Designacion_Catastral`='" & DesignacionCatastral & "',`Domicilio`= " & IdDomicilio & ",`Encargado`= " & IdPersona & ",`Cantidad_Departamentos`=" & CantidadDepartamentos & ",`Ascensor`=" & Convert.ToInt32(Ascensor) & ",`borrado`= " & Borrado & " WHERE `id` = " & idInmueble & ";"
+    '    Me.ejecutar(sqlDomicilio)
+    ' End Sub
+
+    Public Sub BorrarFactura(ByVal idFactura As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Factura` SET `Borrado` = 1 WHERE `id` = " & idFactura & ";"
         Me.ejecutar(sqlDomicilio)
     End Sub
 

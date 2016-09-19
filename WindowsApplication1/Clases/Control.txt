@@ -1,0 +1,18 @@
+﻿
+Operacion_Inmobiliaria				
+--------------------------------------
+Factura								*
+Inmueble							*
+Propiedad							*
+Proveedor							*
+Persona								*
+Interesados							*
+Gastos								*
+Domicilio							*	
+Duenios								*
+--------------------------------------
+Localidad							*
+Provincia							*
+Tipo_Documento						*
+Tipo_Operacion						*
+Tipo_Propiedad						*
