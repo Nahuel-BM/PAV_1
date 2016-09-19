@@ -220,6 +220,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Gastos\AltaGastos.resx">
+      <DependentUpon>AltaGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Gastos\BajaGastos.resx">
+      <DependentUpon>BajaGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Gastos\ModificarGastos.resx">
+      <DependentUpon>ModificarGastos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.resx">
       <DependentUpon>ConsultarOperacionInmobiliaria.vb</DependentUpon>
     </EmbeddedResource>
