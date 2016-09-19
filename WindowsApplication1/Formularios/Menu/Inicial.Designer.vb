@@ -35,7 +35,18 @@ Partial Class Inicial
         Me.OperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+<<<<<<< HEAD
+        Me.AltaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+=======
         Me.NuevaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+>>>>>>> master
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -100,13 +111,18 @@ Partial Class Inicial
         '
         'PersonasToolStripMenuItem
         '
+<<<<<<< HEAD
+        Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersonaToolStripMenuItem, Me.BajaPersonaToolStripMenuItem, Me.ConsultarPersonaToolStripMenuItem, Me.ModificarPersonaToolStripMenuItem})
+=======
         Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaPersonaToolStripMenuItem})
+>>>>>>> master
         Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
         Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.PersonasToolStripMenuItem.Text = "Persona"
         '
         'OperacionInmobiliariaToolStripMenuItem
         '
+        Me.OperacionInmobiliariaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaOperacionInmobiliariaToolStripMenuItem, Me.BajaOperacionInmobiliariaToolStripMenuItem, Me.ConsultarOperacionInmobiliariaToolStripMenuItem, Me.ModificarOperacionInmobiliariaToolStripMenuItem})
         Me.OperacionInmobiliariaToolStripMenuItem.Name = "OperacionInmobiliariaToolStripMenuItem"
         Me.OperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
         Me.OperacionInmobiliariaToolStripMenuItem.Text = "Operacion Inmobiliaria"
@@ -123,11 +139,61 @@ Partial Class Inicial
         Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.GAstosToolStripMenuItem.Text = "Gastos"
         '
+<<<<<<< HEAD
+        'AltaPersonaToolStripMenuItem
+        '
+        Me.AltaPersonaToolStripMenuItem.Name = "AltaPersonaToolStripMenuItem"
+        Me.AltaPersonaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.AltaPersonaToolStripMenuItem.Text = "Alta Persona"
+        '
+        'BajaPersonaToolStripMenuItem
+        '
+        Me.BajaPersonaToolStripMenuItem.Name = "BajaPersonaToolStripMenuItem"
+        Me.BajaPersonaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.BajaPersonaToolStripMenuItem.Text = "Baja Persona"
+        '
+        'ConsultarPersonaToolStripMenuItem
+        '
+        Me.ConsultarPersonaToolStripMenuItem.Name = "ConsultarPersonaToolStripMenuItem"
+        Me.ConsultarPersonaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.ConsultarPersonaToolStripMenuItem.Text = "Consultar Persona"
+        '
+        'ModificarPersonaToolStripMenuItem
+        '
+        Me.ModificarPersonaToolStripMenuItem.Name = "ModificarPersonaToolStripMenuItem"
+        Me.ModificarPersonaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.ModificarPersonaToolStripMenuItem.Text = "Modificar Persona"
+        '
+        'AltaOperacionInmobiliariaToolStripMenuItem
+        '
+        Me.AltaOperacionInmobiliariaToolStripMenuItem.Name = "AltaOperacionInmobiliariaToolStripMenuItem"
+        Me.AltaOperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.AltaOperacionInmobiliariaToolStripMenuItem.Text = "Alta Operacion Inmobiliaria"
+        '
+        'BajaOperacionInmobiliariaToolStripMenuItem
+        '
+        Me.BajaOperacionInmobiliariaToolStripMenuItem.Name = "BajaOperacionInmobiliariaToolStripMenuItem"
+        Me.BajaOperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.BajaOperacionInmobiliariaToolStripMenuItem.Text = "Baja Operacion Inmobiliaria"
+        '
+        'ConsultarOperacionInmobiliariaToolStripMenuItem
+        '
+        Me.ConsultarOperacionInmobiliariaToolStripMenuItem.Name = "ConsultarOperacionInmobiliariaToolStripMenuItem"
+        Me.ConsultarOperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ConsultarOperacionInmobiliariaToolStripMenuItem.Text = "Consultar Operacion inmobiliaria"
+        '
+        'ModificarOperacionInmobiliariaToolStripMenuItem
+        '
+        Me.ModificarOperacionInmobiliariaToolStripMenuItem.Name = "ModificarOperacionInmobiliariaToolStripMenuItem"
+        Me.ModificarOperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ModificarOperacionInmobiliariaToolStripMenuItem.Text = "Modificar Operacion Inmobiliaria"
+=======
         'NuevaPersonaToolStripMenuItem
         '
         Me.NuevaPersonaToolStripMenuItem.Name = "NuevaPersonaToolStripMenuItem"
         Me.NuevaPersonaToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.NuevaPersonaToolStripMenuItem.Text = "Nueva Persona"
+>>>>>>> master
         '
         'Inicial
         '
@@ -157,5 +223,16 @@ Partial Class Inicial
     Friend WithEvents ListarPropiedadesPorLocalidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarPropiedadesPorTipoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadisticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+<<<<<<< HEAD
+    Friend WithEvents AltaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BajaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModificarPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AltaOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BajaOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModificarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+=======
     Friend WithEvents NuevaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> master
 End Class
