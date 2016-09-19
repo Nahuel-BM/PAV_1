@@ -223,6 +223,9 @@
     <EmbeddedResource Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.resx">
       <DependentUpon>ConsultarOperacionInmobiliaria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Persona\AltaPersona.resx">
+      <DependentUpon>AltaPersona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\AltaPropiedad.resx">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
     </EmbeddedResource>

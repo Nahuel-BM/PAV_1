@@ -353,15 +353,31 @@ Public Class Conexion
         Return Me.ultimoIdInsertado()
     End Function
 
-    'Public Sub ActualizarFActura(ByVal idInmueble As Integer, ByVal DesignacionCatastral As String, ByVal IdDomicilio As Integer, ByVal IdPersona As Integer, ByVal CantidadDepartamentos As Integer, ByVal Ascensor As Boolean, Optional ByVal Borrado As Integer = 0)
-    'Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Designacion_Catastral`='" & DesignacionCatastral & "',`Domicilio`= " & IdDomicilio & ",`Encargado`= " & IdPersona & ",`Cantidad_Departamentos`=" & CantidadDepartamentos & ",`Ascensor`=" & Convert.ToInt32(Ascensor) & ",`borrado`= " & Borrado & " WHERE `id` = " & idInmueble & ";"
-    '    Me.ejecutar(sqlDomicilio)
-    ' End Sub
-
     Public Sub BorrarFactura(ByVal idFactura As Integer)
         Dim sqlDomicilio As String = "UPDATE `Factura` SET `Borrado` = 1 WHERE `id` = " & idFactura & ";"
         Me.ejecutar(sqlDomicilio)
     End Sub
+
+    'Operacion inmobiliaria
+
+    'INSERT INTO `Operacion_Inmobiliaria`(`Inmueble`, `Propiedad`, `Tipo_Operacion`, `Persona_Interviniente`, `Fecha_Operacion`, `Duracion`, `Monto_Mensual`, `Factura`, `Comision_Venta`, `Escribano`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])
+
+    Public Function CrearOperacionInmobiliaria(ByVal idPropiedad As Integer, ByVal TipoOperacion As Integer, ByVal idPersonaInterviniente As Integer, ByVal FechaOperacion As Date, ByVal Duracion As Integer, ByVal MontoMensual As Double, ByVal idFactura As Integer, ByVal Comision As Double, ByVal idEscribano As Integer) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Operacion_Inmobiliaria`(`Propiedad`, `Tipo_Operacion`, `Persona_Interviniente`, `Fecha_Operacion`, `Duracion`, `Monto_Mensual`, `Factura`, `Comision_Venta`, `Escribano`) VALUES (" & idPropiedad & "," & TipoOperacion & "," & idPersonaInterviniente & ",'" & FechaOperacion & "', " & Duracion & ", " & MontoMensual & ", " & idFactura & ", " & Comision & "," & idEscribano & ")"
+        Me.ejecutarInsert(sqlDomicilio)
+        Return Me.ultimoIdInsertado()
+    End Function
+
+    Public Sub ActualizarOperacionInmobiliaria(ByVal idOperacionInmobiliaria As Integer, ByVal idPropiedad As Integer, ByVal TipoOperacion As Integer, ByVal idPersonaInterviniente As Integer, ByVal FechaOperacion As Date, ByVal Duracion As Integer, ByVal MontoMensual As Double, ByVal idFactura As Integer, ByVal Comision As Double, ByVal idEscribano As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Operacion_Inmobiliaria` SET `Propiedad`=" & idPropiedad & ",`Tipo_Operacion`=" & TipoOperacion & ",`Persona_Interviniente`=" & idPersonaInterviniente & ",`Fecha_Operacion`= '" & FechaOperacion & "',`Duracion`= " & Duracion & ",`Monto_Mensual`=" & MontoMensual & ",`Factura`= " & idFactura & ",`Comision_Venta`= " & Comision & ",`Escribano`=" & idEscribano & " WHERE `id` = " & idOperacionInmobiliaria & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarOperacionInmobiliaria(ByVal idInmueble As Integer)
+        Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Borrado` = 1 WHERE `id` = " & idInmueble & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
 
 
 End Class
