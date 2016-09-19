@@ -35,6 +35,7 @@ Partial Class Inicial
         Me.OperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -99,6 +100,7 @@ Partial Class Inicial
         '
         'PersonasToolStripMenuItem
         '
+        Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaPersonaToolStripMenuItem})
         Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
         Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.PersonasToolStripMenuItem.Text = "Persona"
@@ -120,6 +122,12 @@ Partial Class Inicial
         Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
         Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.GAstosToolStripMenuItem.Text = "Gastos"
+        '
+        'NuevaPersonaToolStripMenuItem
+        '
+        Me.NuevaPersonaToolStripMenuItem.Name = "NuevaPersonaToolStripMenuItem"
+        Me.NuevaPersonaToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.NuevaPersonaToolStripMenuItem.Text = "Nueva Persona"
         '
         'Inicial
         '
@@ -149,4 +157,5 @@ Partial Class Inicial
     Friend WithEvents ListarPropiedadesPorLocalidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarPropiedadesPorTipoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadisticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
