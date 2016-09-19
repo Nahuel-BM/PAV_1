@@ -35,7 +35,7 @@ Partial Class Inicial
         Me.OperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-<<<<<<< HEAD
+        '<<<<<<< HEAD
         Me.AltaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,9 +44,9 @@ Partial Class Inicial
         Me.BajaOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-=======
+        '======
         Me.NuevaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
->>>>>>> master
+        '>>>>>>> master
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,11 +111,11 @@ Partial Class Inicial
         '
         'PersonasToolStripMenuItem
         '
-<<<<<<< HEAD
+        '<<<<< HEAD
         Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersonaToolStripMenuItem, Me.BajaPersonaToolStripMenuItem, Me.ConsultarPersonaToolStripMenuItem, Me.ModificarPersonaToolStripMenuItem})
-=======
+        '=======
         Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaPersonaToolStripMenuItem})
->>>>>>> master
+        '>>>>>>> master
         Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
         Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.PersonasToolStripMenuItem.Text = "Persona"
@@ -139,7 +139,7 @@ Partial Class Inicial
         Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.GAstosToolStripMenuItem.Text = "Gastos"
         '
-<<<<<<< HEAD
+        '<<<<< HEAD
         'AltaPersonaToolStripMenuItem
         '
         Me.AltaPersonaToolStripMenuItem.Name = "AltaPersonaToolStripMenuItem"
@@ -187,13 +187,13 @@ Partial Class Inicial
         Me.ModificarOperacionInmobiliariaToolStripMenuItem.Name = "ModificarOperacionInmobiliariaToolStripMenuItem"
         Me.ModificarOperacionInmobiliariaToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
         Me.ModificarOperacionInmobiliariaToolStripMenuItem.Text = "Modificar Operacion Inmobiliaria"
-=======
+        '=======
         'NuevaPersonaToolStripMenuItem
         '
         Me.NuevaPersonaToolStripMenuItem.Name = "NuevaPersonaToolStripMenuItem"
         Me.NuevaPersonaToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.NuevaPersonaToolStripMenuItem.Text = "Nueva Persona"
->>>>>>> master
+        '>>>>>>> master
         '
         'Inicial
         '
@@ -223,7 +223,7 @@ Partial Class Inicial
     Friend WithEvents ListarPropiedadesPorLocalidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarPropiedadesPorTipoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadisticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-<<<<<<< HEAD
+    '<<<<< HEAD
     Friend WithEvents AltaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BajaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -232,7 +232,7 @@ Partial Class Inicial
     Friend WithEvents BajaOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-=======
+    '=======
     Friend WithEvents NuevaPersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
->>>>>>> master
+    '>>>>>>> master
 End Class

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.exe
 D:\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.xml
 D:\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.pdb
@@ -61,10 +60,10 @@ C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\D
 C:\Users\PC-LIS-10\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Inicial.resources
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ConsultarOperacionInmobiliaria.resources
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BuscarPropiedad.resources
-<<<<<<< HEAD
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
-=======
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPersona.resources
->>>>>>> master
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaGastos.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaGastos.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ModificarGastos.resources
