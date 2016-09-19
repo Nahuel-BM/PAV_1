@@ -1,5 +1,5 @@
 ﻿
-Operacion_Inmobiliaria				
+Operacion_Inmobiliaria				*
 --------------------------------------
 Factura								*
 Inmueble							*

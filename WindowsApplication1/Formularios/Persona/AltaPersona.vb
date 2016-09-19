@@ -41,7 +41,7 @@
 
             Dim calle As String = Funciones.QuitarEspacios(Me.txt_calle.Text)
             Dim numero As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_numero.Text))
-            Dim localidad As Integer = Me.cmb_localidad.FindStringExact(Me.cmb_localidad.SelectedText)
+            Dim localidad As Integer = Me.cmb_localidad.SelectedValue
 
 
             Dim idDomicilio As Integer = Conexion.CrearDomicilio(calle, numero, localidad)
@@ -55,9 +55,30 @@
                 MsgBox("Persona creada correctamente")
             Catch exception As Exception
                 MsgBox("Error en la Creacion de persona. " & exception.Message)
+                'En caso de error en persona se deberia borrar el domicilio antes creado..
+                Conexion.BorrarDomicilio(idDomicilio)
             End Try
         End If
 
 
+    End Sub
+
+    Private Sub cambiarProvinciaSeleccionada(ByVal sender As Object, ByVal e As EventArgs) Handles cmb_provincia.SelectionChangeCommitted
+
+        Dim senderComboBox As ComboBox = CType(sender, ComboBox)
+        Dim idProvincia As Integer = senderComboBox.SelectedValue
+        Dim sql2 As String = "WHERE Provincia = " + idProvincia.ToString + " ORDER BY Nombre ASC;"
+
+
+        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
+
+    End Sub
+
+
+
+
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        Me.Dispose()
     End Sub
 End Class
