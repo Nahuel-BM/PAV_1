@@ -19,25 +19,26 @@
 
         If Funciones.ValidarTextBox(Me.txt_apellido) = False Then
             guardar = False
-            MsgBox("Revise el campo Nombre")
+            MsgBox("Revise el campo Apellido")
         End If
 
         If Funciones.ValidarTextBox(Me.txt_documento) = False Then
             guardar = False
-            MsgBox("Revise el campo Nombre")
+            MsgBox("Revise el campo Documento")
         End If
 
         If Funciones.ValidarTextBox(Me.txt_calle) = False Then
             guardar = False
-            MsgBox("Revise el campo Nombre")
+            MsgBox("Revise el campo Calle")
         End If
 
         If Funciones.ValidarTextBox(Me.txt_numero) = False Then
             guardar = False
-            MsgBox("Revise el campo Nombre")
+            MsgBox("Revise el campo Número de calle")
         End If
 
         If guardar = True Then
+
             Dim calle As String = Funciones.QuitarEspacios(Me.txt_calle.Text)
             Dim numero As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_numero.Text))
             Dim localidad As Integer = Me.cmb_localidad.FindStringExact(Me.cmb_localidad.SelectedText)
@@ -49,9 +50,12 @@
             Dim apellido As String = Funciones.QuitarEspacios(Me.txt_apellido.Text)
             Dim documento As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_documento.Text))
             Dim tipoDoc As Integer = cmb_tipoDocumento.SelectedValue
-
-            Conexion.CrearPersona(idDomicilio, documento, tipoDoc, nombre, apellido)
-
+            Try
+                Conexion.CrearPersona(idDomicilio, documento, tipoDoc, nombre, apellido)
+                MsgBox("Persona creada correctamente")
+            Catch exception As Exception
+                MsgBox("Error en la Creacion de persona. " & exception.Message)
+            End Try
         End If
 
 
