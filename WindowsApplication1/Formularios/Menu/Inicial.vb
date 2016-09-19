@@ -15,4 +15,9 @@
         Dim frm As New BuscarPropiedad(True)
         frm.Show()
     End Sub
+
+    Private Sub NuevaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaPersonaToolStripMenuItem.Click
+        Dim frm As New AltaPersona()
+        frm.Show()
+    End Sub
 End Class
