@@ -20,6 +20,7 @@
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", " WHERE `Provincia` = 1 ORDER BY `Nombre` ASC ;")
 
         If modificar Then
+            Me.Text = "Edicion de Persona"
             Me.btn_aceptar.Text = "Modificar"
             Dim persona As DataTable = Conexion.Consulta("SELECT `Persona`.*, `Domicilio`.`Calle`, `Domicilio`.`Numero`, `Domicilio`.`Localidad` AS `Localidad`, `Provincia`.`id` AS `Provincia` FROM `Persona` JOIN `Domicilio` ON `Persona`.`Domicilio` = `Domicilio`.`id` JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE `Persona`.`id` = " & idPersona & ";")
 

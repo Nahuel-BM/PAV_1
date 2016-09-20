@@ -97,6 +97,7 @@ Partial Class AltaPersona
         '
         'cmb_tipoDocumento
         '
+        Me.cmb_tipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_tipoDocumento.FormattingEnabled = True
         Me.cmb_tipoDocumento.Location = New System.Drawing.Point(360, 45)
         Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
@@ -117,7 +118,7 @@ Partial Class AltaPersona
         Me.txt_documento.Location = New System.Drawing.Point(79, 45)
         Me.txt_documento.Name = "txt_documento"
         Me.txt_documento.Size = New System.Drawing.Size(170, 20)
-        Me.txt_documento.TabIndex = 1
+        Me.txt_documento.TabIndex = 2
         '
         'Label3
         '
@@ -156,6 +157,7 @@ Partial Class AltaPersona
         '
         'cmb_localidad
         '
+        Me.cmb_localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_localidad.FormattingEnabled = True
         Me.cmb_localidad.Location = New System.Drawing.Point(360, 19)
         Me.cmb_localidad.Name = "cmb_localidad"
@@ -187,6 +189,7 @@ Partial Class AltaPersona
         '
         'cmb_provincia
         '
+        Me.cmb_provincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_provincia.FormattingEnabled = True
         Me.cmb_provincia.Location = New System.Drawing.Point(79, 19)
         Me.cmb_provincia.Name = "cmb_provincia"
