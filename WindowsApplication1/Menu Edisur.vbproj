@@ -172,6 +172,18 @@
     <Compile Include="Formularios\Menu\Inicial.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Proveedores\AltaProveedor.Designer.vb">
+      <DependentUpon>AltaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\AltaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\BajaProveedor.Designer.vb">
+      <DependentUpon>BajaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\BajaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Constantes.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -216,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\BuscarPropiedad.resx">
       <DependentUpon>BuscarPropiedad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\AltaProveedor.resx">
+      <DependentUpon>AltaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\BajaProveedor.resx">
+      <DependentUpon>BajaProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

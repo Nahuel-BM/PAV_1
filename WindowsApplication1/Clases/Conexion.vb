@@ -226,14 +226,14 @@ Public Class Conexion
     'Fin Busquedas
 
     'Proveedor
-    Public Function CrearProveedor(ByVal Nombre As String) As Integer
-        Dim sqlDomicilio As String = "INSERT INTO `Proveedor`(`Nombre`) VALUES ('" & Nombre & "');"
+    Public Function CrearProveedor(ByVal idDomicilio As Integer, ByVal Nombre As String) As Integer
+        Dim sqlDomicilio As String = "INSERT INTO `Proveedor`(`idDomicilio`,`Nombre`) VALUES (" & idDomicilio & ",'" & Nombre & "');"
         Me.ejecutarInsert(sqlDomicilio)
         Return Me.ultimoIdInsertado()
     End Function
 
-    Public Sub ActualizarProveedor(ByVal idProveedor As Integer, ByVal Nombre As String)
-        Dim sqlDomicilio As String = "UPDATE `Proveedor` SET `Nombre`='" & Nombre & "' WHERE `id` = " & idProveedor & ";"
+    Public Sub ActualizarProveedor(ByVal idProveedor As Integer, ByVal idDomicilio As Integer, ByVal Nombre As String)
+        Dim sqlDomicilio As String = "UPDATE `Proveedor` SET `Domicilio`= " & idDomicilio & ", `Nombre`='" & Nombre & "' WHERE `id` = " & idProveedor & ";"
         Me.ejecutar(sqlDomicilio)
     End Sub
 
