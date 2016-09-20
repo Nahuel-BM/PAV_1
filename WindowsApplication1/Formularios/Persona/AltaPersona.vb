@@ -4,6 +4,7 @@
     Dim Funciones As New FuncionesUtiles
     Dim modificar As Boolean = False
     Dim idPersona As Integer
+    Dim idDomicilioEditar As Integer
 
     Public Sub New(ByVal edicion As Boolean, ByVal idAEditar As Integer)
         ' Llamada necesaria para el diseñador.
@@ -23,6 +24,8 @@
             Me.Text = "Edicion de Persona"
             Me.btn_aceptar.Text = "Modificar"
             Dim persona As DataTable = Conexion.Consulta("SELECT `Persona`.*, `Domicilio`.`Calle`, `Domicilio`.`Numero`, `Domicilio`.`Localidad` AS `Localidad`, `Provincia`.`id` AS `Provincia` FROM `Persona` JOIN `Domicilio` ON `Persona`.`Domicilio` = `Domicilio`.`id` JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE `Persona`.`id` = " & idPersona & ";")
+
+            idDomicilioEditar = persona(0)("Domicilio")
 
             Me.txt_nombre.Text = persona(0)("Nombre")
             Me.txt_apellido.Text = persona(0)("Apellido")
@@ -70,26 +73,40 @@
         End If
 
         If guardar = True Then
-
+            'Datos Limpios
             Dim calle As String = Funciones.QuitarEspacios(Me.txt_calle.Text)
             Dim numero As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_numero.Text))
             Dim localidad As Integer = Me.cmb_localidad.SelectedValue
-
-
-            Dim idDomicilio As Integer = Conexion.CrearDomicilio(calle, numero, localidad)
 
             Dim nombre As String = Funciones.QuitarEspacios(Me.txt_nombre.Text)
             Dim apellido As String = Funciones.QuitarEspacios(Me.txt_apellido.Text)
             Dim documento As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_documento.Text))
             Dim tipoDoc As Integer = cmb_tipoDocumento.SelectedValue
-            Try
-                Conexion.CrearPersona(idDomicilio, documento, tipoDoc, nombre, apellido)
-                MsgBox("Persona creada correctamente")
-            Catch exception As Exception
-                MsgBox("Error en la Creacion de persona. " & exception.Message)
-                'En caso de error en persona se deberia borrar el domicilio antes creado..
-                Conexion.BorrarDomicilio(idDomicilio)
-            End Try
+
+            If modificar = True Then
+
+                Try
+                    Conexion.ActualizarDomicilio(idDomicilioEditar, calle, numero, localidad)
+                    Conexion.ActualizarPersona(idPersona, idDomicilioEditar, documento, tipoDoc, nombre, apellido)
+                    MsgBox("Persona editada correctamente")
+                Catch ex As Exception
+                    MsgBox("Error en la Edicion de persona. " & ex.Message)
+                End Try
+
+            Else
+
+                Dim idDomicilio As Integer = Conexion.CrearDomicilio(calle, numero, localidad)
+
+                Try
+                    Conexion.CrearPersona(idDomicilio, documento, tipoDoc, nombre, apellido)
+                    MsgBox("Persona creada correctamente")
+                Catch exception As Exception
+                    MsgBox("Error en la Creacion de persona. " & exception.Message)
+                    'En caso de error en persona se deberia borrar el domicilio antes creado..
+                    Conexion.BorrarDomicilio(idDomicilio)
+                End Try
+            End If
+
         End If
     End Sub
 

@@ -49,7 +49,14 @@
     Private Sub EventoEliminarPersona(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         ' elimino la fila
         If e.ColumnIndex = 3 Then
-            Dim result As Integer = MessageBox.Show("¿Realmente desea quitar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
+            Dim result As Integer
+
+            If editar = True Then
+                result = MessageBox.Show("¿Realmente desea editar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
+            Else
+                result = MessageBox.Show("¿Realmente desea quitar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
+            End If
+
             If result = DialogResult.OK Then
                 Dim Id_Persona As Integer = Integer.Parse(Me.DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString)
                 Try
