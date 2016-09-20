@@ -220,12 +220,7 @@ Public Class Conexion
     End Function
 
     Public Function BusquedaGeneralEnTabla(ByVal NombreTabla As String, ByVal CampoDeBusqueda As String, ByVal valor1 As String, Optional ByVal valor2 As Integer = 0) As DataTable
-        Dim sql As String
-        If valor2 = 0 Then
-            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE '%" & valor1 & "%'; "
-        Else
-            sql = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE %" & valor2 & "%; "
-        End If
+        Dim sql As String = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE '%" & valor1 & "%'; "
         Return Me.Consulta(sql)
     End Function
     'Fin Busquedas
@@ -377,6 +372,19 @@ Public Class Conexion
         Dim sqlDomicilio As String = "UPDATE `Inmueble` SET `Borrado` = 1 WHERE `id` = " & idInmueble & ";"
         Me.ejecutar(sqlDomicilio)
     End Sub
+
+
+    Public Function ComprobarFK(ByVal Tabla As String, ByVal Campo As String, ByVal id As Integer) As Boolean
+        Dim sql As String = "SELECT COUNT(*) AS `TOTAL` FROM `" & Tabla & "` WHERE `" & Campo & "` = " & id & ";"
+        Dim retorno As DataTable = Me.Consulta(sql)
+
+        If retorno(0)("TOTAL") > 0 Then
+            Return False
+        End If
+
+        Return True
+
+    End Function
 
 
 

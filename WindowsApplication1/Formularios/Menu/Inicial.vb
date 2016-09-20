@@ -17,7 +17,17 @@
     End Sub
 
     Private Sub NuevaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaPersonaToolStripMenuItem.Click
-        Dim frm As New AltaPersona()
+        Dim frm As New AltaPersona(False, 0)
+        frm.Show()
+    End Sub
+
+    Private Sub BajaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaPersonaToolStripMenuItem.Click
+        Dim frm As New BajaPersona(False)
+        frm.Show()
+    End Sub
+
+    Private Sub ModificarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarPersonaToolStripMenuItem.Click
+        Dim frm As New BajaPersona(True)
         frm.Show()
     End Sub
 End Class

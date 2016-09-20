@@ -160,46 +160,16 @@
     <Compile Include="Formularios\Persona\BajaPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Propiedad\BajaPropiedad.Designer.vb">
-      <DependentUpon>BajaPropiedad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Propiedad\BajaPropiedad.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Persona\ConsultarPersona.Designer.vb">
-      <DependentUpon>ConsultarPersona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Persona\ConsultarPersona.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Propiedad\BuscarPropiedad.Designer.vb">
       <DependentUpon>BuscarPropiedad.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Propiedad\BuscarPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Propiedad\ConsultarPropiedad.Designer.vb">
-      <DependentUpon>ConsultarPropiedad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Propiedad\ConsultarPropiedad.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Menu\Inicial.Designer.vb">
       <DependentUpon>Inicial.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Menu\Inicial.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Persona\ModificarPersona.Designer.vb">
-      <DependentUpon>ModificarPersona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Persona\ModificarPersona.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Propiedad\ModificarPropiedad.Designer.vb">
-      <DependentUpon>ModificarPropiedad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Propiedad\ModificarPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Constantes.vb" />
@@ -235,20 +205,17 @@
     <EmbeddedResource Include="Formularios\Persona\AltaPersona.resx">
       <DependentUpon>AltaPersona.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Persona\BajaPersona.resx">
+      <DependentUpon>BajaPersona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\AltaPropiedad.resx">
       <DependentUpon>AltaPropiedad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Propiedad\BajaPropiedad.resx">
-      <DependentUpon>BajaPropiedad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu\Inicial.resx">
       <DependentUpon>Inicial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Propiedad\BuscarPropiedad.resx">
       <DependentUpon>BuscarPropiedad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Propiedad\ModificarPropiedad.resx">
-      <DependentUpon>ModificarPropiedad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

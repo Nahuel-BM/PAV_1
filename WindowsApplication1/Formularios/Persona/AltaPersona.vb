@@ -2,12 +2,43 @@
 
     Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
+    Dim modificar As Boolean = False
+    Dim idPersona As Integer
+
+    Public Sub New(ByVal edicion As Boolean, ByVal idAEditar As Integer)
+        ' Llamada necesaria para el diseñador.
+        InitializeComponent()
+        Me.modificar = edicion
+        Me.idPersona = idAEditar
+
+    End Sub
+
 
     Private Sub AltaPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
         Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", " WHERE `Provincia` = 1 ORDER BY `Nombre` ASC ;")
+
+        If modificar Then
+            Me.btn_aceptar.Text = "Modificar"
+            Dim persona As DataTable = Conexion.Consulta("SELECT `Persona`.*, `Domicilio`.`Calle`, `Domicilio`.`Numero`, `Domicilio`.`Localidad` AS `Localidad`, `Provincia`.`id` AS `Provincia` FROM `Persona` JOIN `Domicilio` ON `Persona`.`Domicilio` = `Domicilio`.`id` JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` JOIN `Provincia` ON `Localidad`.`Provincia` = `Provincia`.`id` WHERE `Persona`.`id` = " & idPersona & ";")
+
+            Me.txt_nombre.Text = persona(0)("Nombre")
+            Me.txt_apellido.Text = persona(0)("Apellido")
+            Me.txt_calle.Text = persona(0)("Calle")
+            Me.txt_documento.Text = persona(0)("Documento")
+            Me.txt_numero.Text = persona(0)("Numero")
+
+            ' Combos
+
+
+
+
+        End If
+
     End Sub
+
+
 
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
@@ -59,8 +90,6 @@
                 Conexion.BorrarDomicilio(idDomicilio)
             End Try
         End If
-
-
     End Sub
 
     Private Sub cambiarProvinciaSeleccionada(ByVal sender As Object, ByVal e As EventArgs) Handles cmb_provincia.SelectionChangeCommitted
@@ -68,17 +97,13 @@
         Dim senderComboBox As ComboBox = CType(sender, ComboBox)
         Dim idProvincia As Integer = senderComboBox.SelectedValue
         Dim sql2 As String = "WHERE Provincia = " + idProvincia.ToString + " ORDER BY Nombre ASC;"
-
-
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
 
     End Sub
 
-
-
-
-
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Dispose()
     End Sub
+
+
 End Class
