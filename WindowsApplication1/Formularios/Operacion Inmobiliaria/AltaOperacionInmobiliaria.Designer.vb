@@ -23,24 +23,27 @@ Partial Class AltaOperacionInmobiliaria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.cmb_tipoPropiedad = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.cmb_tipoOperacion = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_domicilio = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.cmb_tipoPropiedad)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btn_buscar)
         Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -50,30 +53,14 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda"
         '
-        'Label1
+        'cmb_tipoPropiedad
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Designación Catastral"
-        '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(122, 19)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(123, 20)
-        Me.MaskedTextBox1.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(463, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cmb_tipoPropiedad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_tipoPropiedad.FormattingEnabled = True
+        Me.cmb_tipoPropiedad.Location = New System.Drawing.Point(336, 19)
+        Me.cmb_tipoPropiedad.Name = "cmb_tipoPropiedad"
+        Me.cmb_tipoPropiedad.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoPropiedad.TabIndex = 4
         '
         'Label2
         '
@@ -84,14 +71,30 @@ Partial Class AltaOperacionInmobiliaria
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Tipo Propiedad"
         '
-        'cmb_tipoPropiedad
+        'btn_buscar
         '
-        Me.cmb_tipoPropiedad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_tipoPropiedad.FormattingEnabled = True
-        Me.cmb_tipoPropiedad.Location = New System.Drawing.Point(336, 19)
-        Me.cmb_tipoPropiedad.Name = "cmb_tipoPropiedad"
-        Me.cmb_tipoPropiedad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_tipoPropiedad.TabIndex = 4
+        Me.btn_buscar.Location = New System.Drawing.Point(463, 17)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_buscar.TabIndex = 2
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = True
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(122, 19)
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(123, 20)
+        Me.MaskedTextBox1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Designación Catastral"
         '
         'GroupBox2
         '
@@ -104,15 +107,6 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Tipo de Operación"
-        '
         'cmb_tipoOperacion
         '
         Me.cmb_tipoOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -122,14 +116,43 @@ Partial Class AltaOperacionInmobiliaria
         Me.cmb_tipoOperacion.Size = New System.Drawing.Size(121, 21)
         Me.cmb_tipoOperacion.TabIndex = 1
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(21, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(95, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Tipo de Operación"
+        '
         'GroupBox3
         '
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 71)
+        Me.GroupBox3.Controls.Add(Me.lbl_domicilio)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 128)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(550, 100)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos Propiedad"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(55, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Domicilio: "
+        '
+        'lbl_domicilio
+        '
+        Me.lbl_domicilio.AutoSize = True
+        Me.lbl_domicilio.Location = New System.Drawing.Point(67, 16)
+        Me.lbl_domicilio.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio.Name = "lbl_domicilio"
+        Me.lbl_domicilio.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio.TabIndex = 1
         '
         'AltaOperacionInmobiliaria
         '
@@ -145,17 +168,21 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmb_tipoPropiedad As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btn_buscar As System.Windows.Forms.Button
     Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents cmb_tipoOperacion As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbl_domicilio As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
