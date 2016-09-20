@@ -3,7 +3,7 @@
     Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
 
-    Private Sub AltaPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", " WHERE `Provincia` = 1 ORDER BY `Nombre` ASC ;")
     End Sub

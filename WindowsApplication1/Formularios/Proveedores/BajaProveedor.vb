@@ -4,7 +4,7 @@
     Dim Funciones As New FuncionesUtiles
     Dim editar As Boolean = False
 
-    Private Sub BajaPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub BajaProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If editar = True Then
             Funciones.AddButtonColumn(Me.DataGridView1, "Editar", "Acción", 3)
         Else
