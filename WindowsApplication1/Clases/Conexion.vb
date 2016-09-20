@@ -285,6 +285,16 @@ Public Class Conexion
         Me.ejecutar(sqlDomicilio)
     End Sub
 
+    Public Sub BorrarDuenioFisico(ByVal idDuenio As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Duenios` WHERE `id` = " & idDuenio & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    Public Sub BorrarDuenioFisicoPorPropiedad(ByVal idPropiedad As Integer)
+        Dim sqlDomicilio As String = "DELETE FROM `Duenios` WHERE `Propiedad` = " & idPropiedad & ";"
+        Me.ejecutar(sqlDomicilio)
+    End Sub
+
     'Interesado
 
     Public Function CrearInteresado(ByVal idPropiedad As Integer, ByVal idPersona As Integer) As Integer

@@ -41,9 +41,13 @@ Partial Class Inicial
         Me.ConsultarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BorrarProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -169,12 +173,6 @@ Partial Class Inicial
         Me.ProveedorToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ProveedorToolStripMenuItem.Text = "Proveedor"
         '
-        'GAstosToolStripMenuItem
-        '
-        Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
-        Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.GAstosToolStripMenuItem.Text = "Gastos"
-        '
         'NuevoProveedorToolStripMenuItem
         '
         Me.NuevoProveedorToolStripMenuItem.Name = "NuevoProveedorToolStripMenuItem"
@@ -186,6 +184,37 @@ Partial Class Inicial
         Me.BorrarProveedorToolStripMenuItem.Name = "BorrarProveedorToolStripMenuItem"
         Me.BorrarProveedorToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.BorrarProveedorToolStripMenuItem.Text = "Borrar Proveedor"
+        '
+        'GAstosToolStripMenuItem
+        '
+        Me.GAstosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaGastoToolStripMenuItem, Me.BajaGastoToolStripMenuItem, Me.ConsultarGastoToolStripMenuItem, Me.ModificarGastoToolStripMenuItem})
+        Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
+        Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.GAstosToolStripMenuItem.Text = "Gastos"
+        '
+        'AltaGastoToolStripMenuItem
+        '
+        Me.AltaGastoToolStripMenuItem.Name = "AltaGastoToolStripMenuItem"
+        Me.AltaGastoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.AltaGastoToolStripMenuItem.Text = "Alta Gasto"
+        '
+        'BajaGastoToolStripMenuItem
+        '
+        Me.BajaGastoToolStripMenuItem.Name = "BajaGastoToolStripMenuItem"
+        Me.BajaGastoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.BajaGastoToolStripMenuItem.Text = "Baja Gasto"
+        '
+        'ConsultarGastoToolStripMenuItem
+        '
+        Me.ConsultarGastoToolStripMenuItem.Name = "ConsultarGastoToolStripMenuItem"
+        Me.ConsultarGastoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ConsultarGastoToolStripMenuItem.Text = "Consultar Gasto"
+        '
+        'ModificarGastoToolStripMenuItem
+        '
+        Me.ModificarGastoToolStripMenuItem.Name = "ModificarGastoToolStripMenuItem"
+        Me.ModificarGastoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ModificarGastoToolStripMenuItem.Text = "Modificar Gasto"
         '
         'Inicial
         '
@@ -227,6 +256,10 @@ Partial Class Inicial
     Friend WithEvents ModificarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoProveedorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BorrarProveedorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AltaGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BajaGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModificarGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     '=======
     '>>>>>>> master
 End Class

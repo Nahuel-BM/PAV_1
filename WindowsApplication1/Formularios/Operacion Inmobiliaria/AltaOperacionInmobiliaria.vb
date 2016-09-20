@@ -7,6 +7,7 @@
 
     Private Sub AltaOperacionInmobiliaria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
+        Conexion.cargarComboTipo(Me.cmb_estado, "Tipo_Propiedad")
     End Sub
 
 
@@ -19,11 +20,12 @@
 
 
         Me.lbl_domicilio.Text = datosDomicilio(0)("Calle") & " " & datosDomicilio(0)("Numero") & ", " & datosDomicilio(0)("Localidadn") & ", " & datosDomicilio(0)("Provincian") & "."
-
+        Me.lbl_tipoPropiedad.Text = Me.cmb_tipoPropiedad.SelectedText
 
 
 
         Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
 
     End Sub
+
 End Class

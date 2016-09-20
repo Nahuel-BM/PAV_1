@@ -45,4 +45,26 @@
         Dim frm As New BajaProveedor()
         frm.Show()
     End Sub
+
+    Private Sub AltaGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaGastoToolStripMenuItem.Click
+        Dim frm As New AltaGastos()
+        frm.Show()
+
+    End Sub
+
+    Private Sub BajaGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaGastoToolStripMenuItem.Click
+        Dim frm As New BajaGastos()
+        frm.Show()
+    End Sub
+
+    Private Sub ConsultarGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarGastoToolStripMenuItem.Click
+        Dim frm As New ConsultarGastos()
+
+        frm.Show()
+    End Sub
+
+    Private Sub ModificarGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarGastoToolStripMenuItem.Click
+        Dim frm As New ModificarGastos()
+        frm.Show()
+    End Sub
 End Class
