@@ -54,14 +54,14 @@ Partial Class BajaProveedor
         Me.txt_nroproveedor.Location = New System.Drawing.Point(123, 19)
         Me.txt_nroproveedor.Name = "txt_nroproveedor"
         Me.txt_nroproveedor.Size = New System.Drawing.Size(294, 20)
-        Me.txt_nroproveedor.TabIndex = 5
+        Me.txt_nroproveedor.TabIndex = 0
         '
         'btn_buscar
         '
         Me.btn_buscar.Location = New System.Drawing.Point(423, 17)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscar.TabIndex = 4
+        Me.btn_buscar.TabIndex = 1
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -95,6 +95,7 @@ Partial Class BajaProveedor
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(489, 168)
         Me.DataGridView1.TabIndex = 0
+        Me.DataGridView1.TabStop = False
         '
         'id
         '
@@ -122,7 +123,7 @@ Partial Class BajaProveedor
         Me.btn_salir.Location = New System.Drawing.Point(435, 278)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 23)
-        Me.btn_salir.TabIndex = 3
+        Me.btn_salir.TabIndex = 2
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.UseVisualStyleBackColor = True
         '

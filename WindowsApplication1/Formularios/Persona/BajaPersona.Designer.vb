@@ -48,7 +48,7 @@ Partial Class BajaPersona
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(467, 79)
+        Me.GroupBox1.Size = New System.Drawing.Size(467, 57)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda"
@@ -56,16 +56,18 @@ Partial Class BajaPersona
         'txt_documento
         '
         Me.txt_documento.Location = New System.Drawing.Point(74, 19)
+        Me.txt_documento.Mask = "99999999"
         Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(137, 20)
-        Me.txt_documento.TabIndex = 5
+        Me.txt_documento.Size = New System.Drawing.Size(62, 20)
+        Me.txt_documento.TabIndex = 0
+        Me.txt_documento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btn_buscar
         '
-        Me.btn_buscar.Location = New System.Drawing.Point(382, 46)
+        Me.btn_buscar.Location = New System.Drawing.Point(386, 17)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscar.TabIndex = 4
+        Me.btn_buscar.TabIndex = 2
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -82,15 +84,15 @@ Partial Class BajaPersona
         '
         Me.cmb_tipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_tipoDocumento.FormattingEnabled = True
-        Me.cmb_tipoDocumento.Location = New System.Drawing.Point(309, 19)
+        Me.cmb_tipoDocumento.Location = New System.Drawing.Point(234, 19)
         Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
-        Me.cmb_tipoDocumento.Size = New System.Drawing.Size(148, 21)
+        Me.cmb_tipoDocumento.Size = New System.Drawing.Size(146, 21)
         Me.cmb_tipoDocumento.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(217, 22)
+        Me.Label1.Location = New System.Drawing.Point(142, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 13)
         Me.Label1.TabIndex = 0
@@ -99,7 +101,7 @@ Partial Class BajaPersona
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 97)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 75)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(467, 185)
         Me.GroupBox2.TabIndex = 1
@@ -117,6 +119,7 @@ Partial Class BajaPersona
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(448, 160)
         Me.DataGridView1.TabIndex = 0
+        Me.DataGridView1.TabStop = False
         '
         'id
         '
@@ -142,10 +145,10 @@ Partial Class BajaPersona
         '
         'btn_salir
         '
-        Me.btn_salir.Location = New System.Drawing.Point(404, 288)
+        Me.btn_salir.Location = New System.Drawing.Point(404, 266)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 23)
-        Me.btn_salir.TabIndex = 2
+        Me.btn_salir.TabIndex = 3
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.UseVisualStyleBackColor = True
         '
@@ -153,7 +156,7 @@ Partial Class BajaPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 323)
+        Me.ClientSize = New System.Drawing.Size(491, 299)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

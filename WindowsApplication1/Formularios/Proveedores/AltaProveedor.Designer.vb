@@ -73,14 +73,14 @@ Partial Class AltaProveedor
         Me.cmb_localidad.Location = New System.Drawing.Point(346, 19)
         Me.cmb_localidad.Name = "cmb_localidad"
         Me.cmb_localidad.Size = New System.Drawing.Size(170, 21)
-        Me.cmb_localidad.TabIndex = 5
+        Me.cmb_localidad.TabIndex = 2
         '
         'txt_calle
         '
         Me.txt_calle.Location = New System.Drawing.Point(65, 46)
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.Size = New System.Drawing.Size(170, 20)
-        Me.txt_calle.TabIndex = 6
+        Me.txt_calle.TabIndex = 3
         '
         'Label6
         '
@@ -96,7 +96,7 @@ Partial Class AltaProveedor
         Me.txt_numero.Location = New System.Drawing.Point(346, 46)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(170, 20)
-        Me.txt_numero.TabIndex = 7
+        Me.txt_numero.TabIndex = 4
         '
         'cmb_provincia
         '
@@ -105,7 +105,7 @@ Partial Class AltaProveedor
         Me.cmb_provincia.Location = New System.Drawing.Point(65, 19)
         Me.cmb_provincia.Name = "cmb_provincia"
         Me.cmb_provincia.Size = New System.Drawing.Size(170, 21)
-        Me.cmb_provincia.TabIndex = 4
+        Me.cmb_provincia.TabIndex = 1
         '
         'Label8
         '
@@ -130,7 +130,7 @@ Partial Class AltaProveedor
         Me.txt_nombre.Location = New System.Drawing.Point(125, 26)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(403, 20)
-        Me.txt_nombre.TabIndex = 7
+        Me.txt_nombre.TabIndex = 0
         '
         'Label1
         '
@@ -146,7 +146,7 @@ Partial Class AltaProveedor
         Me.btn_cancelar.Location = New System.Drawing.Point(12, 176)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancelar.TabIndex = 11
+        Me.btn_cancelar.TabIndex = 6
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -155,7 +155,7 @@ Partial Class AltaProveedor
         Me.btn_aceptar.Location = New System.Drawing.Point(476, 176)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_aceptar.TabIndex = 10
+        Me.btn_aceptar.TabIndex = 5
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
