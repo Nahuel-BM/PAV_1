@@ -67,4 +67,9 @@
         Dim frm As New ModificarGastos()
         frm.Show()
     End Sub
+
+    Private Sub AltaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaPersonaToolStripMenuItem.Click
+        Dim frm As New AltaPersona(False, 0)
+        frm.Show()
+    End Sub
 End Class
