@@ -81,7 +81,7 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grup
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPropiedad.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Inicial.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BuscarPropiedad.resources
-C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Form1.resources
+C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaProveedor.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaProveedor.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Resources.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbproj.GenerateResource.Cache

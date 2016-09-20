@@ -52,9 +52,9 @@
             Dim result As Integer
 
             If editar = True Then
-                result = MessageBox.Show("¿Realmente desea editar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
+                result = MessageBox.Show("¿Realmente desea editar la Persona?", "Alerta", MessageBoxButtons.OKCancel)
             Else
-                result = MessageBox.Show("¿Realmente desea quitar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
+                result = MessageBox.Show("¿Realmente desea quitar la Persona?", "Alerta", MessageBoxButtons.OKCancel)
             End If
 
             If result = DialogResult.OK Then
@@ -88,7 +88,4 @@
         Me.Dispose()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
 End Class

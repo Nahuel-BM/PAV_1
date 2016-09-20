@@ -42,6 +42,8 @@ Partial Class Inicial
         Me.ModificarOperacionInmobiliariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GAstosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -162,6 +164,7 @@ Partial Class Inicial
         '
         'ProveedorToolStripMenuItem
         '
+        Me.ProveedorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoProveedorToolStripMenuItem, Me.BorrarProveedorToolStripMenuItem})
         Me.ProveedorToolStripMenuItem.Name = "ProveedorToolStripMenuItem"
         Me.ProveedorToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ProveedorToolStripMenuItem.Text = "Proveedor"
@@ -171,6 +174,18 @@ Partial Class Inicial
         Me.GAstosToolStripMenuItem.Name = "GAstosToolStripMenuItem"
         Me.GAstosToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.GAstosToolStripMenuItem.Text = "Gastos"
+        '
+        'NuevoProveedorToolStripMenuItem
+        '
+        Me.NuevoProveedorToolStripMenuItem.Name = "NuevoProveedorToolStripMenuItem"
+        Me.NuevoProveedorToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.NuevoProveedorToolStripMenuItem.Text = "Nuevo Proveedor"
+        '
+        'BorrarProveedorToolStripMenuItem
+        '
+        Me.BorrarProveedorToolStripMenuItem.Name = "BorrarProveedorToolStripMenuItem"
+        Me.BorrarProveedorToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.BorrarProveedorToolStripMenuItem.Text = "Borrar Proveedor"
         '
         'Inicial
         '
@@ -210,6 +225,8 @@ Partial Class Inicial
     Friend WithEvents BajaOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarOperacionInmobiliariaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevoProveedorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BorrarProveedorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     '=======
     '>>>>>>> master
 End Class

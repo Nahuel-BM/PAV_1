@@ -35,4 +35,14 @@
         Dim frm As New AltaOperacionInmobiliaria()
         frm.Show()
     End Sub
+
+    Private Sub NuevoProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoProveedorToolStripMenuItem.Click
+        Dim frm As New AltaProveedor()
+        frm.Show()
+    End Sub
+
+    Private Sub BorrarProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarProveedorToolStripMenuItem.Click
+        Dim frm As New BajaProveedor()
+        frm.Show()
+    End Sub
 End Class

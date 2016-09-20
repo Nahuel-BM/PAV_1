@@ -34,7 +34,9 @@
             Me.txt_numero.Text = persona(0)("Numero")
 
             ' Combos
-
+            Me.cmb_localidad.SelectedIndex = persona(0)("Localidad")
+            Me.cmb_provincia.SelectedIndex = persona(0)("Provincia")
+            Me.cmb_tipoDocumento.SelectedIndex = persona(0)("Tipo_Documento")
 
 
 
@@ -89,6 +91,9 @@
                     Conexion.ActualizarDomicilio(idDomicilioEditar, calle, numero, localidad)
                     Conexion.ActualizarPersona(idPersona, idDomicilioEditar, documento, tipoDoc, nombre, apellido)
                     MsgBox("Persona editada correctamente")
+
+                    Me.Dispose()
+
                 Catch ex As Exception
                     MsgBox("Error en la Edicion de persona. " & ex.Message)
                 End Try
