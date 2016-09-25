@@ -1,4 +1,7 @@
-﻿Public Class AltaPropiedad
+﻿'Importo libreria de Hilos..
+Imports System.Threading
+
+Public Class AltaPropiedad
 
     Dim idTipoPropiedad As Integer = 0
     Dim encontrado As Boolean = False
@@ -13,6 +16,9 @@
     Dim tablaDatos As DataTable
     'Fin parametros de carga.
 
+    Dim PantallaDeCarga As Loading
+
+    Public thColor As Threading.Thread
 
     Enum monedas
         peso
@@ -51,23 +57,18 @@
 
 
     Private Sub AltaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Desactivo el control cruzado de hilos
+        Control.CheckForIllegalCrossThreadCalls = False
 
-        Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
-        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
-        'Cargo las localidades de Buenos aires (Provincia = 1) ya que es el que primero se selecciona..
+        'Creo instancia de Loading
+        Me.PantallaDeCarga = New Loading()
 
-        Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
-        Conexion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
-        Conexion.cargarComboTipo(Me.cmb_encargado, "Persona")
+        'Creo el hilo y lo inicio
+        thColor = New Threading.Thread(AddressOf MetodoDeCreacionDeHiloLocal)
+        thColor.Start()
 
-        Me.cargarMonedas(Me.cmb_moneda)
-        Funciones.AddButtonColumn(Me.grid_propietarios, "Eliminar", "Accion", 4)
-
-        If Edicion Then
-            Me.CargarDatosDeEdicion()
-        End If
-
-
+        'Ejecuto el metodo que carga los combobox y actualiza los valores en Loading
+        Me.CargarDatosDeCombos()
 
     End Sub
 
@@ -444,14 +445,14 @@
 
         Else
 
-        Me.cmb_encargado.Enabled = False
-        Me.txt_denominacion_departamento.Enabled = False
-        Me.txt_piso.Enabled = False
-        Me.txt_total_departamento.Enabled = False
-        Me.chk_ascensor.Enabled = False
+            Me.cmb_encargado.Enabled = False
+            Me.txt_denominacion_departamento.Enabled = False
+            Me.txt_piso.Enabled = False
+            Me.txt_total_departamento.Enabled = False
+            Me.chk_ascensor.Enabled = False
 
 
-        datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor` FROM `Inmueble` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
+            datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor` FROM `Inmueble` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
         End If
         'datosInmueble = Conexion.Consulta("SELECT `Inmueble`.`Designacion_Catastral`, `Inmueble`.`Cantidad_Departamentos`, `Inmueble`.`Ascensor`, `Persona`.`Nombre` AS `Encargado`, `Persona`.`Apellido` AS `Encargado_Apellido` FROM `Inmueble` JOIN `Persona` ON `Inmueble`.`Encargado` = `Persona`.`id` WHERE `Inmueble`.`id` = " & Me.Id_Inmueble_parametro)
 
@@ -502,18 +503,6 @@
 
             Conexion.ActualizarInmueble(Id_Inmueble_parametro, denominacionCatastral, Id_Domicilio_parametro, encargado, totaldepto, Ascensor)
 
-
-
-
-            'sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
-            'Else
-            'sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
-
-
-
-            'End If
-
-
             Dim moneda As String = ""
 
             If Me.cmb_moneda.SelectedValue = 0 Then
@@ -553,4 +542,75 @@
     Private Sub cmb_provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_provincia.SelectedIndexChanged
 
     End Sub
+
+
+
+
+    Private Sub CargarDatosDeCombos()
+
+        If Edicion Then
+            PantallaDeCarga._totalPartes = 6
+        Else
+            PantallaDeCarga._totalPartes = 5
+        End If
+
+        Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+
+        Me.actualizarLoading("Combo Localidad..")
+        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
+        'Cargo las localidades de Buenos aires (Provincia = 1) ya que es el que primero se selecciona..
+
+
+        Me.actualizarLoading("Combo Tipo Documento..")
+        Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+
+
+        Me.actualizarLoading("Combo Tipo Propiedad..")
+        Conexion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
+
+
+        Me.actualizarLoading("Combo Encargados..")
+        Conexion.cargarComboTipo(Me.cmb_encargado, "Persona")
+
+
+        Me.cargarMonedas(Me.cmb_moneda)
+        Funciones.AddButtonColumn(Me.grid_propietarios, "Eliminar", "Accion", 4)
+
+        If Edicion Then
+            Me.CargarDatosDeEdicion()
+        End If
+
+
+
+        Me.terminarLoading()
+
+    End Sub
+
+    'Metodo local que apunta a la instancia de Loading, se hace esto para cambiar los valores
+    'de la barra de progreso desde metodos locales.
+    Private Sub MetodoDeCreacionDeHiloLocal()
+        AltaPropiedad.CrearLoadingConParametro(Me.PantallaDeCarga)
+    End Sub
+
+
+    Public Shared Sub CrearLoadingConParametro(ByRef Loading As Loading)
+        Application.Run(Loading)
+    End Sub
+
+
+    ' Metodo que actualiza el valor de la barra de progreso y adiciona una leyenda
+    Private Sub actualizarLoading(ByVal leyenda As String)
+        Me.PantallaDeCarga._leyenda = leyenda
+        Me.PantallaDeCarga.prgb_carga.Value += Me.PantallaDeCarga._aumento
+    End Sub
+
+    ' Metodo que finaliza el hilo y cierra el formulario "Loading"
+    Private Sub terminarLoading()
+        Me.PantallaDeCarga._leyenda = "Finalizando.."
+        Me.PantallaDeCarga.prgb_carga.Value = 100
+        Me.thColor.Abort()
+    End Sub
+
+
+
 End Class
