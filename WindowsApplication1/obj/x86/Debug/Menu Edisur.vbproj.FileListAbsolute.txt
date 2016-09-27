@@ -66,3 +66,4 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Menu
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
+C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Loading.resources

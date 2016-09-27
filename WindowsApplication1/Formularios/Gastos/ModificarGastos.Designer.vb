@@ -27,6 +27,8 @@ Partial Class ModificarGastos
         Me.lbl_edificio = New System.Windows.Forms.Label()
         Me.btn_añadirConcepto = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_importe = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -35,8 +37,6 @@ Partial Class ModificarGastos
         Me.lbl_fecha = New System.Windows.Forms.Label()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_modifGasto = New System.Windows.Forms.Button()
-        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -58,6 +58,7 @@ Partial Class ModificarGastos
         'ComboBox1
         '
         Me.ComboBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(108, 17)
         Me.ComboBox1.Name = "ComboBox1"
@@ -91,6 +92,19 @@ Partial Class ModificarGastos
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(386, 104)
         Me.DataGridView1.TabIndex = 23
+        '
+        'concepto
+        '
+        Me.concepto.HeaderText = "Concepto"
+        Me.concepto.Name = "concepto"
+        Me.concepto.ReadOnly = True
+        Me.concepto.Width = 150
+        '
+        'Importe
+        '
+        Me.Importe.HeaderText = "Importe"
+        Me.Importe.Name = "Importe"
+        Me.Importe.Width = 150
         '
         'lbl_importe
         '
@@ -158,19 +172,6 @@ Partial Class ModificarGastos
         Me.btn_modifGasto.TabIndex = 15
         Me.btn_modifGasto.Text = "Modificar Gasto"
         Me.btn_modifGasto.UseVisualStyleBackColor = True
-        '
-        'concepto
-        '
-        Me.concepto.HeaderText = "Concepto"
-        Me.concepto.Name = "concepto"
-        Me.concepto.ReadOnly = True
-        Me.concepto.Width = 150
-        '
-        'Importe
-        '
-        Me.Importe.HeaderText = "Importe"
-        Me.Importe.Name = "Importe"
-        Me.Importe.Width = 150
         '
         'ComboBox2
         '

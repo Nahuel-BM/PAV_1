@@ -190,6 +190,12 @@
     <Compile Include="Formularios\Proveedores\BajaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Temp.Designer.vb">
+      <DependentUpon>Temp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Temp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Constantes.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores\BajaProveedor.resx">
       <DependentUpon>BajaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Temp.resx">
+      <DependentUpon>Temp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

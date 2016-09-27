@@ -62,6 +62,7 @@ Partial Class BuscarPropiedad
         Me.grid_resultadosBusqueda.ReadOnly = True
         Me.grid_resultadosBusqueda.Size = New System.Drawing.Size(608, 185)
         Me.grid_resultadosBusqueda.TabIndex = 0
+        Me.grid_resultadosBusqueda.TabStop = False
         '
         'ID_DOMICILIO
         '
@@ -122,7 +123,7 @@ Partial Class BuscarPropiedad
         Me.cmb_tipoPropiedad.Location = New System.Drawing.Point(415, 19)
         Me.cmb_tipoPropiedad.Name = "cmb_tipoPropiedad"
         Me.cmb_tipoPropiedad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_tipoPropiedad.TabIndex = 4
+        Me.cmb_tipoPropiedad.TabIndex = 1
         '
         'Label2
         '
@@ -148,7 +149,7 @@ Partial Class BuscarPropiedad
         Me.txt_denominacionCatastral.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         Me.txt_denominacionCatastral.Name = "txt_denominacionCatastral"
         Me.txt_denominacionCatastral.Size = New System.Drawing.Size(199, 20)
-        Me.txt_denominacionCatastral.TabIndex = 1
+        Me.txt_denominacionCatastral.TabIndex = 0
         '
         'Label1
         '
@@ -164,7 +165,7 @@ Partial Class BuscarPropiedad
         Me.btn_salir.Location = New System.Drawing.Point(560, 288)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 23)
-        Me.btn_salir.TabIndex = 5
+        Me.btn_salir.TabIndex = 3
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.UseVisualStyleBackColor = True
         '

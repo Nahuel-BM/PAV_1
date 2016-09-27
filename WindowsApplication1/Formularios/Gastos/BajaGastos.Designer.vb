@@ -39,7 +39,7 @@ Partial Class BajaGastos
         '
         Me.TextBox3.Location = New System.Drawing.Point(103, 16)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(126, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(242, 20)
         Me.TextBox3.TabIndex = 9
         '
         'lbl_comprobanteNº
@@ -100,7 +100,7 @@ Partial Class BajaGastos
         '
         'btn_buscarComprobante
         '
-        Me.btn_buscarComprobante.Location = New System.Drawing.Point(275, 14)
+        Me.btn_buscarComprobante.Location = New System.Drawing.Point(351, 14)
         Me.btn_buscarComprobante.Name = "btn_buscarComprobante"
         Me.btn_buscarComprobante.Size = New System.Drawing.Size(147, 23)
         Me.btn_buscarComprobante.TabIndex = 17

@@ -158,6 +158,7 @@ Partial Class AltaGastos
         'cmb_proveedor
         '
         Me.cmb_proveedor.BackColor = System.Drawing.SystemColors.Window
+        Me.cmb_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_proveedor.FormattingEnabled = True
         Me.cmb_proveedor.Location = New System.Drawing.Point(361, 13)
         Me.cmb_proveedor.Name = "cmb_proveedor"
@@ -171,6 +172,7 @@ Partial Class AltaGastos
         Me.txt_Fecha.Name = "txt_Fecha"
         Me.txt_Fecha.Size = New System.Drawing.Size(125, 20)
         Me.txt_Fecha.TabIndex = 0
+        Me.txt_Fecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_Fecha.ValidatingType = GetType(Date)
         '
         'txt_NumeroComprobante
@@ -180,10 +182,12 @@ Partial Class AltaGastos
         Me.txt_NumeroComprobante.Name = "txt_NumeroComprobante"
         Me.txt_NumeroComprobante.Size = New System.Drawing.Size(125, 20)
         Me.txt_NumeroComprobante.TabIndex = 3
+        Me.txt_NumeroComprobante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cmb_Edificio
         '
         Me.cmb_Edificio.BackColor = System.Drawing.SystemColors.Window
+        Me.cmb_Edificio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_Edificio.FormattingEnabled = True
         Me.cmb_Edificio.Location = New System.Drawing.Point(361, 54)
         Me.cmb_Edificio.Name = "cmb_Edificio"
@@ -214,6 +218,7 @@ Partial Class AltaGastos
         Me.txt_Importe.Name = "txt_Importe"
         Me.txt_Importe.Size = New System.Drawing.Size(149, 20)
         Me.txt_Importe.TabIndex = 6
+        Me.txt_Importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'AltaGastos
         '
