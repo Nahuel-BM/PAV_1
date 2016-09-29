@@ -73,7 +73,7 @@ Partial Class Loading
         Me.Name = "Loading"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "Cargando.."
+        Me.Text = "Iniciando Componentes.."
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

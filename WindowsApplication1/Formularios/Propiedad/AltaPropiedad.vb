@@ -16,9 +16,9 @@ Public Class AltaPropiedad
     Dim tablaDatos As DataTable
     'Fin parametros de carga.
 
-    Dim PantallaDeCarga As Loading
+    'Variables de pantalla de carga
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
 
-    Public thColor As Threading.Thread
 
     Enum monedas
         peso
@@ -57,17 +57,7 @@ Public Class AltaPropiedad
 
 
     Private Sub AltaPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Desactivo el control cruzado de hilos
-        Control.CheckForIllegalCrossThreadCalls = False
 
-        'Creo instancia de Loading
-        Me.PantallaDeCarga = New Loading()
-
-        'Creo el hilo y lo inicio
-        thColor = New Threading.Thread(AddressOf MetodoDeCreacionDeHiloLocal)
-        thColor.Start()
-
-        'Ejecuto el metodo que carga los combobox y actualiza los valores en Loading
         Me.CargarDatosDeCombos()
 
     End Sub
@@ -549,67 +539,51 @@ Public Class AltaPropiedad
     Private Sub CargarDatosDeCombos()
 
         If Edicion Then
-            PantallaDeCarga._totalPartes = 6
+            'Seteo el total de Elementos a cargar
+            Me.Carga.setTotalDeEventos(6)
         Else
-            PantallaDeCarga._totalPartes = 5
+            'Seteo el total de Elementos a cargar
+            Me.Carga.setTotalDeEventos(5)
         End If
 
-        Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        'Muestro el formulario
+        Me.Carga.Run()
 
-        Me.actualizarLoading("Combo Localidad..")
+        'Sigo con logica.
+        Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        Me.Carga.actualizarLoading("Combo Provincia.")
+
+
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", "WHERE Provincia = 1 ORDER BY Nombre ASC;")
         'Cargo las localidades de Buenos aires (Provincia = 1) ya que es el que primero se selecciona..
+        Me.Carga.actualizarLoading("Combo Localidad.")
 
 
-        Me.actualizarLoading("Combo Tipo Documento..")
         Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+        Me.Carga.actualizarLoading("Combo Tipo Documento..")
 
 
-        Me.actualizarLoading("Combo Tipo Propiedad..")
         Conexion.cargarComboTipo(Me.cmb_tipo_propiedad, "Tipo_Propiedad")
+        Me.Carga.actualizarLoading("Combo Tipo Propiedad..")
 
 
-        Me.actualizarLoading("Combo Encargados..")
         Conexion.cargarComboTipo(Me.cmb_encargado, "Persona")
-
+        Me.Carga.actualizarLoading("Combo Encargados..")
 
         Me.cargarMonedas(Me.cmb_moneda)
         Funciones.AddButtonColumn(Me.grid_propietarios, "Eliminar", "Accion", 4)
 
         If Edicion Then
             Me.CargarDatosDeEdicion()
+            Me.Carga.actualizarLoading("Datos de edicion.")
         End If
 
 
 
-        Me.terminarLoading()
+        '      Me.terminarLoading()
 
     End Sub
 
-    'Metodo local que apunta a la instancia de Loading, se hace esto para cambiar los valores
-    'de la barra de progreso desde metodos locales.
-    Private Sub MetodoDeCreacionDeHiloLocal()
-        AltaPropiedad.CrearLoadingConParametro(Me.PantallaDeCarga)
-    End Sub
-
-
-    Public Shared Sub CrearLoadingConParametro(ByRef Loading As Loading)
-        Application.Run(Loading)
-    End Sub
-
-
-    ' Metodo que actualiza el valor de la barra de progreso y adiciona una leyenda
-    Private Sub actualizarLoading(ByVal leyenda As String)
-        Me.PantallaDeCarga._leyenda = leyenda
-        Me.PantallaDeCarga.prgb_carga.Value += Me.PantallaDeCarga._aumento
-    End Sub
-
-    ' Metodo que finaliza el hilo y cierra el formulario "Loading"
-    Private Sub terminarLoading()
-        Me.PantallaDeCarga._leyenda = "Finalizando.."
-        Me.PantallaDeCarga.prgb_carga.Value = 100
-        Me.thColor.Abort()
-    End Sub
 
 
 

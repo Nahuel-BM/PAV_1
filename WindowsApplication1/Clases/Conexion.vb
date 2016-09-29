@@ -146,6 +146,15 @@ Public Class Conexion
             MsgBox("Error al Crear Conexion " &
                    vbCrLf & vbCrLf & ex.Message,
                    MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+
+            Dim Msg As MsgBoxResult
+            Msg = MsgBox("Cerrar el modulo, ¿Desea salir?", vbYesNo, "Salir del Modulo")
+            If Msg = MsgBoxResult.Yes Then
+                Application.ExitThread()
+            End If
+
+        Finally
+
         End Try
     End Sub
 

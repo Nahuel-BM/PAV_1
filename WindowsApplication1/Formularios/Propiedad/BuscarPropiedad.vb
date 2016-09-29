@@ -2,9 +2,10 @@
 
     Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
+
 
     Dim Edicion As Boolean = False
-
 
 
     Sub New(ByVal edicion As Boolean)
@@ -17,13 +18,11 @@
     End Sub
 
     Private Sub BuscarPropiedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
-        If Edicion Then
-            Funciones.AddButtonColumn(Me.grid_resultadosBusqueda, "Editar", "Accion", 5)
-        Else
-            Funciones.AddButtonColumn(Me.grid_resultadosBusqueda, "Borrar", "Accion", 5)
-        End If
+        Me.Carga.setTotalDeEventos(1)
 
+        Me.Carga.Run()
+
+        Me.CargarDatosDeCombos()
     End Sub
 
 
@@ -116,4 +115,22 @@
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
         Me.Dispose()
     End Sub
+
+
+
+
+    Private Sub CargarDatosDeCombos()
+        Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
+
+        Me.Carga.actualizarLoading("Tipo Propiedad")
+
+        If Edicion Then
+            Funciones.AddButtonColumn(Me.grid_resultadosBusqueda, "Editar", "Accion", 5)
+        Else
+            Funciones.AddButtonColumn(Me.grid_resultadosBusqueda, "Borrar", "Accion", 5)
+        End If
+
+    End Sub
+
+
 End Class
