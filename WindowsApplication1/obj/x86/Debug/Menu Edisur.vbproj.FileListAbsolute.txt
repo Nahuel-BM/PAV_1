@@ -72,3 +72,24 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\bin\Debug\Grupo_Ed
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
 C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.pdb
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.xml
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.CodeAnalysisLog.xml
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.lastcodeanalysissucceeded
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Form_con_Pantalla_de_Carga_Incluida.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaGastos.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaGastos.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ModificarGastos.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaOperacionInmobiliaria.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.ConsultarOperacionInmobiliaria.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Loading.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPersona.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaPersona.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaPropiedad.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Inicial.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BuscarPropiedad.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.AltaProveedor.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.BajaProveedor.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Resources.resources
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbproj.GenerateResource.Cache
