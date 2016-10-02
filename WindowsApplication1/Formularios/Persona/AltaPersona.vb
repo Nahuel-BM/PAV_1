@@ -5,6 +5,8 @@
     Dim modificar As Boolean = False
     Dim idPersona As Integer
     Dim idDomicilioEditar As Integer
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
+
 
     Public Sub New(ByVal edicion As Boolean, ByVal idAEditar As Integer)
         ' Llamada necesaria para el diseñador.
@@ -16,9 +18,19 @@
 
 
     Private Sub AltaPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.Carga.setTotalDeEventos(3)
+
+        Me.Carga.Run()
+
         Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+        Me.Carga.actualizarLoading("Combo Tipo Documento.")
+
         Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        Me.Carga.actualizarLoading("Combo Provincia.")
+
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", " WHERE `Provincia` = 1 ORDER BY `Nombre` ASC ;")
+        Me.Carga.actualizarLoading("Combo Localidad.")
 
         If modificar Then
             Me.Text = "Edicion de Persona"

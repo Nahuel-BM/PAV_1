@@ -2,10 +2,20 @@
 
     Dim Conexion As Conexion = Constantes.accesoMySQL
     Dim Funciones As New FuncionesUtiles
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
 
     Private Sub AltaProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.Carga.setTotalDeEventos(2)
+
+        Me.Carga.Run()
+
         Conexion.cargarComboTipo(Me.cmb_provincia, "Provincia")
+        Me.Carga.actualizarLoading("Combo Provincia.")
+
         Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", " WHERE `Provincia` = 1 ORDER BY `Nombre` ASC ;")
+        Me.Carga.actualizarLoading("Combo Localidad.")
+
     End Sub
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click

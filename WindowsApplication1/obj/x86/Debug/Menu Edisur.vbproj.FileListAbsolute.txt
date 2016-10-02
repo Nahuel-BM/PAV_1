@@ -69,3 +69,6 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\bin\Debug\Grupo_Ed
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.xml
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.CodeAnalysisLog.xml
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\bin\Debug\Grupo_Edisur.exe.lastcodeanalysissucceeded
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
+C:\Users\Hogar\nahu\Repositorios Remotos GIT\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb

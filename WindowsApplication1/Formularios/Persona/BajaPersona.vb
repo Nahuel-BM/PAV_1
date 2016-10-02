@@ -4,6 +4,8 @@
     Dim Funciones As New FuncionesUtiles
     Dim editar As Boolean = False
 
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
+
     Public Sub New(ByVal edicion As Boolean)
         InitializeComponent()
         editar = edicion
@@ -13,7 +15,14 @@
 
 
     Private Sub BajaPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.Carga.setTotalDeEventos(1)
+
+        Me.Carga.Run()
+
         Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+        Me.Carga.actualizarLoading("Combo Tipo Documento.")
+
         If editar = True Then
             Funciones.AddButtonColumn(Me.DataGridView1, "Editar", "Acción", 3)
         Else
