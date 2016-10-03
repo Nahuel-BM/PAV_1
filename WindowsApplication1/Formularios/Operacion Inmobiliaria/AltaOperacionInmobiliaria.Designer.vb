@@ -48,10 +48,10 @@ Partial Class AltaOperacionInmobiliaria
         Me.cmb_tipoOperacion = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoOp = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_superficie = New System.Windows.Forms.Label()
+        Me.lbl_tipo_propiedad = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.lbl_tipoPropiedad = New System.Windows.Forms.Label()
+        Me.lbl_Dom = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_domicilio = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -324,10 +324,10 @@ Partial Class AltaOperacionInmobiliaria
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.lbl_superficie)
+        Me.GroupBox3.Controls.Add(Me.lbl_tipo_propiedad)
         Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Controls.Add(Me.lbl_tipoPropiedad)
+        Me.GroupBox3.Controls.Add(Me.lbl_Dom)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.lbl_domicilio)
         Me.GroupBox3.Controls.Add(Me.Label4)
@@ -338,25 +338,25 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos Propiedad"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label12.Location = New System.Drawing.Point(119, 73)
-        Me.Label12.MinimumSize = New System.Drawing.Size(50, 13)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(50, 13)
-        Me.Label12.TabIndex = 6
-        '
         'lbl_superficie
         '
         Me.lbl_superficie.AutoSize = True
         Me.lbl_superficie.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lbl_superficie.Location = New System.Drawing.Point(119, 51)
+        Me.lbl_superficie.Location = New System.Drawing.Point(119, 73)
         Me.lbl_superficie.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_superficie.Name = "lbl_superficie"
         Me.lbl_superficie.Size = New System.Drawing.Size(50, 13)
-        Me.lbl_superficie.TabIndex = 5
+        Me.lbl_superficie.TabIndex = 6
+        '
+        'lbl_tipo_propiedad
+        '
+        Me.lbl_tipo_propiedad.AutoSize = True
+        Me.lbl_tipo_propiedad.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lbl_tipo_propiedad.Location = New System.Drawing.Point(119, 51)
+        Me.lbl_tipo_propiedad.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_tipo_propiedad.Name = "lbl_tipo_propiedad"
+        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_tipo_propiedad.TabIndex = 5
         '
         'Label7
         '
@@ -367,15 +367,15 @@ Partial Class AltaOperacionInmobiliaria
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Superficie:"
         '
-        'lbl_tipoPropiedad
+        'lbl_Dom
         '
-        Me.lbl_tipoPropiedad.AutoSize = True
-        Me.lbl_tipoPropiedad.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lbl_tipoPropiedad.Location = New System.Drawing.Point(119, 29)
-        Me.lbl_tipoPropiedad.MinimumSize = New System.Drawing.Size(50, 13)
-        Me.lbl_tipoPropiedad.Name = "lbl_tipoPropiedad"
-        Me.lbl_tipoPropiedad.Size = New System.Drawing.Size(50, 13)
-        Me.lbl_tipoPropiedad.TabIndex = 3
+        Me.lbl_Dom.AutoSize = True
+        Me.lbl_Dom.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lbl_Dom.Location = New System.Drawing.Point(119, 29)
+        Me.lbl_Dom.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_Dom.Name = "lbl_Dom"
+        Me.lbl_Dom.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_Dom.TabIndex = 3
         '
         'Label5
         '
@@ -456,9 +456,9 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents lbl_domicilio As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents lbl_superficie As System.Windows.Forms.Label
+    Friend WithEvents lbl_tipo_propiedad As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents lbl_tipoPropiedad As System.Windows.Forms.Label
+    Friend WithEvents lbl_Dom As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents lbl_fechaOp As System.Windows.Forms.Label
     Friend WithEvents lbl_Pinterviniente As System.Windows.Forms.Label
@@ -478,5 +478,5 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents MaskedTextBox6 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox5 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox4 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents lbl_superficie As System.Windows.Forms.Label
 End Class
