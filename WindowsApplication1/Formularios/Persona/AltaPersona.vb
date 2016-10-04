@@ -47,6 +47,7 @@
             Me.txt_numero.Text = persona(0)("Numero")
 
             ' Combos
+
             Me.cmb_localidad.SelectedIndex = persona(0)("Localidad")
             Me.cmb_provincia.SelectedIndex = persona(0)("Provincia")
             Me.cmb_tipoDocumento.SelectedIndex = persona(0)("Tipo_Documento")

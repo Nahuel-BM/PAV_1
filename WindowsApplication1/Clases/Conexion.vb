@@ -329,7 +329,7 @@ Public Class Conexion
     'Propiedad
     Public Function CrearPropiedad(ByVal idInmueble As Integer, ByVal Piso As Integer, ByVal Denominacion As String, ByVal TipoPropiedad As Integer, ByVal Superficie As Double, ByVal Monto As Double, ByVal Moneda As String) As Integer
         Dim sqlDomicilio As String = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`)" _
-                                     & " VALUES (" & idInmueble & "," & Piso & ", '" & Denominacion & "' , " & TipoPropiedad & "," & Superficie & ", " & Superficie & ",'" & Moneda & "');"
+                                     & " VALUES (" & idInmueble & "," & Piso & ", '" & Denominacion & "' , " & TipoPropiedad & "," & Superficie & ", " & Superficie & ",`" & Moneda & "`);"
         Me.ejecutarInsert(sqlDomicilio)
         Return Me.ultimoIdInsertado()
     End Function

@@ -23,25 +23,25 @@ Partial Class AltaPersona
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmb_tipoDocumento = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_documento = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmb_localidad = New System.Windows.Forms.ComboBox()
-        Me.txt_calle = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.cmb_provincia = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.txt_documento = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_calle = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -55,20 +55,6 @@ Partial Class AltaPersona
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombres"
         '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(79, 19)
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(170, 20)
-        Me.txt_nombre.TabIndex = 0
-        '
-        'txt_apellido
-        '
-        Me.txt_apellido.Location = New System.Drawing.Point(360, 19)
-        Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(170, 20)
-        Me.txt_apellido.TabIndex = 1
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -80,13 +66,13 @@ Partial Class AltaPersona
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txt_apellido)
+        Me.GroupBox1.Controls.Add(Me.txt_nombre)
+        Me.GroupBox1.Controls.Add(Me.txt_documento)
         Me.GroupBox1.Controls.Add(Me.cmb_tipoDocumento)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txt_documento)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txt_nombre)
-        Me.GroupBox1.Controls.Add(Me.txt_apellido)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(15, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -113,13 +99,6 @@ Partial Class AltaPersona
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Tipo Documento"
         '
-        'txt_documento
-        '
-        Me.txt_documento.Location = New System.Drawing.Point(79, 45)
-        Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(170, 20)
-        Me.txt_documento.TabIndex = 2
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -131,11 +110,11 @@ Partial Class AltaPersona
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txt_calle)
+        Me.GroupBox2.Controls.Add(Me.txt_numero)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.cmb_localidad)
-        Me.GroupBox2.Controls.Add(Me.txt_calle)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.txt_numero)
         Me.GroupBox2.Controls.Add(Me.cmb_provincia)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -164,13 +143,6 @@ Partial Class AltaPersona
         Me.cmb_localidad.Size = New System.Drawing.Size(170, 21)
         Me.cmb_localidad.TabIndex = 5
         '
-        'txt_calle
-        '
-        Me.txt_calle.Location = New System.Drawing.Point(79, 46)
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
-        Me.txt_calle.TabIndex = 6
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -179,13 +151,6 @@ Partial Class AltaPersona
         Me.Label6.Size = New System.Drawing.Size(53, 13)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Localidad"
-        '
-        'txt_numero
-        '
-        Me.txt_numero.Location = New System.Drawing.Point(360, 46)
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
-        Me.txt_numero.TabIndex = 7
         '
         'cmb_provincia
         '
@@ -232,6 +197,52 @@ Partial Class AltaPersona
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
+        'txt_documento
+        '
+        Me.txt_documento.Location = New System.Drawing.Point(79, 45)
+        Me.txt_documento.Mask = "0000000099"
+        Me.txt_documento.Name = "txt_documento"
+        Me.txt_documento.Size = New System.Drawing.Size(170, 20)
+        Me.txt_documento.TabIndex = 2
+        Me.txt_documento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_nombre
+        '
+        Me.txt_nombre.Location = New System.Drawing.Point(79, 19)
+        Me.txt_nombre.Mask = "???????????????????????????????"
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(170, 20)
+        Me.txt_nombre.TabIndex = 0
+        Me.txt_nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_apellido
+        '
+        Me.txt_apellido.Location = New System.Drawing.Point(360, 19)
+        Me.txt_apellido.Mask = "????????????????????????????????"
+        Me.txt_apellido.Name = "txt_apellido"
+        Me.txt_apellido.Size = New System.Drawing.Size(170, 20)
+        Me.txt_apellido.TabIndex = 1
+        Me.txt_apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numero
+        '
+        Me.txt_numero.Location = New System.Drawing.Point(360, 46)
+        Me.txt_numero.Mask = "99999"
+        Me.txt_numero.Name = "txt_numero"
+        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
+        Me.txt_numero.TabIndex = 7
+        Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_numero.ValidatingType = GetType(Integer)
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Location = New System.Drawing.Point(79, 46)
+        Me.txt_calle.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
+        Me.txt_calle.TabIndex = 6
+        Me.txt_calle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'AltaPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -251,23 +262,23 @@ Partial Class AltaPersona
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
-    Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmb_tipoDocumento As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txt_documento As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents cmb_provincia As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cmb_localidad As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_calle As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txt_numero As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
+    Friend WithEvents txt_nombre As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_documento As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_apellido As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_numero As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_calle As System.Windows.Forms.MaskedTextBox
 End Class

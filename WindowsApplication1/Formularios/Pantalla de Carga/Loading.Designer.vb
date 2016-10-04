@@ -63,7 +63,7 @@ Partial Class Loading
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(525, 294)
+        Me.ClientSize = New System.Drawing.Size(521, 290)
         Me.ControlBox = False
         Me.Controls.Add(Me.lbl_Estado)
         Me.Controls.Add(Me.prgb_carga)

@@ -56,7 +56,7 @@ Partial Class BajaPersona
         'txt_documento
         '
         Me.txt_documento.Location = New System.Drawing.Point(74, 19)
-        Me.txt_documento.Mask = "99999999"
+        Me.txt_documento.Mask = "0000000099"
         Me.txt_documento.Name = "txt_documento"
         Me.txt_documento.Size = New System.Drawing.Size(62, 20)
         Me.txt_documento.TabIndex = 0

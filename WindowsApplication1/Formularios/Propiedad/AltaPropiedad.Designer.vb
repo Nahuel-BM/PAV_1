@@ -227,7 +227,7 @@ Partial Class AltaPropiedad
         'txt_monto
         '
         Me.txt_monto.Location = New System.Drawing.Point(95, 124)
-        Me.txt_monto.Mask = "999,999,999.00"
+        Me.txt_monto.Mask = "999999999.00"
         Me.txt_monto.Name = "txt_monto"
         Me.txt_monto.Size = New System.Drawing.Size(144, 20)
         Me.txt_monto.TabIndex = 8
@@ -263,7 +263,7 @@ Partial Class AltaPropiedad
         'txt_superficie
         '
         Me.txt_superficie.Location = New System.Drawing.Point(95, 98)
-        Me.txt_superficie.Mask = "999999999.00"
+        Me.txt_superficie.Mask = "999999999,00"
         Me.txt_superficie.Name = "txt_superficie"
         Me.txt_superficie.Size = New System.Drawing.Size(144, 20)
         Me.txt_superficie.TabIndex = 6

@@ -76,6 +76,8 @@ Public Class AltaPropiedad
         Try
             If Me.validar() = True Then
 
+                Me.idTipoPropiedad = Me.cmb_tipo_propiedad.SelectedValue()
+
                 Dim alturaCalle As Integer = Integer.Parse(Funciones.QuitarEspacios(Me.txt_numeroCalle.Text))
                 Dim sqlDomicilio As String = "INSERT INTO `Domicilio`(`Calle`, `Numero`, `Localidad`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_calle.Text) & "', " & alturaCalle & "," & Me.cmb_localidad.SelectedValue & ");"
 
@@ -88,7 +90,7 @@ Public Class AltaPropiedad
 
                 If Me.idTipoPropiedad = 1 Then
                     'Si es un edificio..
-                    sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie_Edificio`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
+                    sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`, `Encargado`, `Cantidad_Departamentos`, `Superficie`, `Ascensor`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & "," & cmb_encargado.SelectedValue & "," & Integer.Parse(Funciones.QuitarEspacios(Me.txt_total_departamento.Text)) & "," & Double.Parse(Funciones.QuitarEspacios(Me.txt_superficie.Text)) & "," & chk_ascensor.CheckState & ")"
                 Else
                     sqlInmueble = "INSERT INTO `Inmueble`(`Designacion_Catastral`, `Domicilio`) VALUES ('" & Funciones.QuitarEspacios(Me.txt_denominacion_catastral.Text) & "'," & idDomicilio & ");"
                 End If
@@ -115,6 +117,7 @@ Public Class AltaPropiedad
                 Dim sqlPropiedad As String = ""
 
 
+                'Si es departameto
                 If idTipoPropiedad = 1 Then
                     sqlPropiedad = "INSERT INTO `Propiedad`(`Id_Inmueble`, `Piso`, `Denominacion`, `Tipo_Propiedad`, `Superficie`, `Monto`, `Moneda`) VALUES (" _
                                             & idInmueble & ", " & Funciones.QuitarTodosLosEspacios(Me.txt_piso.Text) & ", '" & Funciones.QuitarTodosLosEspacios(Me.txt_denominacion_departamento.Text) & "', " & Me.cmb_tipo_propiedad.SelectedValue & ", " _
@@ -421,7 +424,7 @@ Public Class AltaPropiedad
             Me.cmb_encargado.SelectedIndex = Me.cmb_moneda.FindStringExact(datosInmueble(0)("Encargado"))
 
             'ascensor
-            If datosInmueble(0)("Designacion_Catastral") = 1 Then
+            If datosInmueble(0)("Ascensor") = 1 Then
                 Me.chk_ascensor.CheckState = CheckState.Checked
             End If
 
@@ -587,4 +590,7 @@ Public Class AltaPropiedad
 
 
 
+    Private Sub txt_piso_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_piso.MaskInputRejected
+
+    End Sub
 End Class

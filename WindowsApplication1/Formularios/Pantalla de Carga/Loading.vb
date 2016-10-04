@@ -112,4 +112,12 @@ Public Class Loading
         Me.HiloPadre = _HiloPadre
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub lbl_Estado_Click(sender As Object, e As EventArgs) Handles lbl_Estado.Click
+
+
+    End Sub
 End Class
