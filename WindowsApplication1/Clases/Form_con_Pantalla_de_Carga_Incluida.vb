@@ -10,6 +10,7 @@
 
         'Creo instancia de Loading
         Me.PantallaDeCarga = New Loading()
+
         'Me.PantallaDeCarga.Show()
 
     End Sub
@@ -23,8 +24,22 @@
 
     Public Sub Run()
         'Creo el hilo y lo inicio
-        thColor = New Threading.Thread(AddressOf MetodoDeCreacionDeHiloLocal)
-        thColor.Start()
+
+        Me.thColor = New Threading.Thread(AddressOf MetodoDeCreacionDeHiloLocal)
+        Me.thColor.Start()
+
+        Me.PantallaDeCarga.setHiloPadre(Me.thColor)
+
+        'While True
+        'If Not Me.PantallaDeCarga.Enabled Then
+        'If thColor.IsAlive Then
+        'thColor.Abort()
+        'Exit While
+        'End If
+        'End If
+        'End While
+
+
 
     End Sub
 
@@ -60,9 +75,9 @@
 
     ' Metodo que finaliza el hilo y cierra el formulario "Loading"
     Private Sub terminarLoading()
-        Me.PantallaDeCarga._leyenda = "Finalizando.."
-        Me.PantallaDeCarga.prgb_carga.Value = 100
-        'Me.thColor.Abort()
+        '  Me.PantallaDeCarga._leyenda = "Finalizando.."
+        '   Me.PantallaDeCarga.prgb_carga.Value = 100
+        Me.thColor.Abort()
     End Sub
 
 

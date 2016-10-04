@@ -95,6 +95,24 @@
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\Form_con_Pantalla_de_Carga_Incluida.vb" />
     <Compile Include="Clases\FuncionesUtiles.vb" />
+    <Compile Include="Formularios\Escribano\AltaEscribano.Designer.vb">
+      <DependentUpon>AltaEscribano.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Escribano\AltaEscribano.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Escribano\BajaEscribano.Designer.vb">
+      <DependentUpon>BajaEscribano.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Escribano\BajaEscribano.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Escribano\ModificarEscribano.Designer.vb">
+      <DependentUpon>ModificarEscribano.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Escribano\ModificarEscribano.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Gastos\AltaGastos.Designer.vb">
       <DependentUpon>AltaGastos.vb</DependentUpon>
     </Compile>
@@ -211,6 +229,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Clases\Form_con_Pantalla_de_Carga_Incluida.resx">
       <DependentUpon>Form_con_Pantalla_de_Carga_Incluida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Escribano\AltaEscribano.resx">
+      <DependentUpon>AltaEscribano.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Escribano\ModificarEscribano.resx">
+      <DependentUpon>ModificarEscribano.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Gastos\AltaGastos.resx">
       <DependentUpon>AltaGastos.vb</DependentUpon>

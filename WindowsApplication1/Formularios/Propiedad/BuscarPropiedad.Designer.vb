@@ -146,10 +146,11 @@ Partial Class BuscarPropiedad
         'txt_denominacionCatastral
         '
         Me.txt_denominacionCatastral.Location = New System.Drawing.Point(121, 19)
-        Me.txt_denominacionCatastral.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.txt_denominacionCatastral.Mask = ">aaaaaaaaaaaaaaaaaaaa"
         Me.txt_denominacionCatastral.Name = "txt_denominacionCatastral"
         Me.txt_denominacionCatastral.Size = New System.Drawing.Size(199, 20)
         Me.txt_denominacionCatastral.TabIndex = 0
+        Me.txt_denominacionCatastral.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '

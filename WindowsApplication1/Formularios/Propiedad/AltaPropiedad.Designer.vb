@@ -317,7 +317,7 @@ Partial Class AltaPropiedad
         'txt_denominacion_catastral
         '
         Me.txt_denominacion_catastral.Location = New System.Drawing.Point(404, 72)
-        Me.txt_denominacion_catastral.Mask = "????????????????????"
+        Me.txt_denominacion_catastral.Mask = ">aaaaaaaaaaaaaaaaaaaa"
         Me.txt_denominacion_catastral.Name = "txt_denominacion_catastral"
         Me.txt_denominacion_catastral.Size = New System.Drawing.Size(144, 20)
         Me.txt_denominacion_catastral.TabIndex = 5

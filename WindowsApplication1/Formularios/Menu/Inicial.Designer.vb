@@ -48,12 +48,14 @@ Partial Class Inicial
         Me.BajaGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PersonasToolStripMenuItem, Me.OperacionInmobiliariaToolStripMenuItem, Me.ProveedorToolStripMenuItem, Me.GAstosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PersonasToolStripMenuItem, Me.OperacionInmobiliariaToolStripMenuItem, Me.ProveedorToolStripMenuItem, Me.GAstosToolStripMenuItem, Me.EscribanoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(640, 24)
@@ -216,6 +218,19 @@ Partial Class Inicial
         Me.ModificarGastoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.ModificarGastoToolStripMenuItem.Text = "Modificar Gasto"
         '
+        'EscribanoToolStripMenuItem
+        '
+        Me.EscribanoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoEscribanoToolStripMenuItem})
+        Me.EscribanoToolStripMenuItem.Name = "EscribanoToolStripMenuItem"
+        Me.EscribanoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.EscribanoToolStripMenuItem.Text = "Escribano"
+        '
+        'NuevoEscribanoToolStripMenuItem
+        '
+        Me.NuevoEscribanoToolStripMenuItem.Name = "NuevoEscribanoToolStripMenuItem"
+        Me.NuevoEscribanoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.NuevoEscribanoToolStripMenuItem.Text = "Nuevo Escribano"
+        '
         'Inicial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -260,6 +275,8 @@ Partial Class Inicial
     Friend WithEvents BajaGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevoEscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     '=======
     '>>>>>>> master
 End Class

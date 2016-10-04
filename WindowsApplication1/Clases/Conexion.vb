@@ -88,13 +88,17 @@ Public Class Conexion
     Private Function ejecutar(ByVal sql As String) As DataTable
 
         Dim tabla As New DataTable
+        Try
+            Me.Conectar()
+            Me.cmd.CommandText = sql
 
-        Me.Conectar()
-        Me.cmd.CommandText = sql
+            tabla.Load(cmd.ExecuteReader())
 
-        tabla.Load(cmd.ExecuteReader())
+            Me.Cerrar()
 
-        Me.Cerrar()
+        Catch ex As Exception
+
+        End Try
 
         Return tabla
 
@@ -116,7 +120,7 @@ Public Class Conexion
 
             MsgBox(sql)
 
-            Throw ex
+            Throw
 
         End Try
 
@@ -148,9 +152,9 @@ Public Class Conexion
                    MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
 
             Dim Msg As MsgBoxResult
-            Msg = MsgBox("Cerrar el modulo, ¿Desea salir?", vbYesNo, "Salir del Modulo")
+            Msg = MsgBox("Cerrar el programa, ¿Desea salir?", vbYesNo, "Salir del Programa")
             If Msg = MsgBoxResult.Yes Then
-                Application.ExitThread()
+                Application.Exit()
             End If
 
         Finally
@@ -228,8 +232,8 @@ Public Class Conexion
         Return Me.Consulta(sql)
     End Function
 
-    Public Function BusquedaGeneralEnTabla(ByVal NombreTabla As String, ByVal CampoDeBusqueda As String, ByVal valor1 As String, Optional ByVal valor2 As Integer = 0) As DataTable
-        Dim sql As String = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE '%" & valor1 & "%'; "
+    Public Function BusquedaGeneralEnTabla(ByVal NombreTabla As String, ByVal CampoDeBusqueda As String, ByVal valor1 As String, Optional ByVal Filtro As String = "") As DataTable
+        Dim sql As String = "SELECT * FROM `" & NombreTabla & "` WHERE `" & CampoDeBusqueda & "` LIKE '%" & valor1 & "%' " & Filtro & "; "
         Return Me.Consulta(sql)
     End Function
     'Fin Busquedas

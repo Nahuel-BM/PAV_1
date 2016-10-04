@@ -8,6 +8,8 @@ Public Class Loading
     Dim leyenda As String = "Iniciando.."
     Dim SegundosTranscurridos As Double = 0
 
+    Dim HiloPadre As Threading.Thread
+
 
     Public Property _leyenda As String
         Get
@@ -53,8 +55,8 @@ Public Class Loading
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
+        'Arranco el timer
         Me.Timer1.Enabled = True
 
     End Sub
@@ -87,6 +89,7 @@ Public Class Loading
             If Me.Opacity = 0.0 Then       ' si la ventana es transparente
                 Me.Timer1.Enabled = False   ' Detengo el timer..
                 Me.Dispose()                ' cierro la ventana
+                Me.HiloPadre.Abort()        ' Mato el hilo padre
             Else                            ' sino 
                 Me.Opacity -= 0.1           ' aumento la transparencia
             End If
@@ -95,6 +98,10 @@ Public Class Loading
 
         End If
 
+    End Sub
+
+    Public Sub setHiloPadre(ByRef _HiloPadre As Thread)
+        Me.HiloPadre = _HiloPadre
     End Sub
 
 End Class
