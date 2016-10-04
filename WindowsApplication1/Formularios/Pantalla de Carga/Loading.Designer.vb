@@ -68,6 +68,7 @@ Partial Class Loading
         Me.Controls.Add(Me.lbl_Estado)
         Me.Controls.Add(Me.prgb_carga)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Loading"

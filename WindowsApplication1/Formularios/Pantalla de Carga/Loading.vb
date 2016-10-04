@@ -88,8 +88,16 @@ Public Class Loading
 
             If Me.Opacity = 0.0 Then       ' si la ventana es transparente
                 Me.Timer1.Enabled = False   ' Detengo el timer..
-                Me.Dispose()                ' cierro la ventana
-                Me.HiloPadre.Abort()        ' Mato el hilo padre
+                Me.Timer1 = Nothing
+
+                Try
+                    Me.HiloPadre.Abort()
+                Catch ex As System.Threading.ThreadAbortException
+                Finally
+                    ' cierro la ventana
+                    Me.Close()
+                End Try
+
             Else                            ' sino 
                 Me.Opacity -= 0.1           ' aumento la transparencia
             End If
@@ -100,7 +108,7 @@ Public Class Loading
 
     End Sub
 
-    Public Sub setHiloPadre(ByRef _HiloPadre As Thread)
+    Public Sub setHiloPadre(ByRef _HiloPadre As Threading.Thread)
         Me.HiloPadre = _HiloPadre
     End Sub
 

@@ -1,80 +1,80 @@
 ﻿Public Class Inicial
 
+    Dim Funciones As New FuncionesUtiles
 
     Private Sub AltaPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaPropiedadToolStripMenuItem.Click
         Dim frm As New AltaPropiedad()
-        frm.Show()
+        Funciones.AbrirFormulario("AltaPropiedad", frm)
     End Sub
 
     Private Sub BajaPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaPropiedadToolStripMenuItem.Click
         Dim frm As New BuscarPropiedad()
-        frm.Show()
+        Funciones.AbrirFormulario("BuscarPropiedad", frm)
     End Sub
 
     Private Sub MdoficarPropiedadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MdoficarPropiedadToolStripMenuItem.Click
         Dim frm As New BuscarPropiedad(True)
-        frm.Show()
+        Funciones.AbrirFormulario("BuscarPropiedad", frm)
     End Sub
 
     Private Sub NuevaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim frm As New AltaPersona(False, 0)
-        frm.Show()
+        Funciones.AbrirFormulario("AltaPersona", frm)
     End Sub
 
     Private Sub BajaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaPersonaToolStripMenuItem.Click
         Dim frm As New BajaPersona(False)
-        frm.Show()
+        Funciones.AbrirFormulario("BajaPersona", frm)
     End Sub
 
     Private Sub ModificarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarPersonaToolStripMenuItem.Click
         Dim frm As New BajaPersona(True)
-        frm.Show()
+        Funciones.AbrirFormulario("BajaPersona", frm)
     End Sub
 
     Private Sub AltaOperacionInmobiliariaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaOperacionInmobiliariaToolStripMenuItem.Click
         Dim frm As New AltaOperacionInmobiliaria()
-        frm.Show()
+        Funciones.AbrirFormulario("AltaOperacionInmobiliaria", frm)
     End Sub
 
     Private Sub NuevoProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoProveedorToolStripMenuItem.Click
         Dim frm As New AltaProveedor()
-        frm.Show()
+        Funciones.AbrirFormulario("AltaProveedor", frm)
     End Sub
 
     Private Sub BorrarProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarProveedorToolStripMenuItem.Click
         Dim frm As New BajaProveedor()
-        frm.Show()
+        Funciones.AbrirFormulario("BajaProveedor", frm)
     End Sub
 
     Private Sub AltaGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaGastoToolStripMenuItem.Click
         Dim frm As New AltaGastos()
-        frm.Show()
-
+        Funciones.AbrirFormulario("AltaGastos", frm)
     End Sub
 
     Private Sub BajaGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaGastoToolStripMenuItem.Click
         Dim frm As New BajaGastos()
-        frm.Show()
+        Funciones.AbrirFormulario("BajaGastos", frm)
     End Sub
 
     Private Sub ConsultarGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarGastoToolStripMenuItem.Click
         Dim frm As New ConsultarGastos()
-
-        frm.Show()
+        Funciones.AbrirFormulario("ConsultarGastos", frm)
     End Sub
 
     Private Sub ModificarGastoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarGastoToolStripMenuItem.Click
         Dim frm As New ModificarGastos()
-        frm.Show()
+        Funciones.AbrirFormulario("ModificarGastos", frm)
     End Sub
 
     Private Sub AltaPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaPersonaToolStripMenuItem.Click
         Dim frm As New AltaPersona(False, 0)
-        frm.Show()
+        Funciones.AbrirFormulario("AltaPersona", frm)
     End Sub
 
     Private Sub NuevoEscribanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoEscribanoToolStripMenuItem.Click
         Dim frm As New AltaEscribano()
-        frm.Show()
+        Funciones.AbrirFormulario("AltaEscribano", frm)
     End Sub
+
 End Class

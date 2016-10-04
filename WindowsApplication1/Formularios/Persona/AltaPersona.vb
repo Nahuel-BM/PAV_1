@@ -5,6 +5,7 @@
     Dim modificar As Boolean = False
     Dim idPersona As Integer
     Dim idDomicilioEditar As Integer
+
     Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
 
 
@@ -137,7 +138,7 @@
     End Sub
 
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
-        Me.Dispose()
+        Me.Close()
     End Sub
 
 

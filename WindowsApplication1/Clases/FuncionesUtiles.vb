@@ -77,4 +77,66 @@
     End Function
 
 
+    Public Function GetFormByName(formName As String) As Form
+
+        If (formName = String.Empty) Then Return Nothing
+
+        For Each frm As Form In Application.OpenForms
+
+            If (frm.Name.ToUpperInvariant() = formName.ToUpperInvariant()) Then
+                ' Devolvemos la referencia del formulario.
+                '
+                Return frm
+            End If
+
+        Next
+
+        ' No está abierto el formulario especificado
+        '
+        Return Nothing
+
+    End Function
+
+    'Ahora, cuando desees saber si el formulario llamado 'frmClientes' está abierto, llamarías a la función de la siguiente manera:
+    Public Sub AbrirFormulario(ByVal nombreFormulario As String, ByVal claseForm As Form)
+        Try
+            Dim frm2 As Form = GetFormByName("Loading")
+            frm2.Close()
+        Catch ex As Exception
+
+        End Try
+
+
+        If Application.OpenForms.Count < 2 Then
+
+            Dim frm As Form = GetFormByName(nombreFormulario)
+
+            If (frm Is Nothing) Then
+                ' Creamos una nueva instancia del formulario
+
+
+                frm = claseForm
+
+                ' Mostramos el formulario
+                frm.Show()
+
+            Else
+                ' Seleccionamos el formulario abierto
+                frm.Select()
+
+            End If
+
+        Else
+
+            For dime As Integer = 0 To Application.OpenForms.Count - 1
+                MsgBox("Cantidad de forms abiertos : " & Application.OpenForms.Count & "    " & Application.OpenForms.Item(dime).Name)
+
+            Next
+
+
+            
+        End If
+
+    End Sub
+
 End Class

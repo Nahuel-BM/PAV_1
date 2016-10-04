@@ -28,18 +28,8 @@
         Me.thColor = New Threading.Thread(AddressOf MetodoDeCreacionDeHiloLocal)
         Me.thColor.Start()
 
+        'Asigno referencia al hilo padre
         Me.PantallaDeCarga.setHiloPadre(Me.thColor)
-
-        'While True
-        'If Not Me.PantallaDeCarga.Enabled Then
-        'If thColor.IsAlive Then
-        'thColor.Abort()
-        'Exit While
-        'End If
-        'End If
-        'End While
-
-
 
     End Sub
 
@@ -52,12 +42,12 @@
 
 
     Public Shared Sub CrearLoadingConParametro(ByRef Loading As Loading)
-        Application.Run(Loading)
+        Try
+            Application.Run(Loading)
+        Catch ex As System.Threading.ThreadAbortException
+            'agarre la exception!
+        End Try
     End Sub
-
-
-    ' Public Async
-
 
     ' Metodo que actualiza el valor de la barra de progreso y adiciona una leyenda
     Public Sub actualizarLoading(ByVal leyenda As String)
@@ -68,7 +58,16 @@
         'Me.PantallaDeCarga.ActualizarBarra()
 
         'funciona asi.. o.O
-        Me.PantallaDeCarga.prgb_carga.Value += Me.PantallaDeCarga._aumento
+
+        Dim suma As Integer = Me.PantallaDeCarga.prgb_carga.Value + Me.PantallaDeCarga._aumento
+
+        If suma >= 99 Then
+            Me.PantallaDeCarga.prgb_carga.Value = 100
+        Else
+            Me.PantallaDeCarga.prgb_carga.Value += Me.PantallaDeCarga._aumento
+        End If
+
+
         Me.PantallaDeCarga.lbl_Estado.Text = leyenda
 
     End Sub
