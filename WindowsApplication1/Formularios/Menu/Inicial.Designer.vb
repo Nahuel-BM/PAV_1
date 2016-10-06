@@ -50,6 +50,8 @@ Partial Class Inicial
         Me.ModificarGastoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -220,7 +222,7 @@ Partial Class Inicial
         '
         'EscribanoToolStripMenuItem
         '
-        Me.EscribanoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoEscribanoToolStripMenuItem})
+        Me.EscribanoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoEscribanoToolStripMenuItem, Me.EditarEscribanoToolStripMenuItem, Me.BorrarEscribanoToolStripMenuItem})
         Me.EscribanoToolStripMenuItem.Name = "EscribanoToolStripMenuItem"
         Me.EscribanoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.EscribanoToolStripMenuItem.Text = "Escribano"
@@ -230,6 +232,18 @@ Partial Class Inicial
         Me.NuevoEscribanoToolStripMenuItem.Name = "NuevoEscribanoToolStripMenuItem"
         Me.NuevoEscribanoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.NuevoEscribanoToolStripMenuItem.Text = "Nuevo Escribano"
+        '
+        'EditarEscribanoToolStripMenuItem
+        '
+        Me.EditarEscribanoToolStripMenuItem.Name = "EditarEscribanoToolStripMenuItem"
+        Me.EditarEscribanoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.EditarEscribanoToolStripMenuItem.Text = "Editar Escribano"
+        '
+        'BorrarEscribanoToolStripMenuItem
+        '
+        Me.BorrarEscribanoToolStripMenuItem.Name = "BorrarEscribanoToolStripMenuItem"
+        Me.BorrarEscribanoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.BorrarEscribanoToolStripMenuItem.Text = "Borrar Escribano"
         '
         'Inicial
         '
@@ -278,6 +292,8 @@ Partial Class Inicial
     Friend WithEvents ModificarGastoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoEscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EditarEscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BorrarEscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     '=======
     '>>>>>>> master
 End Class

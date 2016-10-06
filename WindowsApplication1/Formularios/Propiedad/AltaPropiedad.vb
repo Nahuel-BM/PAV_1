@@ -531,14 +531,6 @@ Public Class AltaPropiedad
         End If
     End Sub
 
-
-    Private Sub cmb_provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_provincia.SelectedIndexChanged
-
-    End Sub
-
-
-
-
     Private Sub CargarDatosDeCombos()
 
         If Edicion Then

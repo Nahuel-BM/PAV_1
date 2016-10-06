@@ -45,8 +45,10 @@
     Public Shared Sub CrearLoadingConParametro(ByRef Loading As Loading)
         Try
             Application.Run(Loading)
-        Catch ex As System.Threading.ThreadAbortException
+        Catch ex As Exception
             'agarre la exception!
+        Finally
+            'nadaaaa
         End Try
     End Sub
 

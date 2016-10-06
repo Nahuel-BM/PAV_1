@@ -34,7 +34,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmb_escribano = New System.Windows.Forms.ComboBox()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -54,15 +54,16 @@ Partial Class AltaOperacionInmobiliaria
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.grid_Busqueda = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.idPropiedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idInmueble = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.textDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -129,7 +130,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.Controls.Add(Me.MaskedTextBox4)
         Me.GroupBox2.Controls.Add(Me.MaskedTextBox3)
         Me.GroupBox2.Controls.Add(Me.MaskedTextBox2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.cmb_escribano)
         Me.GroupBox2.Controls.Add(Me.cmb_estado)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -202,15 +203,15 @@ Partial Class AltaOperacionInmobiliaria
         Me.MaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.MaskedTextBox2.ValidatingType = GetType(Date)
         '
-        'ComboBox1
+        'cmb_escribano
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(394, 45)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(144, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.cmb_escribano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_escribano.Enabled = False
+        Me.cmb_escribano.FormattingEnabled = True
+        Me.cmb_escribano.Location = New System.Drawing.Point(394, 45)
+        Me.cmb_escribano.Name = "cmb_escribano"
+        Me.cmb_escribano.Size = New System.Drawing.Size(144, 21)
+        Me.cmb_escribano.TabIndex = 6
         '
         'cmb_estado
         '
@@ -306,6 +307,8 @@ Partial Class AltaOperacionInmobiliaria
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Button2)
+        Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.lbl_superficie)
         Me.GroupBox3.Controls.Add(Me.lbl_tipo_propiedad)
         Me.GroupBox3.Controls.Add(Me.Label7)
@@ -323,7 +326,7 @@ Partial Class AltaOperacionInmobiliaria
         '
         Me.lbl_superficie.AutoSize = True
         Me.lbl_superficie.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lbl_superficie.Location = New System.Drawing.Point(119, 73)
+        Me.lbl_superficie.Location = New System.Drawing.Point(69, 51)
         Me.lbl_superficie.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_superficie.Name = "lbl_superficie"
         Me.lbl_superficie.Size = New System.Drawing.Size(50, 13)
@@ -333,16 +336,17 @@ Partial Class AltaOperacionInmobiliaria
         '
         Me.lbl_tipo_propiedad.AutoSize = True
         Me.lbl_tipo_propiedad.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lbl_tipo_propiedad.Location = New System.Drawing.Point(119, 51)
+        Me.lbl_tipo_propiedad.Location = New System.Drawing.Point(446, 29)
         Me.lbl_tipo_propiedad.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_tipo_propiedad.Name = "lbl_tipo_propiedad"
-        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(97, 13)
         Me.lbl_tipo_propiedad.TabIndex = 5
+        Me.lbl_tipo_propiedad.Text = "DEPARTAMENTO"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 73)
+        Me.Label7.Location = New System.Drawing.Point(6, 51)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(57, 13)
         Me.Label7.TabIndex = 4
@@ -352,16 +356,17 @@ Partial Class AltaOperacionInmobiliaria
         '
         Me.lbl_domicilio.AutoSize = True
         Me.lbl_domicilio.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lbl_domicilio.Location = New System.Drawing.Point(119, 29)
+        Me.lbl_domicilio.Location = New System.Drawing.Point(69, 29)
         Me.lbl_domicilio.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_domicilio.Name = "lbl_domicilio"
         Me.lbl_domicilio.Size = New System.Drawing.Size(50, 13)
         Me.lbl_domicilio.TabIndex = 3
+        Me.lbl_domicilio.Text = "hola"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 51)
+        Me.Label5.Location = New System.Drawing.Point(343, 29)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(97, 13)
         Me.Label5.TabIndex = 2
@@ -395,17 +400,35 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'grid_Busqueda
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPropiedad, Me.idInmueble, Me.idDomicilio, Me.textDomicilio})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 71)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(550, 116)
-        Me.DataGridView1.TabIndex = 14
+        Me.grid_Busqueda.AllowUserToAddRows = False
+        Me.grid_Busqueda.AllowUserToDeleteRows = False
+        Me.grid_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_Busqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idPropiedad, Me.idInmueble, Me.textDomicilio})
+        Me.grid_Busqueda.Location = New System.Drawing.Point(12, 71)
+        Me.grid_Busqueda.Name = "grid_Busqueda"
+        Me.grid_Busqueda.ReadOnly = True
+        Me.grid_Busqueda.Size = New System.Drawing.Size(550, 116)
+        Me.grid_Busqueda.TabIndex = 14
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(468, 71)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Confirmar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(6, 71)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Text = "Rebuscar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'idPropiedad
         '
@@ -413,6 +436,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.idPropiedad.Name = "idPropiedad"
         Me.idPropiedad.ReadOnly = True
         Me.idPropiedad.Visible = False
+        Me.idPropiedad.Width = 300
         '
         'idInmueble
         '
@@ -420,26 +444,21 @@ Partial Class AltaOperacionInmobiliaria
         Me.idInmueble.Name = "idInmueble"
         Me.idInmueble.ReadOnly = True
         Me.idInmueble.Visible = False
-        '
-        'idDomicilio
-        '
-        Me.idDomicilio.HeaderText = "idDomicilio"
-        Me.idDomicilio.Name = "idDomicilio"
-        Me.idDomicilio.ReadOnly = True
-        Me.idDomicilio.Visible = False
+        Me.idInmueble.Width = 74
         '
         'textDomicilio
         '
         Me.textDomicilio.HeaderText = "Domicilio"
         Me.textDomicilio.Name = "textDomicilio"
         Me.textDomicilio.ReadOnly = True
+        Me.textDomicilio.Width = 430
         '
         'AltaOperacionInmobiliaria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 499)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.grid_Busqueda)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Controls.Add(Me.GroupBox3)
@@ -453,7 +472,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_Busqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -484,14 +503,15 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents MaskedTextBox3 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_escribano As System.Windows.Forms.ComboBox
     Friend WithEvents MaskedTextBox6 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox5 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox4 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_superficie As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents grid_Busqueda As System.Windows.Forms.DataGridView
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents idPropiedad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idInmueble As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents idDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents textDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
