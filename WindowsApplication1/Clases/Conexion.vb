@@ -114,11 +114,12 @@ Public Class Conexion
 
             Me.Cerrar()
         Catch ex As Exception
-            MsgBox("Error al Ejecutar Insert " &
-                   vbCrLf & vbCrLf & ex.Message,
-                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
 
-            MsgBox(sql)
+            'MsgBox("Error al Ejecutar Insert " &
+            '       vbCrLf & vbCrLf & ex.Message,
+            '       MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+
+            'MsgBox(sql)
 
             Throw
 
@@ -219,6 +220,22 @@ Public Class Conexion
     Public Sub BorrarPersona(ByVal idPersona As Integer)
         Dim sqlDomicilio As String = "DELETE FROM `Persona` WHERE `id` = " & idPersona & ";"
         Me.ejecutar(sqlDomicilio)
+    End Sub
+
+    'Escribano
+    Public Sub CrearEscribano(ByVal idPersona As Integer, ByVal Matricula As String)
+        Dim sqlCrearEscribano As String = "INSERT INTO `Escribanos`(`Matricula`, `Persona`) VALUES ('" & Matricula & "', " & idPersona & "); "
+        Me.ejecutarInsert(sqlCrearEscribano)
+    End Sub
+
+    Public Sub EditarEscribano(ByVal idEscribano As Integer, ByVal idPersona As Integer, ByVal Matricula As String)
+        Dim sqlCrearEscribano As String = "UPDATE `Escribanos` SET `id`=[value-1],`Matricula`='" & Matricula & "',`Persona`=" & idPersona & " WHERE `id` = " & idEscribano & ";"
+        Me.ejecutar(sqlCrearEscribano)
+    End Sub
+
+    Public Sub BorrarEscribano(ByVal idEscribano As Integer)
+        Dim sqlCrearEscribano As String = "DELETE FROM `Escribanos` WHERE `id` = " & idEscribano & "; "
+        Me.ejecutar(sqlCrearEscribano)
     End Sub
 
     'Busquedas en tablas
