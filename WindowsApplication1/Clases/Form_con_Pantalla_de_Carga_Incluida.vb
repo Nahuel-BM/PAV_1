@@ -1,8 +1,9 @@
 ﻿Public Class Form_con_Pantalla_de_Carga_Incluida
-
+    Implements System.IDisposable
 
     Dim PantallaDeCarga As Loading
     Public thColor As Threading.Thread
+    Dim disposed As Boolean = False
 
     Public Sub New()
         'Desactivo el control cruzado de hilos
@@ -77,6 +78,23 @@
         '  Me.PantallaDeCarga._leyenda = "Finalizando.."
         '   Me.PantallaDeCarga.prgb_carga.Value = 100
         Me.thColor.Abort()
+    End Sub
+
+
+    Protected Overridable Overloads Sub Dispose(ByVal disposing As Boolean)
+
+        If Not disposed Then
+            If disposing Then
+                Dispose()
+            End If
+        End If
+        disposed = True
+    End Sub
+
+    Public Overloads Sub Dispose() Implements System.IDisposable.Dispose
+        Dispose(True)
+        Me.terminarLoading()
+        GC.SuppressFinalize(Me)
     End Sub
 
 

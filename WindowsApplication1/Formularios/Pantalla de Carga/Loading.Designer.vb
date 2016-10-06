@@ -63,7 +63,7 @@ Partial Class Loading
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(521, 290)
+        Me.ClientSize = New System.Drawing.Size(517, 286)
         Me.ControlBox = False
         Me.Controls.Add(Me.lbl_Estado)
         Me.Controls.Add(Me.prgb_carga)
@@ -74,6 +74,7 @@ Partial Class Loading
         Me.Name = "Loading"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Iniciando Componentes.."
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
