@@ -5,13 +5,53 @@
     Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
 
     Dim idPersonaBuscada As Integer = 0
+    Dim esEdicion As Boolean = False
+    Dim idEscribanoDeEdicion As Integer = 0
+
+
+
+    Public Sub New(Optional ByVal idEscribano As Integer = 0)
+
+        ' Llamada necesaria para el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+        If idEscribano > 0 Then
+            Me.esEdicion = True
+            Me.idEscribanoDeEdicion = idEscribano
+        End If
+
+
+    End Sub
+
+
+
 
     Private Sub AltaEscribano_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Carga.setTotalDeEventos(1)
-        Me.Carga.Run()
+        If esEdicion Then
 
-        Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
-        Me.Carga.actualizarLoading("Combo Tipo Documento.")
+            Me.Text = "Edicion de Escribano"
+            Me.cmd_nuevo.Text = "Guardar"
+
+            Me.Carga.setTotalDeEventos(2)
+            Me.Carga.Run()
+
+            Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+            Me.Carga.actualizarLoading("Combo Tipo Documento.")
+
+            Me.cargarDatosDeEdicion()
+            Me.Carga.actualizarLoading("Datos de Escribano.")
+        Else
+            Me.Carga.setTotalDeEventos(1)
+            Me.Carga.Run()
+
+            Conexion.cargarComboTipo(Me.cmb_tipoDocumento, "Tipo_Documento")
+            Me.Carga.actualizarLoading("Combo Tipo Documento.")
+
+        End If
+
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles cmd_nuevo.Click
@@ -93,26 +133,39 @@
         If Funciones.ValidarTextBox(Me.txt_matricula) Then
             ' MsgBox("Matricula: " & Matricula & " Persona: " & idPersonaBuscada)
             Try
+                If esEdicion Then
+                    Conexion.EditarEscribano(idEscribanoDeEdicion, Matricula)
+                    MsgBox("Edicion Correcta.")
+                Else
+                    Conexion.CrearEscribano(Me.idPersonaBuscada, Matricula)
+                    MsgBox("Escribano Creado Correctamente.")
+                    Me.txt_matricula.Enabled = False
+                    Me.cmd_crear.Enabled = False
+                End If
 
-                Conexion.CrearEscribano(Me.idPersonaBuscada, Matricula)
-                MsgBox("Escribano Creado Correctamente.")
-                Me.txt_matricula.Enabled = False
-                Me.cmd_crear.Enabled = False
 
 
             Catch ex As Exception
-
-
                 Dim mensaje As String = ex.Message
 
-                If mensaje.Contains("Matricula") Then
-                    MsgBox("Error al crear escribano. La matricula ya esta registrada.")
-                    Me.txt_matricula.Focus()
-                ElseIf mensaje.Contains("Persona") Then
-                    MsgBox("Error al crear escribano. La persona ya tiene matricula registrada.")
-                    Me.cmd_nuevo.Focus()
+                If esEdicion Then
+
+                    MsgBox("Error al Editar Escribano.")
+
+                Else
+                    If mensaje.Contains("Matricula") Then
+                        MsgBox("Error al crear escribano. La matricula ya esta registrada.")
+                        Me.txt_matricula.Focus()
+                    ElseIf mensaje.Contains("Persona") Then
+                        MsgBox("Error al crear escribano. La persona ya tiene matricula registrada.")
+                        Me.cmd_nuevo.Focus()
+                    End If
+
+
                 End If
 
+
+               
 
 
             End Try
@@ -126,4 +179,38 @@
         End If
 
     End Sub
+
+
+    Private Sub cargarDatosDeEdicion()
+        Dim sql As String = "SELECT `Persona`.`Documento` AS `Documento`, `Persona`.`Tipo_Documento` AS `TipoDocumento`, CONCAT (`Persona`.`Nombre`, ', ' , `Persona`.`Apellido`) AS `NombreCompleto` , `Escribanos`.`Matricula` AS `Matricula` FROM `Escribanos` JOIN `Persona` ON `Persona`.`id` = `Escribanos`.`Persona` WHERE `Escribanos`.`id` = " & Me.idEscribanoDeEdicion & "; "
+        Dim Datos As DataTable = Me.Conexion.Consulta(sql)
+
+        Try
+            Me.txt_documento.Text = Datos.Rows(0)("Documento")
+            Me.txt_matricula.Text = Datos.Rows(0)("Matricula")
+            Me.lbl_nombre.Text = Datos.Rows(0)("NombreCompleto")
+
+            Me.txt_documento.Enabled = False
+            Me.txt_matricula.Enabled = True
+            Me.cmb_tipoDocumento.Enabled = False
+
+            Me.cmd_crear.Text = "Guardar"
+            Me.cmd_crear.Enabled = True
+            Me.cmd_buscar.Enabled = False
+            Me.cmd_nuevo.Text = "Nuevo"
+
+
+
+
+
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message)
+            MsgBox(sql)
+        End Try
+
+
+
+
+    End Sub
+
 End Class

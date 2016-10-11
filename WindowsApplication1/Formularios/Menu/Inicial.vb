@@ -77,4 +77,13 @@
         Funciones.AbrirFormulario("AltaEscribano", frm)
     End Sub
 
+    Private Sub EditarEscribanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarEscribanoToolStripMenuItem.Click
+        Dim frm As New BuscarEscribano(True)
+        Funciones.AbrirFormulario("BuscarEscribano", frm)
+    End Sub
+
+    Private Sub BorrarEscribanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarEscribanoToolStripMenuItem.Click
+        Dim frm As New BuscarEscribano(False)
+        Funciones.AbrirFormulario("BuscarEscribano", frm)
+    End Sub
 End Class

@@ -228,8 +228,8 @@ Public Class Conexion
         Me.ejecutarInsert(sqlCrearEscribano)
     End Sub
 
-    Public Sub EditarEscribano(ByVal idEscribano As Integer, ByVal idPersona As Integer, ByVal Matricula As String)
-        Dim sqlCrearEscribano As String = "UPDATE `Escribanos` SET `id`=[value-1],`Matricula`='" & Matricula & "',`Persona`=" & idPersona & " WHERE `id` = " & idEscribano & ";"
+    Public Sub EditarEscribano(ByVal idEscribano As Integer, ByVal Matricula As String)
+        Dim sqlCrearEscribano As String = "UPDATE `Escribanos` SET `Matricula`='" & Matricula & "' WHERE `id` = " & idEscribano & ";"
         Me.ejecutar(sqlCrearEscribano)
     End Sub
 

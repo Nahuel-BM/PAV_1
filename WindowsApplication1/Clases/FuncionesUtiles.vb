@@ -2,7 +2,7 @@
 
 
 
-    Public Sub AddButtonColumn(ByRef grid As DataGridView, ByVal Texto As String, ByVal Cabecera As String, Optional ByRef posicion As Integer = 0)
+    Public Sub AddButtonColumn(ByRef grid As DataGridView, ByVal Texto As String, ByVal Cabecera As String, Optional ByVal posicion As Integer = 0)
         Dim buttons As New DataGridViewButtonColumn()
         With buttons
             .HeaderText = Cabecera
