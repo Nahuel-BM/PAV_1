@@ -257,7 +257,7 @@ Public Class Conexion
 
     'Proveedor
     Public Function CrearProveedor(ByVal idDomicilio As Integer, ByVal Nombre As String) As Integer
-        Dim sqlDomicilio As String = "INSERT INTO `Proveedor`(`idDomicilio`,`Nombre`) VALUES (" & idDomicilio & ",'" & Nombre & "');"
+        Dim sqlDomicilio As String = "INSERT INTO `Proveedor`(`Domicilio`,`Nombre`) VALUES (" & idDomicilio & ",'" & Nombre & "');"
         Me.ejecutarInsert(sqlDomicilio)
         Return Me.ultimoIdInsertado()
     End Function
