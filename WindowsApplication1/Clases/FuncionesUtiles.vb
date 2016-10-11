@@ -15,6 +15,7 @@
         End With
 
         buttons.DisplayIndex = posicion
+        buttons.MinimumWidth = 75
 
         grid.Columns.Add(buttons)
 

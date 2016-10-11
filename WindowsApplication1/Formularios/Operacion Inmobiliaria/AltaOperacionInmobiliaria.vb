@@ -7,7 +7,7 @@
 
 
     Private Sub AltaOperacionInmobiliaria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Carga.setTotalDeEventos(2)
+        Me.Carga.setTotalDeEventos(4)
 
         Me.Carga.Run()
 
@@ -16,6 +16,12 @@
 
         Conexion.cargarComboTipo(Me.cmb_estado, "Tipo_Propiedad")
         Me.Carga.actualizarLoading("Combo Estado Propiedad.")
+
+        Me.cargarComboEscribanos(Me.cmb_escribano)
+        Me.Carga.actualizarLoading("Combo Escribanos.")
+
+        Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
+        Me.Carga.actualizarLoading("Combo Tipo Operacion.")
 
         Me.Funciones.AddButtonColumn(Me.grid_Busqueda, "Seleccionar", "Accion", 4)
 
@@ -26,10 +32,10 @@
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
 
         Me.grid_Busqueda.Rows.Clear()
-        Me.btn_buscar.Enabled = False
+        '    Me.btn_buscar.Enabled = False
 
 
-        Dim denominacion As String = Funciones.QuitarTodosLosEspacios(Me.MaskedTextBox1.Text)
+        Dim denominacion As String = Funciones.QuitarTodosLosEspacios(Me.txt_designacion.Text)
 
         Dim sqlModificada As String = "SELECT  `Inmueble`.`id` AS `idInmueble`, `Propiedad`.`id` AS `idPropiedad`, CONCAT(  `Domicilio`.`Calle` ,  ' ', `Domicilio`.`Numero`, ', ', `Localidad`.`Nombre`, ', ', `Provincia`.`Nombre`) AS  `Domicilio` FROM  `Inmueble` JOIN  `Propiedad` ON  `Propiedad`.`Id_Inmueble` =  `Inmueble`.`id` JOIN  `Domicilio` ON  `Domicilio`.`id` =  `Inmueble`.`Domicilio` JOIN  `Localidad` ON  `Localidad`.`id` = `Domicilio`.`Localidad` JOIN  `Provincia` ON  `Provincia`.`id` = `Localidad`.`Provincia` WHERE  `Inmueble`.`Designacion_Catastral` LIKE  '%" & denominacion & "%' AND  `Propiedad`.`Tipo_Propiedad` = 1 "
         Dim datos As DataTable = Conexion.Consulta(sqlModificada)
@@ -56,30 +62,13 @@
             Next
 
 
-
-
-
-
-
-
-
-
             Try
-                '  Dim datosDomicilio As DataTable = Conexion.Consulta("SELECT `Domicilio`.*, `Localidad`.`Nombre` AS `Localidadn`, `Provincia`.`Nombre` AS `Provincian` FROM `Domicilio` JOIN `Localidad` ON `Domicilio`.`Localidad` = `Localidad`.`id` JOIN `Provincia` ON `Localidad`.`Provincia`=`Provincia`.`id` WHERE `Domicilio`.`id` = " & datosInmueble(0)("Domicilio"))
 
-                '   Me.lbl_domicilio.Text = datosDomicilio(0)("Calle") & " " & datosDomicilio(0)("Numero") & ", " & datosDomicilio(0)("Localidadn") & ", " & datosDomicilio(0)("Provincian") & "."
-                '   Me.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.SelectedText
-
-
-
-                Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
-
-                Me.btn_aceptar.Enabled = True
+                 Me.btn_aceptar.Enabled = True
 
             Catch ex As Exception
                 MsgBox("Inmueble no encontrado.")
             End Try
-
 
 
 
@@ -105,18 +94,82 @@
     Private Sub EventoSeleccionarPropiedad(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_Busqueda.CellClick
 
         If e.ColumnIndex = 3 Then
-            '   Dim result As Integer = MessageBox.Show("¿Realmente desea quitar al Propietario?", "Alerta", MessageBoxButtons.OKCancel)
-            '    If result = DialogResult.OK Then
-            'Me.grid_propietarios.Rows.RemoveAt(e.RowIndex)
-            'MsgBox("Seleccionada!!")
+
+            btn_buscar.Enabled = False
+            Me.cmb_tipoPropiedad.Enabled = False
+            Me.txt_designacion.Enabled = False
+
             Me.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
+            Me.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.SelectedValue
 
-            ' MsgBox(Me.grid_Busqueda.Rows(e.RowIndex).Cells(3).Size)
+            Me.lbl_superficie.Text = "54.654 Km2"
 
-            'End If
         End If
     End Sub
 
 
 
+
+    Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
+        Me.grid_Busqueda.Rows.Clear()
+
+        Me.btn_aceptar.Enabled = True
+        Me.cmb_escribano.Enabled = True
+        Me.cmb_estado.Enabled = True
+        Me.cmb_tipoOperacion.Enabled = True
+
+
+        'Me.RemoveControl()
+        Me.txt_factura.Enabled = True
+        Me.txt_fechaFin.Enabled = True
+        Me.txt_fechaOperacion.Enabled = True
+        Me.txt_venta.Enabled = True
+        Me.txt_MontoMensual.Enabled = True
+        Me.btn_confirmar.Enabled = False
+
+
+    End Sub
+
+
+    Private Sub cargarComboEscribanos(ByRef ComboBox As ComboBox)
+        Dim sql As String = "SELECT `Escribanos`.`id` AS `ID`, CONCAT(`Persona`.`Apellido`, ', ', `Persona`.`Nombre`, '(', `Escribanos`.`Matricula` ,')' ) AS `Nombre` FROM `Escribanos` JOIN `Persona` ON `Persona`.`id` = `Escribanos`.`Persona` ;"
+
+        Dim Tabla As DataTable = Me.Conexion.Consulta(sql)
+
+        ComboBox.DataSource = Tabla
+        ComboBox.DisplayMember = "Nombre"
+        ComboBox.ValueMember = "ID"
+
+    End Sub
+
+
+
+    Public Sub RemoveControl()
+        ' NOTE: The code below uses the instance of 
+        ' the button (NewPanelButton) from the previous example.
+        If Me.Controls.Contains(grid_Busqueda) Then
+            RemoveHandler grid_Busqueda.CellClick, AddressOf _
+            EventoSeleccionarPropiedad
+            Me.Controls.Remove(grid_Busqueda)
+            grid_Busqueda.Dispose()
+        End If
+    End Sub
+
+    Public Sub RemoveControl2()
+        ' NOTE: The code below uses the instance of 
+        ' the button (NewPanelButton) from the previous example.
+        If Me.Controls.Contains(Me.GroupBox1) Then
+            RemoveHandler grid_Busqueda.CellClick, AddressOf _
+            EventoSeleccionarPropiedad
+            Me.Controls.Remove(grid_Busqueda)
+            grid_Busqueda.Dispose()
+        End If
+    End Sub
+
+
+
+
+    Private Sub btn_NuevaBusqueda_Click(sender As Object, e As EventArgs) Handles btn_NuevaBusqueda.Click
+        MsgBox("Sin Implementar..")
+    End Sub
 End Class

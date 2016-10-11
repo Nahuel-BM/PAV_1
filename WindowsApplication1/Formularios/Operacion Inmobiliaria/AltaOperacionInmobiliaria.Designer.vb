@@ -26,14 +26,14 @@ Partial Class AltaOperacionInmobiliaria
         Me.cmb_tipoPropiedad = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_buscar = New System.Windows.Forms.Button()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_designacion = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.MaskedTextBox6 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox5 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_venta = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_factura = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_MontoMensual = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_fechaFin = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_fechaOperacion = New System.Windows.Forms.MaskedTextBox()
         Me.cmb_escribano = New System.Windows.Forms.ComboBox()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -46,6 +46,8 @@ Partial Class AltaOperacionInmobiliaria
         Me.cmb_tipoOperacion = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoOp = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btn_NuevaBusqueda = New System.Windows.Forms.Button()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.lbl_superficie = New System.Windows.Forms.Label()
         Me.lbl_tipo_propiedad = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -55,8 +57,6 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.grid_Busqueda = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.idPropiedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idInmueble = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.textDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,7 +71,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox1.Controls.Add(Me.cmb_tipoPropiedad)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btn_buscar)
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox1.Controls.Add(Me.txt_designacion)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -107,12 +107,12 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
-        'MaskedTextBox1
+        'txt_designacion
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(122, 19)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(123, 20)
-        Me.MaskedTextBox1.TabIndex = 0
+        Me.txt_designacion.Location = New System.Drawing.Point(122, 19)
+        Me.txt_designacion.Name = "txt_designacion"
+        Me.txt_designacion.Size = New System.Drawing.Size(123, 20)
+        Me.txt_designacion.TabIndex = 0
         '
         'Label1
         '
@@ -125,11 +125,11 @@ Partial Class AltaOperacionInmobiliaria
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox6)
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox5)
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox4)
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox3)
-        Me.GroupBox2.Controls.Add(Me.MaskedTextBox2)
+        Me.GroupBox2.Controls.Add(Me.txt_venta)
+        Me.GroupBox2.Controls.Add(Me.txt_factura)
+        Me.GroupBox2.Controls.Add(Me.txt_MontoMensual)
+        Me.GroupBox2.Controls.Add(Me.txt_fechaFin)
+        Me.GroupBox2.Controls.Add(Me.txt_fechaOperacion)
         Me.GroupBox2.Controls.Add(Me.cmb_escribano)
         Me.GroupBox2.Controls.Add(Me.cmb_estado)
         Me.GroupBox2.Controls.Add(Me.Label11)
@@ -148,60 +148,60 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
         '
-        'MaskedTextBox6
+        'txt_venta
         '
-        Me.MaskedTextBox6.Enabled = False
-        Me.MaskedTextBox6.Location = New System.Drawing.Point(394, 97)
-        Me.MaskedTextBox6.Mask = "99999"
-        Me.MaskedTextBox6.Name = "MaskedTextBox6"
-        Me.MaskedTextBox6.Size = New System.Drawing.Size(144, 20)
-        Me.MaskedTextBox6.TabIndex = 10
-        Me.MaskedTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox6.ValidatingType = GetType(Integer)
+        Me.txt_venta.Enabled = False
+        Me.txt_venta.Location = New System.Drawing.Point(394, 97)
+        Me.txt_venta.Mask = "99999"
+        Me.txt_venta.Name = "txt_venta"
+        Me.txt_venta.Size = New System.Drawing.Size(144, 20)
+        Me.txt_venta.TabIndex = 10
+        Me.txt_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_venta.ValidatingType = GetType(Integer)
         '
-        'MaskedTextBox5
+        'txt_factura
         '
-        Me.MaskedTextBox5.Enabled = False
-        Me.MaskedTextBox5.Location = New System.Drawing.Point(394, 71)
-        Me.MaskedTextBox5.Mask = "99999"
-        Me.MaskedTextBox5.Name = "MaskedTextBox5"
-        Me.MaskedTextBox5.Size = New System.Drawing.Size(144, 20)
-        Me.MaskedTextBox5.TabIndex = 8
-        Me.MaskedTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox5.ValidatingType = GetType(Integer)
+        Me.txt_factura.Enabled = False
+        Me.txt_factura.Location = New System.Drawing.Point(394, 71)
+        Me.txt_factura.Mask = "99999"
+        Me.txt_factura.Name = "txt_factura"
+        Me.txt_factura.Size = New System.Drawing.Size(144, 20)
+        Me.txt_factura.TabIndex = 8
+        Me.txt_factura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_factura.ValidatingType = GetType(Integer)
         '
-        'MaskedTextBox4
+        'txt_MontoMensual
         '
-        Me.MaskedTextBox4.Enabled = False
-        Me.MaskedTextBox4.Location = New System.Drawing.Point(135, 97)
-        Me.MaskedTextBox4.Mask = "99999"
-        Me.MaskedTextBox4.Name = "MaskedTextBox4"
-        Me.MaskedTextBox4.Size = New System.Drawing.Size(144, 20)
-        Me.MaskedTextBox4.TabIndex = 11
-        Me.MaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox4.ValidatingType = GetType(Integer)
+        Me.txt_MontoMensual.Enabled = False
+        Me.txt_MontoMensual.Location = New System.Drawing.Point(135, 97)
+        Me.txt_MontoMensual.Mask = "99999"
+        Me.txt_MontoMensual.Name = "txt_MontoMensual"
+        Me.txt_MontoMensual.Size = New System.Drawing.Size(144, 20)
+        Me.txt_MontoMensual.TabIndex = 11
+        Me.txt_MontoMensual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_MontoMensual.ValidatingType = GetType(Integer)
         '
-        'MaskedTextBox3
+        'txt_fechaFin
         '
-        Me.MaskedTextBox3.Enabled = False
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(135, 71)
-        Me.MaskedTextBox3.Mask = "00/00/0000"
-        Me.MaskedTextBox3.Name = "MaskedTextBox3"
-        Me.MaskedTextBox3.Size = New System.Drawing.Size(144, 20)
-        Me.MaskedTextBox3.TabIndex = 9
-        Me.MaskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox3.ValidatingType = GetType(Date)
+        Me.txt_fechaFin.Enabled = False
+        Me.txt_fechaFin.Location = New System.Drawing.Point(135, 71)
+        Me.txt_fechaFin.Mask = "00/00/0000"
+        Me.txt_fechaFin.Name = "txt_fechaFin"
+        Me.txt_fechaFin.Size = New System.Drawing.Size(144, 20)
+        Me.txt_fechaFin.TabIndex = 9
+        Me.txt_fechaFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_fechaFin.ValidatingType = GetType(Date)
         '
-        'MaskedTextBox2
+        'txt_fechaOperacion
         '
-        Me.MaskedTextBox2.Enabled = False
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(135, 45)
-        Me.MaskedTextBox2.Mask = "00/00/0000"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(144, 20)
-        Me.MaskedTextBox2.TabIndex = 7
-        Me.MaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox2.ValidatingType = GetType(Date)
+        Me.txt_fechaOperacion.Enabled = False
+        Me.txt_fechaOperacion.Location = New System.Drawing.Point(135, 45)
+        Me.txt_fechaOperacion.Mask = "00/00/0000"
+        Me.txt_fechaOperacion.Name = "txt_fechaOperacion"
+        Me.txt_fechaOperacion.Size = New System.Drawing.Size(144, 20)
+        Me.txt_fechaOperacion.TabIndex = 7
+        Me.txt_fechaOperacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_fechaOperacion.ValidatingType = GetType(Date)
         '
         'cmb_escribano
         '
@@ -307,8 +307,8 @@ Partial Class AltaOperacionInmobiliaria
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button2)
-        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.Controls.Add(Me.btn_NuevaBusqueda)
+        Me.GroupBox3.Controls.Add(Me.btn_confirmar)
         Me.GroupBox3.Controls.Add(Me.lbl_superficie)
         Me.GroupBox3.Controls.Add(Me.lbl_tipo_propiedad)
         Me.GroupBox3.Controls.Add(Me.Label7)
@@ -321,6 +321,24 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos Propiedad Seleccionada"
+        '
+        'btn_NuevaBusqueda
+        '
+        Me.btn_NuevaBusqueda.Location = New System.Drawing.Point(6, 71)
+        Me.btn_NuevaBusqueda.Name = "btn_NuevaBusqueda"
+        Me.btn_NuevaBusqueda.Size = New System.Drawing.Size(113, 23)
+        Me.btn_NuevaBusqueda.TabIndex = 8
+        Me.btn_NuevaBusqueda.Text = "Nueva Busqueda"
+        Me.btn_NuevaBusqueda.UseVisualStyleBackColor = True
+        '
+        'btn_confirmar
+        '
+        Me.btn_confirmar.Location = New System.Drawing.Point(468, 71)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_confirmar.TabIndex = 7
+        Me.btn_confirmar.Text = "Confirmar"
+        Me.btn_confirmar.UseVisualStyleBackColor = True
         '
         'lbl_superficie
         '
@@ -335,13 +353,12 @@ Partial Class AltaOperacionInmobiliaria
         'lbl_tipo_propiedad
         '
         Me.lbl_tipo_propiedad.AutoSize = True
-        Me.lbl_tipo_propiedad.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lbl_tipo_propiedad.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_tipo_propiedad.Location = New System.Drawing.Point(446, 29)
         Me.lbl_tipo_propiedad.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_tipo_propiedad.Name = "lbl_tipo_propiedad"
-        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(97, 13)
+        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(50, 13)
         Me.lbl_tipo_propiedad.TabIndex = 5
-        Me.lbl_tipo_propiedad.Text = "DEPARTAMENTO"
         '
         'Label7
         '
@@ -355,13 +372,12 @@ Partial Class AltaOperacionInmobiliaria
         'lbl_domicilio
         '
         Me.lbl_domicilio.AutoSize = True
-        Me.lbl_domicilio.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lbl_domicilio.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_domicilio.Location = New System.Drawing.Point(69, 29)
         Me.lbl_domicilio.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_domicilio.Name = "lbl_domicilio"
         Me.lbl_domicilio.Size = New System.Drawing.Size(50, 13)
         Me.lbl_domicilio.TabIndex = 3
-        Me.lbl_domicilio.Text = "hola"
         '
         'Label5
         '
@@ -411,24 +427,6 @@ Partial Class AltaOperacionInmobiliaria
         Me.grid_Busqueda.ReadOnly = True
         Me.grid_Busqueda.Size = New System.Drawing.Size(550, 116)
         Me.grid_Busqueda.TabIndex = 14
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(468, 71)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Confirmar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(6, 71)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "Rebuscar"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'idPropiedad
         '
@@ -480,7 +478,7 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents cmb_tipoPropiedad As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btn_buscar As System.Windows.Forms.Button
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_designacion As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents cmb_tipoOperacion As System.Windows.Forms.ComboBox
@@ -501,16 +499,16 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmb_estado As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents MaskedTextBox3 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_fechaFin As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_fechaOperacion As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmb_escribano As System.Windows.Forms.ComboBox
-    Friend WithEvents MaskedTextBox6 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox5 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox4 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_venta As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_factura As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_MontoMensual As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_superficie As System.Windows.Forms.Label
     Friend WithEvents grid_Busqueda As System.Windows.Forms.DataGridView
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btn_NuevaBusqueda As System.Windows.Forms.Button
+    Friend WithEvents btn_confirmar As System.Windows.Forms.Button
     Friend WithEvents idPropiedad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idInmueble As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents textDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
