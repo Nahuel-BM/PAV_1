@@ -25,10 +25,15 @@ Partial Class AltaPersona
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_documento = New System.Windows.Forms.MaskedTextBox()
         Me.cmb_tipoDocumento = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_calle = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmb_localidad = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -37,11 +42,6 @@ Partial Class AltaPersona
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.txt_documento = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_calle = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -80,6 +80,33 @@ Partial Class AltaPersona
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Personales"
+        '
+        'txt_apellido
+        '
+        Me.txt_apellido.Location = New System.Drawing.Point(360, 19)
+        Me.txt_apellido.Mask = "????????????????????????????????"
+        Me.txt_apellido.Name = "txt_apellido"
+        Me.txt_apellido.Size = New System.Drawing.Size(170, 20)
+        Me.txt_apellido.TabIndex = 1
+        Me.txt_apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_nombre
+        '
+        Me.txt_nombre.Location = New System.Drawing.Point(79, 19)
+        Me.txt_nombre.Mask = "???????????????????????????????"
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(170, 20)
+        Me.txt_nombre.TabIndex = 0
+        Me.txt_nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_documento
+        '
+        Me.txt_documento.Location = New System.Drawing.Point(79, 45)
+        Me.txt_documento.Mask = "00000000"
+        Me.txt_documento.Name = "txt_documento"
+        Me.txt_documento.Size = New System.Drawing.Size(170, 20)
+        Me.txt_documento.TabIndex = 2
+        Me.txt_documento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cmb_tipoDocumento
         '
@@ -124,6 +151,25 @@ Partial Class AltaPersona
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Domicilio"
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Location = New System.Drawing.Point(79, 46)
+        Me.txt_calle.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
+        Me.txt_calle.TabIndex = 6
+        Me.txt_calle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numero
+        '
+        Me.txt_numero.Location = New System.Drawing.Point(360, 46)
+        Me.txt_numero.Mask = "99999"
+        Me.txt_numero.Name = "txt_numero"
+        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
+        Me.txt_numero.TabIndex = 7
+        Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_numero.ValidatingType = GetType(Integer)
         '
         'Label7
         '
@@ -196,52 +242,6 @@ Partial Class AltaPersona
         Me.btn_cancelar.TabIndex = 9
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
-        '
-        'txt_documento
-        '
-        Me.txt_documento.Location = New System.Drawing.Point(79, 45)
-        Me.txt_documento.Mask = "0000000099"
-        Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(170, 20)
-        Me.txt_documento.TabIndex = 2
-        Me.txt_documento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(79, 19)
-        Me.txt_nombre.Mask = "???????????????????????????????"
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(170, 20)
-        Me.txt_nombre.TabIndex = 0
-        Me.txt_nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_apellido
-        '
-        Me.txt_apellido.Location = New System.Drawing.Point(360, 19)
-        Me.txt_apellido.Mask = "????????????????????????????????"
-        Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(170, 20)
-        Me.txt_apellido.TabIndex = 1
-        Me.txt_apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_numero
-        '
-        Me.txt_numero.Location = New System.Drawing.Point(360, 46)
-        Me.txt_numero.Mask = "99999"
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
-        Me.txt_numero.TabIndex = 7
-        Me.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_numero.ValidatingType = GetType(Integer)
-        '
-        'txt_calle
-        '
-        Me.txt_calle.Location = New System.Drawing.Point(79, 46)
-        Me.txt_calle.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
-        Me.txt_calle.TabIndex = 6
-        Me.txt_calle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'AltaPersona
         '

@@ -1,11 +1,11 @@
 ﻿Module Constantes
 
     
-    'Public ReadOnly HOST As String = "52.37.245.6"
-    Public ReadOnly HOST As String = "localhost"
+    Public ReadOnly HOST As String = "52.37.245.6"
+    'Public ReadOnly HOST As String = "localhost"
     Public ReadOnly PORT As Integer = 3306
-    Public ReadOnly USER As String = "root"
-    Public ReadOnly PASS As String = ""
+    Public ReadOnly USER As String = "PAV_1"
+    Public ReadOnly PASS As String = "pass"
     Public ReadOnly DB_NAME As String = "PAV_1"
 
     Public ReadOnly ConnectionString As String = "server=" & HOST & ";" & "user id=" & USER & ";" & "password=" & PASS & ";" & "port=" & PORT & ";" & "database=" & DB_NAME & ";"

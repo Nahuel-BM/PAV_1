@@ -60,10 +60,18 @@ Partial Class AltaOperacionInmobiliaria
         Me.idPropiedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idInmueble = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.textDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.grid_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -141,7 +149,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.Controls.Add(Me.lbl_fechaOp)
         Me.GroupBox2.Controls.Add(Me.cmb_tipoOperacion)
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 299)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 422)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(550, 134)
         Me.GroupBox2.TabIndex = 1
@@ -400,7 +408,7 @@ Partial Class AltaOperacionInmobiliaria
         'btn_aceptar
         '
         Me.btn_aceptar.Enabled = False
-        Me.btn_aceptar.Location = New System.Drawing.Point(430, 464)
+        Me.btn_aceptar.Location = New System.Drawing.Point(430, 587)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(120, 23)
         Me.btn_aceptar.TabIndex = 12
@@ -409,7 +417,7 @@ Partial Class AltaOperacionInmobiliaria
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(21, 464)
+        Me.btn_cancelar.Location = New System.Drawing.Point(21, 587)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 13
@@ -451,11 +459,69 @@ Partial Class AltaOperacionInmobiliaria
         Me.textDomicilio.ReadOnly = True
         Me.textDomicilio.Width = 430
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox4.Controls.Add(Me.Button2)
+        Me.GroupBox4.Controls.Add(Me.Button1)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 299)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(550, 117)
+        Me.GroupBox4.TabIndex = 15
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "GroupBox4"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 21)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(115, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Número de documento"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(-250, -268)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(251, 16)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(122, 18)
+        Me.MaskedTextBox1.Mask = "00000000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(123, 20)
+        Me.MaskedTextBox1.TabIndex = 3
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 45)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(529, 66)
+        Me.DataGridView1.TabIndex = 4
+        '
         'AltaOperacionInmobiliaria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(575, 499)
+        Me.ClientSize = New System.Drawing.Size(575, 615)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.grid_Busqueda)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
@@ -471,6 +537,9 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.grid_Busqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -512,4 +581,10 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents idPropiedad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idInmueble As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents textDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class

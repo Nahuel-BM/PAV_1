@@ -67,4 +67,21 @@
     Private Sub txt_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_nombre.TextChanged
 
     End Sub
+
+
+
+    Private Sub cambiarProvinciaSeleccionada(ByVal sender As Object, ByVal e As EventArgs) Handles cmb_provincia.SelectionChangeCommitted
+
+        Dim senderComboBox As ComboBox = CType(sender, ComboBox)
+        Dim idProvincia As Integer = senderComboBox.SelectedValue
+        Dim sql2 As String = "WHERE `Provincia` = " + idProvincia.ToString + " ORDER BY `Nombre` ASC;"
+
+        Conexion.cargarComboTipo(Me.cmb_localidad, "Localidad", sql2)
+
+
+
+    End Sub
+
+
+
 End Class

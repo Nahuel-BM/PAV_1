@@ -119,7 +119,7 @@
         Me.cmb_tipoOperacion.Enabled = True
 
 
-        'Me.RemoveControl()
+        Me.RemoveControl()
         Me.txt_factura.Enabled = True
         Me.txt_fechaFin.Enabled = True
         Me.txt_fechaOperacion.Enabled = True
@@ -171,5 +171,31 @@
 
     Private Sub btn_NuevaBusqueda_Click(sender As Object, e As EventArgs) Handles btn_NuevaBusqueda.Click
         MsgBox("Sin Implementar..")
+    End Sub
+
+    Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
+
+
+        Conexion._nombre_tabla = "t_pedidos"
+        Conexion.conexion_con_transaccion()
+
+
+        Dim sqlFActura As String = "INSERT INTO `Factura`(`Persona`, `Monto`, `Moneda`, `Concepto`) VALUES ([value-1],[value-2],'','') ;"
+
+
+
+
+
+        Dim sqlinsert As String = ""
+
+      
+        Conexion.insertar(sqlinsert)
+
+
+
+
+        '''''''''' comit
+
+        Conexion.cerrar_con_transaccion()
     End Sub
 End Class

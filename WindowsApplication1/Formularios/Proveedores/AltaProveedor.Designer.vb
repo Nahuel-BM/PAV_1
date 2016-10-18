@@ -25,9 +25,7 @@ Partial Class AltaProveedor
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmb_localidad = New System.Windows.Forms.ComboBox()
-        Me.txt_calle = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.cmb_provincia = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -36,17 +34,19 @@ Partial Class AltaProveedor
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_numero = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_calle = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txt_calle)
+        Me.GroupBox2.Controls.Add(Me.txt_numero)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.cmb_localidad)
-        Me.GroupBox2.Controls.Add(Me.txt_calle)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.txt_numero)
         Me.GroupBox2.Controls.Add(Me.cmb_provincia)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -75,13 +75,6 @@ Partial Class AltaProveedor
         Me.cmb_localidad.Size = New System.Drawing.Size(170, 21)
         Me.cmb_localidad.TabIndex = 2
         '
-        'txt_calle
-        '
-        Me.txt_calle.Location = New System.Drawing.Point(65, 46)
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
-        Me.txt_calle.TabIndex = 3
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -90,13 +83,6 @@ Partial Class AltaProveedor
         Me.Label6.Size = New System.Drawing.Size(53, 13)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Localidad"
-        '
-        'txt_numero
-        '
-        Me.txt_numero.Location = New System.Drawing.Point(346, 46)
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
-        Me.txt_numero.TabIndex = 4
         '
         'cmb_provincia
         '
@@ -170,6 +156,22 @@ Partial Class AltaProveedor
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Proveedor"
         '
+        'txt_numero
+        '
+        Me.txt_numero.Location = New System.Drawing.Point(346, 46)
+        Me.txt_numero.Mask = "9999999"
+        Me.txt_numero.Name = "txt_numero"
+        Me.txt_numero.Size = New System.Drawing.Size(170, 20)
+        Me.txt_numero.TabIndex = 4
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Location = New System.Drawing.Point(65, 46)
+        Me.txt_calle.Mask = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.Size = New System.Drawing.Size(170, 20)
+        Me.txt_calle.TabIndex = 3
+        '
         'AltaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -191,9 +193,7 @@ Partial Class AltaProveedor
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cmb_localidad As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_calle As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txt_numero As System.Windows.Forms.TextBox
     Friend WithEvents cmb_provincia As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -202,4 +202,6 @@ Partial Class AltaProveedor
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txt_calle As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_numero As System.Windows.Forms.MaskedTextBox
 End Class
