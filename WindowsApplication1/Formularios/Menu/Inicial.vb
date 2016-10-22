@@ -86,4 +86,8 @@
         Dim frm As New BuscarEscribano(False)
         Funciones.AbrirFormulario("BuscarEscribano", frm)
     End Sub
+
+    Private Sub PersonasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonasToolStripMenuItem.Click
+
+    End Sub
 End Class

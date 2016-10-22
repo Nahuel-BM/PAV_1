@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
+
+
 Public Class Conexion
 
     '1._ Cadena de conexion.

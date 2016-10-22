@@ -14,16 +14,17 @@
         Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
         Me.Carga.actualizarLoading("Combo Tipo Documento.")
 
-        Conexion.cargarComboTipo(Me.cmb_estado, "Tipo_Propiedad")
-        Me.Carga.actualizarLoading("Combo Estado Propiedad.")
+        'Conexion.cargarComboTipo(Me.cmb_estado, "Tipo_Propiedad")
+        'Me.Carga.actualizarLoading("Combo Estado Propiedad.")
 
-        Me.cargarComboEscribanos(Me.cmb_escribano)
-        Me.Carga.actualizarLoading("Combo Escribanos.")
+        'Me.cargarComboEscribanos(Me.cmb_escribano)
+        'Me.Carga.actualizarLoading("Combo Escribanos.")
 
-        Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
-        Me.Carga.actualizarLoading("Combo Tipo Operacion.")
+        'Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
+        'Me.Carga.actualizarLoading("Combo Tipo Operacion.")
 
         Me.Funciones.AddButtonColumn(Me.grid_Busqueda, "Seleccionar", "Accion", 4)
+        Me.Funciones.AddButtonColumn(Me.DataGridView1, "Seleccionar", "Accion", 7)
 
     End Sub
 
@@ -64,7 +65,7 @@
 
             Try
 
-                 Me.btn_aceptar.Enabled = True
+                Me.btn_siguiente.Enabled = True
 
             Catch ex As Exception
                 MsgBox("Inmueble no encontrado.")
@@ -113,19 +114,19 @@
     Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
         Me.grid_Busqueda.Rows.Clear()
 
-        Me.btn_aceptar.Enabled = True
-        Me.cmb_escribano.Enabled = True
-        Me.cmb_estado.Enabled = True
-        Me.cmb_tipoOperacion.Enabled = True
+        'Me.btn_aceptar.Enabled = True
+        'Me.cmb_escribano.Enabled = True
+        'Me.cmb_estado.Enabled = True
+        'Me.cmb_tipoOperacion.Enabled = True
 
 
-        Me.RemoveControl()
-        Me.txt_factura.Enabled = True
-        Me.txt_fechaFin.Enabled = True
-        Me.txt_fechaOperacion.Enabled = True
-        Me.txt_venta.Enabled = True
-        Me.txt_MontoMensual.Enabled = True
-        Me.btn_confirmar.Enabled = False
+        ''Me.RemoveControl()
+        'Me.txt_factura.Enabled = True
+        'Me.txt_fechaFin.Enabled = True
+        'Me.txt_fechaOperacion.Enabled = True
+        'Me.txt_venta.Enabled = True
+        'Me.txt_MontoMensual.Enabled = True
+        'Me.btn_confirmar.Enabled = False
 
 
     End Sub
@@ -173,29 +174,79 @@
         MsgBox("Sin Implementar..")
     End Sub
 
-    Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
+    
 
 
-        Conexion._nombre_tabla = "t_pedidos"
-        Conexion.conexion_con_transaccion()
+    Private Sub btn_buscar_persona_Click(sender As Object, e As EventArgs) Handles btn_buscar_persona.Click
+        Me.grid_Busqueda.Rows.Clear()
+        '    Me.btn_buscar.Enabled = False
 
 
-        Dim sqlFActura As String = "INSERT INTO `Factura`(`Persona`, `Monto`, `Moneda`, `Concepto`) VALUES ([value-1],[value-2],'','') ;"
+        Dim Documento As String = Funciones.QuitarTodosLosEspacios(Me.txt_docPersona.Text)
 
-
-
-
-
-        Dim sqlinsert As String = ""
-
-      
-        Conexion.insertar(sqlinsert)
+        Dim sqlModificada As String = "SELECT  `Persona`.`id` AS `idPersona`,CONCAT(  `Domicilio`.`Calle` ,  ' ', `Domicilio`.`Numero`, ', ', `Localidad`.`Nombre`, ', ', `Provincia`.`Nombre`) AS  `Domicilio`,`Persona`.`Nombre` AS `nombrePersona`,`Persona`.`Apellido` AS `apellidoPersona`,`Persona`.`Telefono` AS `telefonoPersona`,`Persona`.`Documento` AS `documentoPersona` FROM  `Persona` JOIN  `Domicilio` ON  `Domicilio`.`id` =  `Persona`.`Domicilio` JOIN  `Localidad` ON  `Localidad`.`id` = `Domicilio`.`Localidad` JOIN  `Provincia` ON  `Provincia`.`id` = `Localidad`.`Provincia` WHERE  `Persona`.`Documento` LIKE  '%" & Documento & "%'"
+        Dim datos As DataTable = Conexion.Consulta(sqlModificada)
 
 
 
+        ' MsgBox("Encontrados: " & datos.Rows.Count)
 
-        '''''''''' comit
 
-        Conexion.cerrar_con_transaccion()
+        Try
+
+            Dim recorrido As Integer = 0
+            For Each row As DataRow In datos.Rows
+
+                Dim Domicilio As String = row("Domicilio")
+
+                Me.DataGridView1.Rows.Add()
+
+                Me.DataGridView1.Rows(recorrido).Cells("idPersona").Value = row("idPersona")
+                Me.DataGridView1.Rows(recorrido).Cells("nombre").Value = row("nombrePersona")
+                Me.DataGridView1.Rows(recorrido).Cells("apellido").Value = row("apellidoPersona")
+                Me.DataGridView1.Rows(recorrido).Cells("documento").Value = row("documentoPersona")
+                Me.DataGridView1.Rows(recorrido).Cells("domicilio").Value = Domicilio
+                Me.DataGridView1.Rows(recorrido).Cells("telefono").Value = row("telefonoPersona")
+
+                recorrido += 1
+            Next
+
+
+            Try
+
+                Me.btn_siguiente.Enabled = True
+
+            Catch ex As Exception
+                MsgBox("Persona no encontrada.")
+            End Try
+
+
+
+
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+    Private Sub EventoSeleccionarPersona(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
+        If e.ColumnIndex = 6 Then
+
+            btn_buscar.Enabled = False
+            Me.txt_docPersona.Enabled = False
+
+            Me.lbl_nombre.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(1).Value
+            Me.lbl_apellido.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            Me.lbl_documento.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(3).Value
+            Me.lbl_domicilio2.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(4).Value
+            Me.lbl_telefono.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(5).Value
+
+        End If
+    End Sub
+
+    Private Sub btn_siguiente_Click(sender As Object, e As EventArgs) Handles btn_siguiente.Click
+        Dim frm As New Datos_Transaccion_AltaOperacion()
+        Funciones.AbrirFormulario("Datos_Transaccion_AltaOperacion", frm)
     End Sub
 End Class

@@ -149,6 +149,12 @@
     <Compile Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Operacion Inmobiliaria\Datos_Transaccion_AltaOperacion.Designer.vb">
+      <DependentUpon>Datos_Transaccion_AltaOperacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Operacion Inmobiliaria\Datos_Transaccion_AltaOperacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Operacion Inmobiliaria\ModificarOperacionInmobiliaria.Designer.vb">
       <DependentUpon>ModificarOperacionInmobiliaria.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Operacion Inmobiliaria\ConsultarOperacionInmobiliaria.resx">
       <DependentUpon>ConsultarOperacionInmobiliaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Operacion Inmobiliaria\Datos_Transaccion_AltaOperacion.resx">
+      <DependentUpon>Datos_Transaccion_AltaOperacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Pantalla de Carga\Loading.resx">
       <DependentUpon>Loading.vb</DependentUpon>
