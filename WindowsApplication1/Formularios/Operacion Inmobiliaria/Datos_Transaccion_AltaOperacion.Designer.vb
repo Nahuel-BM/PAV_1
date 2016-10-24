@@ -41,21 +41,42 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_fechaOp = New System.Windows.Forms.Label()
         Me.cmb_tipoOperacion = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoOp = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbl_telefono = New System.Windows.Forms.Label()
+        Me.lbl_documento = New System.Windows.Forms.Label()
+        Me.lbl_domicilio2 = New System.Windows.Forms.Label()
+        Me.lbl_apellido = New System.Windows.Forms.Label()
+        Me.lbl_nombre = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lbl_domicilio = New System.Windows.Forms.Label()
+        Me.lbl_tipo_propiedad = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lbl_idpersona = New System.Windows.Forms.Label()
+        Me.lbl_idprop = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_aceptar
         '
-        Me.btn_aceptar.Location = New System.Drawing.Point(510, 404)
+        Me.btn_aceptar.Location = New System.Drawing.Point(435, 312)
         Me.btn_aceptar.Name = "btn_aceptar"
-        Me.btn_aceptar.Size = New System.Drawing.Size(99, 23)
+        Me.btn_aceptar.Size = New System.Drawing.Size(152, 23)
         Me.btn_aceptar.TabIndex = 0
-        Me.btn_aceptar.Text = "Aceptar"
+        Me.btn_aceptar.Text = "Aceptar Operacion"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(12, 404)
+        Me.btn_cancelar.Location = New System.Drawing.Point(14, 312)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(99, 23)
         Me.btn_cancelar.TabIndex = 2
@@ -64,7 +85,9 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lbl_idpersona)
         Me.GroupBox2.Controls.Add(Me.txt_venta)
+        Me.GroupBox2.Controls.Add(Me.lbl_idprop)
         Me.GroupBox2.Controls.Add(Me.txt_factura)
         Me.GroupBox2.Controls.Add(Me.txt_MontoMensual)
         Me.GroupBox2.Controls.Add(Me.txt_fechaFin)
@@ -80,9 +103,9 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox2.Controls.Add(Me.lbl_fechaOp)
         Me.GroupBox2.Controls.Add(Me.cmb_tipoOperacion)
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 228)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 174)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(571, 146)
+        Me.GroupBox2.Size = New System.Drawing.Size(575, 132)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
@@ -244,11 +267,207 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_tipoOp.TabIndex = 0
         Me.lbl_tipoOp.Text = "Tipo de Operación"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lbl_telefono)
+        Me.GroupBox1.Controls.Add(Me.lbl_documento)
+        Me.GroupBox1.Controls.Add(Me.lbl_domicilio2)
+        Me.GroupBox1.Controls.Add(Me.lbl_apellido)
+        Me.GroupBox1.Controls.Add(Me.lbl_nombre)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 79)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(575, 89)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos de Persona"
+        '
+        'lbl_telefono
+        '
+        Me.lbl_telefono.AutoSize = True
+        Me.lbl_telefono.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_telefono.Location = New System.Drawing.Point(367, 48)
+        Me.lbl_telefono.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_telefono.Name = "lbl_telefono"
+        Me.lbl_telefono.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_telefono.TabIndex = 23
+        '
+        'lbl_documento
+        '
+        Me.lbl_documento.AutoSize = True
+        Me.lbl_documento.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_documento.Location = New System.Drawing.Point(380, 16)
+        Me.lbl_documento.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_documento.Name = "lbl_documento"
+        Me.lbl_documento.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_documento.TabIndex = 22
+        '
+        'lbl_domicilio2
+        '
+        Me.lbl_domicilio2.AutoSize = True
+        Me.lbl_domicilio2.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_domicilio2.Location = New System.Drawing.Point(63, 71)
+        Me.lbl_domicilio2.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio2.Name = "lbl_domicilio2"
+        Me.lbl_domicilio2.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio2.TabIndex = 21
+        '
+        'lbl_apellido
+        '
+        Me.lbl_apellido.AutoSize = True
+        Me.lbl_apellido.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_apellido.Location = New System.Drawing.Point(63, 48)
+        Me.lbl_apellido.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_apellido.Name = "lbl_apellido"
+        Me.lbl_apellido.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_apellido.TabIndex = 20
+        '
+        'lbl_nombre
+        '
+        Me.lbl_nombre.AutoSize = True
+        Me.lbl_nombre.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_nombre.Location = New System.Drawing.Point(63, 21)
+        Me.lbl_nombre.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_nombre.Name = "lbl_nombre"
+        Me.lbl_nombre.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_nombre.TabIndex = 19
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(57, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
+        Me.Label1.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 71)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Domicilio"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(312, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Telefono"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(312, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Documento"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 48)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 13)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "Apellido"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 21)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(44, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Nombre"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(6, 29)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(55, 13)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "Domicilio: "
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(343, 29)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(97, 13)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "Tipo de Propiedad:"
+        '
+        'lbl_domicilio
+        '
+        Me.lbl_domicilio.AutoSize = True
+        Me.lbl_domicilio.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_domicilio.Location = New System.Drawing.Point(69, 29)
+        Me.lbl_domicilio.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio.Name = "lbl_domicilio"
+        Me.lbl_domicilio.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_domicilio.TabIndex = 3
+        '
+        'lbl_tipo_propiedad
+        '
+        Me.lbl_tipo_propiedad.AutoSize = True
+        Me.lbl_tipo_propiedad.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_tipo_propiedad.Location = New System.Drawing.Point(446, 29)
+        Me.lbl_tipo_propiedad.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_tipo_propiedad.Name = "lbl_tipo_propiedad"
+        Me.lbl_tipo_propiedad.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_tipo_propiedad.TabIndex = 5
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.lbl_tipo_propiedad)
+        Me.GroupBox3.Controls.Add(Me.lbl_domicilio)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 24)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(575, 49)
+        Me.GroupBox3.TabIndex = 17
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Datos Propiedad Seleccionada"
+        '
+        'lbl_idpersona
+        '
+        Me.lbl_idpersona.AutoSize = True
+        Me.lbl_idpersona.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_idpersona.Location = New System.Drawing.Point(623, 71)
+        Me.lbl_idpersona.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_idpersona.Name = "lbl_idpersona"
+        Me.lbl_idpersona.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_idpersona.TabIndex = 23
+        '
+        'lbl_idprop
+        '
+        Me.lbl_idprop.AutoSize = True
+        Me.lbl_idprop.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_idprop.Location = New System.Drawing.Point(605, 18)
+        Me.lbl_idprop.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_idprop.Name = "lbl_idprop"
+        Me.lbl_idprop.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_idprop.TabIndex = 22
+        '
         'Datos_Transaccion_AltaOperacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 440)
+        Me.ClientSize = New System.Drawing.Size(600, 343)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
@@ -256,6 +475,10 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.Text = "Datos_Transaccion_AltaOperacion"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -278,4 +501,23 @@ Partial Class Datos_Transaccion_AltaOperacion
     Friend WithEvents lbl_fechaOp As System.Windows.Forms.Label
     Friend WithEvents cmb_tipoOperacion As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_tipoOp As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbl_telefono As System.Windows.Forms.Label
+    Friend WithEvents lbl_documento As System.Windows.Forms.Label
+    Friend WithEvents lbl_domicilio2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_apellido As System.Windows.Forms.Label
+    Friend WithEvents lbl_nombre As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents lbl_domicilio As System.Windows.Forms.Label
+    Friend WithEvents lbl_tipo_propiedad As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbl_idpersona As System.Windows.Forms.Label
+    Friend WithEvents lbl_idprop As System.Windows.Forms.Label
 End Class

@@ -30,7 +30,6 @@ Partial Class AltaOperacionInmobiliaria
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_NuevaBusqueda = New System.Windows.Forms.Button()
-        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.lbl_superficie = New System.Windows.Forms.Label()
         Me.lbl_tipo_propiedad = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -135,7 +134,6 @@ Partial Class AltaOperacionInmobiliaria
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.btn_NuevaBusqueda)
-        Me.GroupBox3.Controls.Add(Me.btn_confirmar)
         Me.GroupBox3.Controls.Add(Me.lbl_superficie)
         Me.GroupBox3.Controls.Add(Me.lbl_tipo_propiedad)
         Me.GroupBox3.Controls.Add(Me.Label7)
@@ -151,21 +149,12 @@ Partial Class AltaOperacionInmobiliaria
         '
         'btn_NuevaBusqueda
         '
-        Me.btn_NuevaBusqueda.Location = New System.Drawing.Point(6, 71)
+        Me.btn_NuevaBusqueda.Location = New System.Drawing.Point(430, 71)
         Me.btn_NuevaBusqueda.Name = "btn_NuevaBusqueda"
         Me.btn_NuevaBusqueda.Size = New System.Drawing.Size(113, 23)
         Me.btn_NuevaBusqueda.TabIndex = 8
         Me.btn_NuevaBusqueda.Text = "Nueva Busqueda"
         Me.btn_NuevaBusqueda.UseVisualStyleBackColor = True
-        '
-        'btn_confirmar
-        '
-        Me.btn_confirmar.Location = New System.Drawing.Point(468, 71)
-        Me.btn_confirmar.Name = "btn_confirmar"
-        Me.btn_confirmar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_confirmar.TabIndex = 7
-        Me.btn_confirmar.Text = "Confirmar"
-        Me.btn_confirmar.UseVisualStyleBackColor = True
         '
         'lbl_superficie
         '
@@ -227,7 +216,7 @@ Partial Class AltaOperacionInmobiliaria
         'btn_siguiente
         '
         Me.btn_siguiente.Enabled = False
-        Me.btn_siguiente.Location = New System.Drawing.Point(430, 587)
+        Me.btn_siguiente.Location = New System.Drawing.Point(435, 541)
         Me.btn_siguiente.Name = "btn_siguiente"
         Me.btn_siguiente.Size = New System.Drawing.Size(120, 23)
         Me.btn_siguiente.TabIndex = 12
@@ -236,7 +225,7 @@ Partial Class AltaOperacionInmobiliaria
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(21, 587)
+        Me.btn_cancelar.Location = New System.Drawing.Point(21, 541)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 13
@@ -391,7 +380,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
         Me.GroupBox2.Location = New System.Drawing.Point(8, 442)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(554, 121)
+        Me.GroupBox2.Size = New System.Drawing.Size(554, 93)
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Persona"
@@ -503,7 +492,7 @@ Partial Class AltaOperacionInmobiliaria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(577, 615)
+        Me.ClientSize = New System.Drawing.Size(577, 569)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.gbox_Persona)
@@ -544,7 +533,6 @@ Partial Class AltaOperacionInmobiliaria
     Friend WithEvents lbl_superficie As System.Windows.Forms.Label
     Friend WithEvents grid_Busqueda As System.Windows.Forms.DataGridView
     Friend WithEvents btn_NuevaBusqueda As System.Windows.Forms.Button
-    Friend WithEvents btn_confirmar As System.Windows.Forms.Button
     Friend WithEvents idPropiedad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idInmueble As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents textDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn

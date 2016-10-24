@@ -14,15 +14,7 @@
         Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
         Me.Carga.actualizarLoading("Combo Tipo Documento.")
 
-        'Conexion.cargarComboTipo(Me.cmb_estado, "Tipo_Propiedad")
-        'Me.Carga.actualizarLoading("Combo Estado Propiedad.")
-
-        'Me.cargarComboEscribanos(Me.cmb_escribano)
-        'Me.Carga.actualizarLoading("Combo Escribanos.")
-
-        'Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
-        'Me.Carga.actualizarLoading("Combo Tipo Operacion.")
-
+        
         Me.Funciones.AddButtonColumn(Me.grid_Busqueda, "Seleccionar", "Accion", 4)
         Me.Funciones.AddButtonColumn(Me.DataGridView1, "Seleccionar", "Accion", 7)
 
@@ -99,49 +91,16 @@
             btn_buscar.Enabled = False
             Me.cmb_tipoPropiedad.Enabled = False
             Me.txt_designacion.Enabled = False
-
+            Datos_Transaccion_AltaOperacion.lbl_idprop.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(0).Value
             Me.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
             Me.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.SelectedValue
-
+            Datos_Transaccion_AltaOperacion.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
+            Datos_Transaccion_AltaOperacion.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.SelectedValue
             Me.lbl_superficie.Text = "54.654 Km2"
 
         End If
     End Sub
 
-
-
-
-    Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
-        Me.grid_Busqueda.Rows.Clear()
-
-        'Me.btn_aceptar.Enabled = True
-        'Me.cmb_escribano.Enabled = True
-        'Me.cmb_estado.Enabled = True
-        'Me.cmb_tipoOperacion.Enabled = True
-
-
-        ''Me.RemoveControl()
-        'Me.txt_factura.Enabled = True
-        'Me.txt_fechaFin.Enabled = True
-        'Me.txt_fechaOperacion.Enabled = True
-        'Me.txt_venta.Enabled = True
-        'Me.txt_MontoMensual.Enabled = True
-        'Me.btn_confirmar.Enabled = False
-
-
-    End Sub
-
-
-    Private Sub cargarComboEscribanos(ByRef ComboBox As ComboBox)
-        Dim sql As String = "SELECT `Escribanos`.`id` AS `ID`, CONCAT(`Persona`.`Apellido`, ', ', `Persona`.`Nombre`, '(', `Escribanos`.`Matricula` ,')' ) AS `Nombre` FROM `Escribanos` JOIN `Persona` ON `Persona`.`id` = `Escribanos`.`Persona` ;"
-
-        Dim Tabla As DataTable = Me.Conexion.Consulta(sql)
-
-        ComboBox.DataSource = Tabla
-        ComboBox.DisplayMember = "Nombre"
-        ComboBox.ValueMember = "ID"
-
-    End Sub
 
 
 
@@ -178,7 +137,7 @@
 
 
     Private Sub btn_buscar_persona_Click(sender As Object, e As EventArgs) Handles btn_buscar_persona.Click
-        Me.grid_Busqueda.Rows.Clear()
+        Me.DataGridView1.Rows.Clear()
         '    Me.btn_buscar.Enabled = False
 
 
@@ -235,18 +194,25 @@
 
             btn_buscar.Enabled = False
             Me.txt_docPersona.Enabled = False
-
+            Datos_Transaccion_AltaOperacion.lbl_idpersona.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(0).Value
             Me.lbl_nombre.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(1).Value
             Me.lbl_apellido.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(2).Value
             Me.lbl_documento.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(3).Value
             Me.lbl_domicilio2.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(4).Value
             Me.lbl_telefono.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(5).Value
-
+            Datos_Transaccion_AltaOperacion.lbl_nombre.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(1).Value
+            Datos_Transaccion_AltaOperacion.lbl_apellido.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            Datos_Transaccion_AltaOperacion.lbl_documento.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(3).Value
+            Datos_Transaccion_AltaOperacion.lbl_domicilio2.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(4).Value
+            Datos_Transaccion_AltaOperacion.lbl_telefono.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(5).Value
         End If
     End Sub
 
     Private Sub btn_siguiente_Click(sender As Object, e As EventArgs) Handles btn_siguiente.Click
-        Dim frm As New Datos_Transaccion_AltaOperacion()
-        Funciones.AbrirFormulario("Datos_Transaccion_AltaOperacion", frm)
+
+        Datos_Transaccion_AltaOperacion.Show()
+
     End Sub
+
+   
 End Class
