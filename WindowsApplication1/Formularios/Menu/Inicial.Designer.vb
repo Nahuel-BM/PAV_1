@@ -31,6 +31,8 @@ Partial Class Inicial
         Me.ListarPropiedadesPorLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPropiedadesPorTipoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarProvedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarDueñosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarInteresadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,7 +55,6 @@ Partial Class Inicial
         Me.NuevoEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BorrarEscribanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarDueñosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -93,7 +94,7 @@ Partial Class Inicial
         '
         'ListadosToolStripMenuItem
         '
-        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarPropiedadesPorLocalidadToolStripMenuItem, Me.ListarPropiedadesPorTipoToolStripMenuItem, Me.ListarProvedoresToolStripMenuItem, Me.ListarDueñosToolStripMenuItem})
+        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarPropiedadesPorLocalidadToolStripMenuItem, Me.ListarPropiedadesPorTipoToolStripMenuItem, Me.ListarProvedoresToolStripMenuItem, Me.ListarDueñosToolStripMenuItem, Me.ListarInteresadosToolStripMenuItem})
         Me.ListadosToolStripMenuItem.Name = "ListadosToolStripMenuItem"
         Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
@@ -101,20 +102,32 @@ Partial Class Inicial
         'ListarPropiedadesPorLocalidadToolStripMenuItem
         '
         Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Name = "ListarPropiedadesPorLocalidadToolStripMenuItem"
-        Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Size = New System.Drawing.Size(245, 22)
-        Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Text = "Listar Propiedades por Localidad"
+        Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ListarPropiedadesPorLocalidadToolStripMenuItem.Text = "Listar Propiedades por Provincia"
         '
         'ListarPropiedadesPorTipoToolStripMenuItem
         '
         Me.ListarPropiedadesPorTipoToolStripMenuItem.Name = "ListarPropiedadesPorTipoToolStripMenuItem"
-        Me.ListarPropiedadesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(245, 22)
+        Me.ListarPropiedadesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ListarPropiedadesPorTipoToolStripMenuItem.Text = "Listar Propiedades por Tipo"
         '
         'ListarProvedoresToolStripMenuItem
         '
         Me.ListarProvedoresToolStripMenuItem.Name = "ListarProvedoresToolStripMenuItem"
-        Me.ListarProvedoresToolStripMenuItem.Size = New System.Drawing.Size(245, 22)
+        Me.ListarProvedoresToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ListarProvedoresToolStripMenuItem.Text = "Listar Provedores"
+        '
+        'ListarDueñosToolStripMenuItem
+        '
+        Me.ListarDueñosToolStripMenuItem.Name = "ListarDueñosToolStripMenuItem"
+        Me.ListarDueñosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ListarDueñosToolStripMenuItem.Text = "Listar Dueños"
+        '
+        'ListarInteresadosToolStripMenuItem
+        '
+        Me.ListarInteresadosToolStripMenuItem.Name = "ListarInteresadosToolStripMenuItem"
+        Me.ListarInteresadosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ListarInteresadosToolStripMenuItem.Text = "Listar Operaciones Inmobiliarias"
         '
         'EstadisticasToolStripMenuItem
         '
@@ -253,12 +266,6 @@ Partial Class Inicial
         Me.BorrarEscribanoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.BorrarEscribanoToolStripMenuItem.Text = "Borrar Escribano"
         '
-        'ListarDueñosToolStripMenuItem
-        '
-        Me.ListarDueñosToolStripMenuItem.Name = "ListarDueñosToolStripMenuItem"
-        Me.ListarDueñosToolStripMenuItem.Size = New System.Drawing.Size(245, 22)
-        Me.ListarDueñosToolStripMenuItem.Text = "Listar Dueños"
-        '
         'Inicial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -310,6 +317,7 @@ Partial Class Inicial
     Friend WithEvents BorrarEscribanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarProvedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarDueñosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListarInteresadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     '=======
     '>>>>>>> master
 End Class

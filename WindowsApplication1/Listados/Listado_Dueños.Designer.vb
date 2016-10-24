@@ -24,10 +24,14 @@ Partial Class Listado_Dueños
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DueniosDataTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DueniosDataTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DueniosDataTableBindingSource
+        '
+        Me.DueniosDataTableBindingSource.DataSource = GetType(Grupo_Edisur.DataSet1.DueniosDataTable)
         '
         'ReportViewer1
         '
@@ -40,10 +44,6 @@ Partial Class Listado_Dueños
         Me.ReportViewer1.Size = New System.Drawing.Size(648, 448)
         Me.ReportViewer1.TabIndex = 0
         '
-        'DueniosDataTableBindingSource
-        '
-        Me.DueniosDataTableBindingSource.DataSource = GetType(Grupo_Edisur.DataSet1.DueniosDataTable)
-        '
         'Listado_Dueños
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -51,7 +51,7 @@ Partial Class Listado_Dueños
         Me.ClientSize = New System.Drawing.Size(672, 472)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "Listado_Dueños"
-        Me.Text = "Form2"
+        Me.Text = "Listado Dueños"
         CType(Me.DueniosDataTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

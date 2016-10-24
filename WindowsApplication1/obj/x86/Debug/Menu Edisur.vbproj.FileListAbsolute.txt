@@ -150,3 +150,5 @@ C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\RdlCompile.compiled
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Listado_Proveedores.resources
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Listado_Dueños.resources
+C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbprojResolveAssemblyReference.cache
+C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Listado_OperacionesInmobiliarias.resources

@@ -104,4 +104,9 @@
         Dim frm As New Listado_Dueños()
         Funciones.AbrirFormulario("Listado_Dueños", frm)
     End Sub
+
+    Private Sub ListarInteresadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarInteresadosToolStripMenuItem.Click
+        Dim frm As New Listado_OperacionesInmobiliarias()
+        Funciones.AbrirFormulario("Listado_OperacionesInmobiliarias", frm)
+    End Sub
 End Class

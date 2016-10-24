@@ -229,6 +229,12 @@
     <Compile Include="Listados\Listado_Dueños.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\Listado_OperacionesInmobiliarias.Designer.vb">
+      <DependentUpon>Listado_OperacionesInmobiliarias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Listado_OperacionesInmobiliarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\Listado_Proveedores.Designer.vb">
       <DependentUpon>Listado_Proveedores.vb</DependentUpon>
     </Compile>
@@ -307,10 +313,13 @@
     <EmbeddedResource Include="Listados\Listado_Dueños.resx">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Listado_OperacionesInmobiliarias.resx">
+      <DependentUpon>Listado_OperacionesInmobiliarias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\Listado_Proveedores.resx">
       <DependentUpon>Listado_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Lista_Compradores.rdlc" />
+    <EmbeddedResource Include="Listados\Lista_OperacionesInmobiliarias.rdlc" />
     <EmbeddedResource Include="Listados\Lista_Dueños.rdlc" />
     <EmbeddedResource Include="Listados\Lista_PropiedadxTipo.rdlc" />
     <EmbeddedResource Include="Listados\Lista_Proveedores.rdlc" />
