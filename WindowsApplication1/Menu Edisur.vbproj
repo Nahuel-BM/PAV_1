@@ -314,7 +314,7 @@
     <EmbeddedResource Include="Listados\Lista_Dueños.rdlc" />
     <EmbeddedResource Include="Listados\Lista_PropiedadxTipo.rdlc" />
     <EmbeddedResource Include="Listados\Lista_Proveedores.rdlc" />
-    <EmbeddedResource Include="Listados\Lista_PropiedadxDomicilio.rdlc" />
+    <EmbeddedResource Include="Listados\Lista_PropiedadxProvincia.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

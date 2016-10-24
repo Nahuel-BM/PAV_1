@@ -18,7 +18,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Listado de Propiedades por Domicilio</Value>
+                  <Value>Listado de Propiedades por Provincia</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontSize>20pt</FontSize>
