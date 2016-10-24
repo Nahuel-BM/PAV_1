@@ -60,6 +60,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.lbl_idpersona = New System.Windows.Forms.Label()
         Me.lbl_idprop = New System.Windows.Forms.Label()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -67,7 +68,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'btn_aceptar
         '
-        Me.btn_aceptar.Location = New System.Drawing.Point(435, 312)
+        Me.btn_aceptar.Location = New System.Drawing.Point(435, 340)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(152, 23)
         Me.btn_aceptar.TabIndex = 0
@@ -76,7 +77,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(14, 312)
+        Me.btn_cancelar.Location = New System.Drawing.Point(12, 340)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(99, 23)
         Me.btn_cancelar.TabIndex = 2
@@ -103,9 +104,9 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox2.Controls.Add(Me.lbl_fechaOp)
         Me.GroupBox2.Controls.Add(Me.cmb_tipoOperacion)
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 174)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 208)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(575, 132)
+        Me.GroupBox2.Size = New System.Drawing.Size(575, 126)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
@@ -461,11 +462,21 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_idprop.Size = New System.Drawing.Size(50, 13)
         Me.lbl_idprop.TabIndex = 22
         '
+        'btn_confirmar
+        '
+        Me.btn_confirmar.Location = New System.Drawing.Point(445, 179)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(142, 23)
+        Me.btn_confirmar.TabIndex = 19
+        Me.btn_confirmar.Text = "Confirmar Datos"
+        Me.btn_confirmar.UseVisualStyleBackColor = True
+        '
         'Datos_Transaccion_AltaOperacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 343)
+        Me.ClientSize = New System.Drawing.Size(600, 371)
+        Me.Controls.Add(Me.btn_confirmar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -520,4 +531,5 @@ Partial Class Datos_Transaccion_AltaOperacion
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents lbl_idpersona As System.Windows.Forms.Label
     Friend WithEvents lbl_idprop As System.Windows.Forms.Label
+    Friend WithEvents btn_confirmar As System.Windows.Forms.Button
 End Class

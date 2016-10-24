@@ -15,14 +15,16 @@
         Conexion.cargarComboTipo(Me.cmb_tipoOperacion, "Tipo_Operacion")
         Me.Carga.actualizarLoading("Combo Tipo Operacion.")
 
-        Me.txt_factura.Enabled = True
-        Me.txt_fechaFin.Enabled = True
-        Me.txt_fechaOperacion.Enabled = True
-        Me.txt_venta.Enabled = True
-        Me.txt_MontoMensual.Enabled = True
-        Me.cmb_escribano.Enabled = True
-        Me.cmb_estado.Enabled = True
-        Me.cmb_tipoOperacion.Enabled = True
+        Me.txt_factura.Enabled = False
+        Me.txt_fechaFin.Enabled = False
+        Me.txt_fechaOperacion.Enabled = False
+        Me.txt_venta.Enabled = False
+        Me.txt_MontoMensual.Enabled = False
+        Me.cmb_escribano.Enabled = False
+        Me.cmb_estado.Enabled = False
+        Me.cmb_tipoOperacion.Enabled = False
+        Me.btn_aceptar.Enabled = False
+        'Falta Comision y Duracion
     End Sub
 
     Private Sub cargarComboEscribanos(ByRef ComboBox As ComboBox)
@@ -89,5 +91,17 @@
         End If
 
 
+    End Sub
+
+    Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
+        Me.txt_factura.Enabled = True
+        Me.txt_fechaFin.Enabled = True
+        Me.txt_fechaOperacion.Enabled = True
+        Me.txt_venta.Enabled = True
+        Me.txt_MontoMensual.Enabled = True
+        Me.cmb_escribano.Enabled = True
+        Me.cmb_estado.Enabled = True
+        Me.cmb_tipoOperacion.Enabled = True
+        Me.btn_aceptar.Enabled = True
     End Sub
 End Class
