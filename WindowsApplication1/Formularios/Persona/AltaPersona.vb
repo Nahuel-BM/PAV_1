@@ -143,4 +143,7 @@
     End Sub
 
 
+    Private Sub txt_nombre_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_nombre.MaskInputRejected
+
+    End Sub
 End Class

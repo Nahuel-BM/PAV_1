@@ -90,4 +90,18 @@
     Private Sub PersonasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonasToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub Inicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub ListarProvedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarProvedoresToolStripMenuItem.Click
+        Dim frm As New Listado_Proveedores()
+        Funciones.AbrirFormulario("Listado_Proveedores", frm)
+    End Sub
+
+    Private Sub ListarDueñosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDueñosToolStripMenuItem.Click
+        Dim frm As New Listado_Dueños()
+        Funciones.AbrirFormulario("Listado_Dueños", frm)
+    End Sub
 End Class
