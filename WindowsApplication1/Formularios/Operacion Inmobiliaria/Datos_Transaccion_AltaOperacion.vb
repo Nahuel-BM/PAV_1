@@ -20,6 +20,7 @@
         Me.txt_fechaOperacion.Enabled = False
         Me.txt_venta.Enabled = False
         Me.txt_MontoMensual.Enabled = False
+        Me.txt_duracion.Enabled = False
         Me.cmb_escribano.Enabled = False
         Me.cmb_estado.Enabled = False
         Me.cmb_tipoOperacion.Enabled = False
@@ -60,6 +61,11 @@
             MsgBox("Revise el campo Fecha Operacion")
         End If
 
+        If Funciones.ValidarTextBox(Me.txt_duracion) = False Then
+            guardar = False
+            MsgBox("Revise el campo Duracion")
+        End If
+
         If Funciones.ValidarTextBox(Me.txt_venta) = False Then
             guardar = False
             MsgBox("Revise el campo Venta")
@@ -75,15 +81,16 @@
             Dim factura As String = Funciones.QuitarEspacios(Me.txt_factura.Text)
             Dim fechafin As String = Funciones.QuitarEspacios(Me.txt_fechaFin.Text)
             Dim fechaop As String = Funciones.QuitarEspacios(Me.txt_fechaOperacion.Text)
-            Dim venta As String = Funciones.QuitarEspacios(Me.txt_venta.Text)
+            Dim venta As String = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_venta.Text))
             Dim monto As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_MontoMensual.Text))
             Dim escribano As Integer = Me.cmb_escribano.SelectedValue
             Dim estado As Integer = Me.cmb_estado.SelectedValue
             Dim tipoop As Integer = Me.cmb_tipoOperacion.SelectedValue
+            Dim duracion As Integer = Integer.Parse(Funciones.QuitarTodosLosEspacios(Me.txt_duracion.Text))
 
 
             Try
-                '  Conexion.CrearOperacionInmobiliaria(Me.lbl_idprop.Text, tipoop, Me.lbl_idpersona.Text, fechaop, , monto, factura, , escribano)
+                Conexion.CrearOperacionInmobiliaria(Me.lbl_idprop.Text, tipoop, Me.lbl_idpersona.Text, fechaop, duracion, monto, factura, venta, escribano)
                 MsgBox("Operacion Inmobiliaria creada correctamente")
             Catch exception As Exception
                 MsgBox("Error en la Creacion de la operacion. " & exception.Message)
@@ -99,9 +106,12 @@
         Me.txt_fechaOperacion.Enabled = True
         Me.txt_venta.Enabled = True
         Me.txt_MontoMensual.Enabled = True
+        Me.txt_duracion.Enabled = True
         Me.cmb_escribano.Enabled = True
         Me.cmb_estado.Enabled = True
         Me.cmb_tipoOperacion.Enabled = True
         Me.btn_aceptar.Enabled = True
     End Sub
+
+
 End Class

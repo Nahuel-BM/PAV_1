@@ -25,7 +25,11 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_duracion = New System.Windows.Forms.MaskedTextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lbl_idpersona = New System.Windows.Forms.Label()
         Me.txt_venta = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_idprop = New System.Windows.Forms.Label()
         Me.txt_factura = New System.Windows.Forms.MaskedTextBox()
         Me.txt_MontoMensual = New System.Windows.Forms.MaskedTextBox()
         Me.txt_fechaFin = New System.Windows.Forms.MaskedTextBox()
@@ -58,8 +62,6 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_domicilio = New System.Windows.Forms.Label()
         Me.lbl_tipo_propiedad = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.lbl_idpersona = New System.Windows.Forms.Label()
-        Me.lbl_idprop = New System.Windows.Forms.Label()
         Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -68,7 +70,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'btn_aceptar
         '
-        Me.btn_aceptar.Location = New System.Drawing.Point(435, 340)
+        Me.btn_aceptar.Location = New System.Drawing.Point(436, 382)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(152, 23)
         Me.btn_aceptar.TabIndex = 0
@@ -77,7 +79,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(12, 340)
+        Me.btn_cancelar.Location = New System.Drawing.Point(14, 382)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(99, 23)
         Me.btn_cancelar.TabIndex = 2
@@ -86,6 +88,8 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txt_duracion)
+        Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.lbl_idpersona)
         Me.GroupBox2.Controls.Add(Me.txt_venta)
         Me.GroupBox2.Controls.Add(Me.lbl_idprop)
@@ -106,10 +110,38 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 208)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(575, 126)
+        Me.GroupBox2.Size = New System.Drawing.Size(575, 150)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
+        '
+        'txt_duracion
+        '
+        Me.txt_duracion.Location = New System.Drawing.Point(135, 124)
+        Me.txt_duracion.Mask = "99999"
+        Me.txt_duracion.Name = "txt_duracion"
+        Me.txt_duracion.Size = New System.Drawing.Size(144, 20)
+        Me.txt_duracion.TabIndex = 26
+        Me.txt_duracion.ValidatingType = GetType(Integer)
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(6, 124)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(50, 13)
+        Me.Label16.TabIndex = 25
+        Me.Label16.Text = "Duracion"
+        '
+        'lbl_idpersona
+        '
+        Me.lbl_idpersona.AutoSize = True
+        Me.lbl_idpersona.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_idpersona.Location = New System.Drawing.Point(623, 71)
+        Me.lbl_idpersona.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_idpersona.Name = "lbl_idpersona"
+        Me.lbl_idpersona.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_idpersona.TabIndex = 23
         '
         'txt_venta
         '
@@ -121,6 +153,16 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.txt_venta.TabIndex = 10
         Me.txt_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_venta.ValidatingType = GetType(Integer)
+        '
+        'lbl_idprop
+        '
+        Me.lbl_idprop.AutoSize = True
+        Me.lbl_idprop.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_idprop.Location = New System.Drawing.Point(605, 18)
+        Me.lbl_idprop.MinimumSize = New System.Drawing.Size(50, 13)
+        Me.lbl_idprop.Name = "lbl_idprop"
+        Me.lbl_idprop.Size = New System.Drawing.Size(50, 13)
+        Me.lbl_idprop.TabIndex = 22
         '
         'txt_factura
         '
@@ -442,26 +484,6 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos Propiedad Seleccionada"
         '
-        'lbl_idpersona
-        '
-        Me.lbl_idpersona.AutoSize = True
-        Me.lbl_idpersona.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_idpersona.Location = New System.Drawing.Point(623, 71)
-        Me.lbl_idpersona.MinimumSize = New System.Drawing.Size(50, 13)
-        Me.lbl_idpersona.Name = "lbl_idpersona"
-        Me.lbl_idpersona.Size = New System.Drawing.Size(50, 13)
-        Me.lbl_idpersona.TabIndex = 23
-        '
-        'lbl_idprop
-        '
-        Me.lbl_idprop.AutoSize = True
-        Me.lbl_idprop.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_idprop.Location = New System.Drawing.Point(605, 18)
-        Me.lbl_idprop.MinimumSize = New System.Drawing.Size(50, 13)
-        Me.lbl_idprop.Name = "lbl_idprop"
-        Me.lbl_idprop.Size = New System.Drawing.Size(50, 13)
-        Me.lbl_idprop.TabIndex = 22
-        '
         'btn_confirmar
         '
         Me.btn_confirmar.Location = New System.Drawing.Point(445, 179)
@@ -475,7 +497,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 371)
+        Me.ClientSize = New System.Drawing.Size(600, 417)
         Me.Controls.Add(Me.btn_confirmar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
@@ -532,4 +554,6 @@ Partial Class Datos_Transaccion_AltaOperacion
     Friend WithEvents lbl_idpersona As System.Windows.Forms.Label
     Friend WithEvents lbl_idprop As System.Windows.Forms.Label
     Friend WithEvents btn_confirmar As System.Windows.Forms.Button
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents txt_duracion As System.Windows.Forms.MaskedTextBox
 End Class
