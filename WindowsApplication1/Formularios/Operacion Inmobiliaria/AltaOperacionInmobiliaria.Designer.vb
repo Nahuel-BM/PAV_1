@@ -118,6 +118,7 @@ Partial Class AltaOperacionInmobiliaria
         'txt_designacion
         '
         Me.txt_designacion.Location = New System.Drawing.Point(122, 19)
+        Me.txt_designacion.Mask = ">aaaaaaaaaaaaaaaaaaaa"
         Me.txt_designacion.Name = "txt_designacion"
         Me.txt_designacion.Size = New System.Drawing.Size(123, 20)
         Me.txt_designacion.TabIndex = 0
@@ -152,7 +153,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_NuevaBusqueda.Location = New System.Drawing.Point(430, 71)
         Me.btn_NuevaBusqueda.Name = "btn_NuevaBusqueda"
         Me.btn_NuevaBusqueda.Size = New System.Drawing.Size(113, 23)
-        Me.btn_NuevaBusqueda.TabIndex = 8
+        Me.btn_NuevaBusqueda.TabIndex = 3
         Me.btn_NuevaBusqueda.Text = "Nueva Busqueda"
         Me.btn_NuevaBusqueda.UseVisualStyleBackColor = True
         '
@@ -219,7 +220,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_siguiente.Location = New System.Drawing.Point(435, 541)
         Me.btn_siguiente.Name = "btn_siguiente"
         Me.btn_siguiente.Size = New System.Drawing.Size(120, 23)
-        Me.btn_siguiente.TabIndex = 12
+        Me.btn_siguiente.TabIndex = 6
         Me.btn_siguiente.Text = "Siguiente"
         Me.btn_siguiente.UseVisualStyleBackColor = True
         '
@@ -228,7 +229,7 @@ Partial Class AltaOperacionInmobiliaria
         Me.btn_cancelar.Location = New System.Drawing.Point(21, 541)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancelar.TabIndex = 13
+        Me.btn_cancelar.TabIndex = 7
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -286,14 +287,15 @@ Partial Class AltaOperacionInmobiliaria
         Me.txt_docPersona.Mask = "00000000"
         Me.txt_docPersona.Name = "txt_docPersona"
         Me.txt_docPersona.Size = New System.Drawing.Size(123, 20)
-        Me.txt_docPersona.TabIndex = 3
+        Me.txt_docPersona.TabIndex = 4
+        Me.txt_docPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btn_buscar_persona
         '
         Me.btn_buscar_persona.Location = New System.Drawing.Point(251, 16)
         Me.btn_buscar_persona.Name = "btn_buscar_persona"
         Me.btn_buscar_persona.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscar_persona.TabIndex = 2
+        Me.btn_buscar_persona.TabIndex = 5
         Me.btn_buscar_persona.Text = "Buscar"
         Me.btn_buscar_persona.UseVisualStyleBackColor = True
         '

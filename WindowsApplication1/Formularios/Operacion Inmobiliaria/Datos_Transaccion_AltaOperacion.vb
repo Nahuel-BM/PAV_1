@@ -133,6 +133,7 @@
         Me.cmb_moneda.Enabled = True
         Me.cmb_tipoOperacion.Enabled = True
         Me.btn_aceptar.Enabled = True
+        Me.btn_confirmar.Enabled = False
     End Sub
 
 

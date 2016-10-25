@@ -69,7 +69,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.btn_aceptar.Location = New System.Drawing.Point(436, 382)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(152, 23)
-        Me.btn_aceptar.TabIndex = 0
+        Me.btn_aceptar.TabIndex = 8
         Me.btn_aceptar.Text = "Aceptar Operacion"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
@@ -78,7 +78,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.btn_cancelar.Location = New System.Drawing.Point(14, 382)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(99, 23)
-        Me.btn_cancelar.TabIndex = 2
+        Me.btn_cancelar.TabIndex = 9
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -113,7 +113,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.txt_duracion.Mask = "99999"
         Me.txt_duracion.Name = "txt_duracion"
         Me.txt_duracion.Size = New System.Drawing.Size(144, 20)
-        Me.txt_duracion.TabIndex = 26
+        Me.txt_duracion.TabIndex = 7
         Me.txt_duracion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_duracion.ValidatingType = GetType(Integer)
         '
@@ -143,7 +143,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.txt_venta.Mask = "99999"
         Me.txt_venta.Name = "txt_venta"
         Me.txt_venta.Size = New System.Drawing.Size(144, 20)
-        Me.txt_venta.TabIndex = 10
+        Me.txt_venta.TabIndex = 6
         Me.txt_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_venta.ValidatingType = GetType(Integer)
         '
@@ -164,7 +164,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.txt_MontoMensual.Mask = "99999"
         Me.txt_MontoMensual.Name = "txt_MontoMensual"
         Me.txt_MontoMensual.Size = New System.Drawing.Size(144, 20)
-        Me.txt_MontoMensual.TabIndex = 11
+        Me.txt_MontoMensual.TabIndex = 5
         Me.txt_MontoMensual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_MontoMensual.ValidatingType = GetType(Integer)
         '
@@ -172,10 +172,10 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         Me.txt_fechaOperacion.Enabled = False
         Me.txt_fechaOperacion.Location = New System.Drawing.Point(135, 45)
-        Me.txt_fechaOperacion.Mask = "0000/00/00"
+        Me.txt_fechaOperacion.Mask = "00/00/0000"
         Me.txt_fechaOperacion.Name = "txt_fechaOperacion"
         Me.txt_fechaOperacion.Size = New System.Drawing.Size(144, 20)
-        Me.txt_fechaOperacion.TabIndex = 7
+        Me.txt_fechaOperacion.TabIndex = 3
         Me.txt_fechaOperacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cmb_escribano
@@ -186,7 +186,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.cmb_escribano.Location = New System.Drawing.Point(394, 45)
         Me.cmb_escribano.Name = "cmb_escribano"
         Me.cmb_escribano.Size = New System.Drawing.Size(144, 21)
-        Me.cmb_escribano.TabIndex = 6
+        Me.cmb_escribano.TabIndex = 4
         '
         'cmb_moneda
         '
@@ -196,7 +196,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.cmb_moneda.Location = New System.Drawing.Point(394, 18)
         Me.cmb_moneda.Name = "cmb_moneda"
         Me.cmb_moneda.Size = New System.Drawing.Size(144, 21)
-        Me.cmb_moneda.TabIndex = 4
+        Me.cmb_moneda.TabIndex = 2
         '
         'Label11
         '
@@ -251,7 +251,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.cmb_tipoOperacion.Location = New System.Drawing.Point(135, 18)
         Me.cmb_tipoOperacion.Name = "cmb_tipoOperacion"
         Me.cmb_tipoOperacion.Size = New System.Drawing.Size(144, 21)
-        Me.cmb_tipoOperacion.TabIndex = 3
+        Me.cmb_tipoOperacion.TabIndex = 1
         '
         'lbl_tipoOp
         '
@@ -441,7 +441,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.btn_confirmar.Location = New System.Drawing.Point(445, 179)
         Me.btn_confirmar.Name = "btn_confirmar"
         Me.btn_confirmar.Size = New System.Drawing.Size(142, 23)
-        Me.btn_confirmar.TabIndex = 19
+        Me.btn_confirmar.TabIndex = 0
         Me.btn_confirmar.Text = "Confirmar Datos"
         Me.btn_confirmar.UseVisualStyleBackColor = True
         '
