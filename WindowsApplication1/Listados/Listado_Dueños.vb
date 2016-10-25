@@ -6,7 +6,7 @@
     End Sub
     Private Sub impresion()
         Dim tabla As New DataTable
-        Dim sql As String = "SELECT `Duenios`.`id`,CONCAT( `Tipo_Propiedad`.`Nombre`) AS  `Propiedad`, CONCAT(  `Persona`.`Nombre` ,',', `Persona`.`Apellido`) AS `Duenio`  FROM `Duenios` LEFT JOIN `Propiedad` ON `Duenios`.`Propiedad` = `Propiedad`.`id`  LEFT JOIN `Tipo_Propiedad` ON `Tipo_Propiedad`.`id` = `Propiedad`.`Tipo_Propiedad` LEFT JOIN `Persona` ON `Duenios`.`Duenio` = `Persona`.`id`"
+        Dim sql As String = "SELECT `Duenios`.`id`, `Tipo_Propiedad`.`Nombre` AS  `Propiedad`, CONCAT(  `Persona`.`Nombre` ,',', `Persona`.`Apellido`) AS `Duenio`  FROM `Duenios` JOIN `Propiedad` ON `Duenios`.`Propiedad` = `Propiedad`.`id` JOIN `Tipo_Propiedad` ON `Tipo_Propiedad`.`id` = `Propiedad`.`Tipo_Propiedad` JOIN `Persona` ON `Duenios`.`Duenio` = `Persona`.`id` WHERE `Duenios`.`borrado` = 0 AND `Propiedad`.`borrado` = 0;"
         tabla = Conexion.Consulta(sql)
         Me.DueniosDataTableBindingSource.DataSource = tabla
     End Sub

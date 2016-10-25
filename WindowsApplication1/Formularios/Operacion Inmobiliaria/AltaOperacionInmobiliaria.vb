@@ -7,7 +7,7 @@
 
 
     Private Sub AltaOperacionInmobiliaria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Carga.setTotalDeEventos(4)
+        Me.Carga.setTotalDeEventos(1)
 
         Me.Carga.Run()
 
