@@ -14,10 +14,11 @@
         Conexion.cargarComboTipo(Me.cmb_tipoPropiedad, "Tipo_Propiedad")
         Me.Carga.actualizarLoading("Combo Tipo Documento.")
 
-        
         Me.Funciones.AddButtonColumn(Me.grid_Busqueda, "Seleccionar", "Accion", 4)
         Me.Funciones.AddButtonColumn(Me.DataGridView1, "Seleccionar", "Accion", 7)
-
+        Me.txt_docPersona.Enabled = False
+        Me.btn_buscar_persona.Enabled = False
+        Me.DataGridView1.Enabled = False
     End Sub
 
 
@@ -57,7 +58,7 @@
 
             Try
 
-                Me.btn_siguiente.Enabled = True
+                Me.btn_siguiente.Enabled = False
 
             Catch ex As Exception
                 MsgBox("Inmueble no encontrado.")
@@ -98,6 +99,9 @@
             Datos_Transaccion_AltaOperacion.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.SelectedValue
             Me.lbl_superficie.Text = "54.654 Km2"
 
+            Me.txt_docPersona.Enabled = True
+            Me.btn_buscar_persona.Enabled = True
+            Me.DataGridView1.Enabled = True
         End If
     End Sub
 
@@ -173,7 +177,7 @@
 
             Try
 
-                Me.btn_siguiente.Enabled = True
+                Me.btn_siguiente.Enabled = False
 
             Catch ex As Exception
                 MsgBox("Persona no encontrada.")
@@ -205,12 +209,13 @@
             Datos_Transaccion_AltaOperacion.lbl_documento.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(3).Value
             Datos_Transaccion_AltaOperacion.lbl_domicilio2.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(4).Value
             Datos_Transaccion_AltaOperacion.lbl_telefono.Text = Me.DataGridView1.Rows(e.RowIndex).Cells(5).Value
+            Me.btn_siguiente.Enabled = True
         End If
     End Sub
 
     Private Sub btn_siguiente_Click(sender As Object, e As EventArgs) Handles btn_siguiente.Click
-
         Datos_Transaccion_AltaOperacion.Show()
+        Me.Close()
 
     End Sub
 
