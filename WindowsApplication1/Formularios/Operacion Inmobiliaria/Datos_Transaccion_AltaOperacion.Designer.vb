@@ -30,18 +30,14 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_idpersona = New System.Windows.Forms.Label()
         Me.txt_venta = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_idprop = New System.Windows.Forms.Label()
-        Me.txt_factura = New System.Windows.Forms.MaskedTextBox()
         Me.txt_MontoMensual = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_fechaFin = New System.Windows.Forms.MaskedTextBox()
         Me.txt_fechaOperacion = New System.Windows.Forms.MaskedTextBox()
         Me.cmb_escribano = New System.Windows.Forms.ComboBox()
-        Me.cmb_estado = New System.Windows.Forms.ComboBox()
+        Me.cmb_moneda = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_fechaOp = New System.Windows.Forms.Label()
         Me.cmb_tipoOperacion = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoOp = New System.Windows.Forms.Label()
@@ -93,51 +89,48 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.GroupBox2.Controls.Add(Me.lbl_idpersona)
         Me.GroupBox2.Controls.Add(Me.txt_venta)
         Me.GroupBox2.Controls.Add(Me.lbl_idprop)
-        Me.GroupBox2.Controls.Add(Me.txt_factura)
         Me.GroupBox2.Controls.Add(Me.txt_MontoMensual)
-        Me.GroupBox2.Controls.Add(Me.txt_fechaFin)
         Me.GroupBox2.Controls.Add(Me.txt_fechaOperacion)
         Me.GroupBox2.Controls.Add(Me.cmb_escribano)
-        Me.GroupBox2.Controls.Add(Me.cmb_estado)
+        Me.GroupBox2.Controls.Add(Me.cmb_moneda)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.lbl_fechaOp)
         Me.GroupBox2.Controls.Add(Me.cmb_tipoOperacion)
         Me.GroupBox2.Controls.Add(Me.lbl_tipoOp)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 208)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(575, 150)
+        Me.GroupBox2.Size = New System.Drawing.Size(576, 150)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Operacion"
         '
         'txt_duracion
         '
-        Me.txt_duracion.Location = New System.Drawing.Point(135, 124)
+        Me.txt_duracion.Location = New System.Drawing.Point(135, 98)
         Me.txt_duracion.Mask = "99999"
         Me.txt_duracion.Name = "txt_duracion"
         Me.txt_duracion.Size = New System.Drawing.Size(144, 20)
         Me.txt_duracion.TabIndex = 26
+        Me.txt_duracion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_duracion.ValidatingType = GetType(Integer)
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(6, 124)
+        Me.Label16.Location = New System.Drawing.Point(6, 98)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(50, 13)
+        Me.Label16.Size = New System.Drawing.Size(98, 13)
         Me.Label16.TabIndex = 25
-        Me.Label16.Text = "Duracion"
+        Me.Label16.Text = "Duracion en meses"
         '
         'lbl_idpersona
         '
         Me.lbl_idpersona.AutoSize = True
         Me.lbl_idpersona.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_idpersona.Location = New System.Drawing.Point(623, 71)
+        Me.lbl_idpersona.Location = New System.Drawing.Point(621, 78)
         Me.lbl_idpersona.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lbl_idpersona.Name = "lbl_idpersona"
         Me.lbl_idpersona.Size = New System.Drawing.Size(50, 13)
@@ -146,7 +139,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         'txt_venta
         '
         Me.txt_venta.Enabled = False
-        Me.txt_venta.Location = New System.Drawing.Point(394, 97)
+        Me.txt_venta.Location = New System.Drawing.Point(394, 71)
         Me.txt_venta.Mask = "99999"
         Me.txt_venta.Name = "txt_venta"
         Me.txt_venta.Size = New System.Drawing.Size(144, 20)
@@ -164,21 +157,10 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.lbl_idprop.Size = New System.Drawing.Size(50, 13)
         Me.lbl_idprop.TabIndex = 22
         '
-        'txt_factura
-        '
-        Me.txt_factura.Enabled = False
-        Me.txt_factura.Location = New System.Drawing.Point(394, 71)
-        Me.txt_factura.Mask = "99999"
-        Me.txt_factura.Name = "txt_factura"
-        Me.txt_factura.Size = New System.Drawing.Size(144, 20)
-        Me.txt_factura.TabIndex = 8
-        Me.txt_factura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_factura.ValidatingType = GetType(Integer)
-        '
         'txt_MontoMensual
         '
         Me.txt_MontoMensual.Enabled = False
-        Me.txt_MontoMensual.Location = New System.Drawing.Point(135, 97)
+        Me.txt_MontoMensual.Location = New System.Drawing.Point(135, 71)
         Me.txt_MontoMensual.Mask = "99999"
         Me.txt_MontoMensual.Name = "txt_MontoMensual"
         Me.txt_MontoMensual.Size = New System.Drawing.Size(144, 20)
@@ -186,27 +168,15 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.txt_MontoMensual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_MontoMensual.ValidatingType = GetType(Integer)
         '
-        'txt_fechaFin
-        '
-        Me.txt_fechaFin.Enabled = False
-        Me.txt_fechaFin.Location = New System.Drawing.Point(135, 71)
-        Me.txt_fechaFin.Mask = "00/00/0000"
-        Me.txt_fechaFin.Name = "txt_fechaFin"
-        Me.txt_fechaFin.Size = New System.Drawing.Size(144, 20)
-        Me.txt_fechaFin.TabIndex = 9
-        Me.txt_fechaFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_fechaFin.ValidatingType = GetType(Date)
-        '
         'txt_fechaOperacion
         '
         Me.txt_fechaOperacion.Enabled = False
         Me.txt_fechaOperacion.Location = New System.Drawing.Point(135, 45)
-        Me.txt_fechaOperacion.Mask = "00/00/0000"
+        Me.txt_fechaOperacion.Mask = "0000/00/00"
         Me.txt_fechaOperacion.Name = "txt_fechaOperacion"
         Me.txt_fechaOperacion.Size = New System.Drawing.Size(144, 20)
         Me.txt_fechaOperacion.TabIndex = 7
         Me.txt_fechaOperacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_fechaOperacion.ValidatingType = GetType(Date)
         '
         'cmb_escribano
         '
@@ -218,24 +188,24 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.cmb_escribano.Size = New System.Drawing.Size(144, 21)
         Me.cmb_escribano.TabIndex = 6
         '
-        'cmb_estado
+        'cmb_moneda
         '
-        Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_estado.Enabled = False
-        Me.cmb_estado.FormattingEnabled = True
-        Me.cmb_estado.Location = New System.Drawing.Point(394, 18)
-        Me.cmb_estado.Name = "cmb_estado"
-        Me.cmb_estado.Size = New System.Drawing.Size(144, 21)
-        Me.cmb_estado.TabIndex = 4
+        Me.cmb_moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_moneda.Enabled = False
+        Me.cmb_moneda.FormattingEnabled = True
+        Me.cmb_moneda.Location = New System.Drawing.Point(394, 18)
+        Me.cmb_moneda.Name = "cmb_moneda"
+        Me.cmb_moneda.Size = New System.Drawing.Size(144, 21)
+        Me.cmb_moneda.TabIndex = 4
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(308, 21)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(40, 13)
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
         Me.Label11.TabIndex = 16
-        Me.Label11.Text = "Estado"
+        Me.Label11.Text = "Moneda"
         '
         'Label10
         '
@@ -246,19 +216,10 @@ Partial Class Datos_Transaccion_AltaOperacion
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "Escribano"
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 74)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(54, 13)
-        Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Fecha Fin"
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(308, 100)
+        Me.Label8.Location = New System.Drawing.Point(308, 74)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(80, 13)
         Me.Label8.TabIndex = 8
@@ -267,20 +228,11 @@ Partial Class Datos_Transaccion_AltaOperacion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 100)
+        Me.Label6.Location = New System.Drawing.Point(6, 74)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "Monto Mensual"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(308, 74)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Factura Nº"
         '
         'lbl_fechaOp
         '
@@ -497,7 +449,7 @@ Partial Class Datos_Transaccion_AltaOperacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 417)
+        Me.ClientSize = New System.Drawing.Size(599, 417)
         Me.Controls.Add(Me.btn_confirmar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
@@ -519,18 +471,14 @@ Partial Class Datos_Transaccion_AltaOperacion
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_venta As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txt_factura As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_MontoMensual As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txt_fechaFin As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_fechaOperacion As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmb_escribano As System.Windows.Forms.ComboBox
-    Friend WithEvents cmb_estado As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_moneda As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lbl_fechaOp As System.Windows.Forms.Label
     Friend WithEvents cmb_tipoOperacion As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_tipoOp As System.Windows.Forms.Label

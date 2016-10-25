@@ -134,4 +134,25 @@
 
     End Sub
 
+
+    Public Function validarFecha(cadena As String) As Boolean
+        Try
+            Dim separados() As String
+
+            separados = Split(cadena, "/")
+
+            Dim dia As Integer = Integer.Parse(separados(2))
+            Dim mes As Integer = Integer.Parse(separados(1))
+            Dim año As Integer = Integer.Parse(separados(0))
+
+            Dim daaaa As New Date(año, mes, dia)
+
+            Dim fecha As String = separados.ToString("yyyy-MM-dd")
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 End Class

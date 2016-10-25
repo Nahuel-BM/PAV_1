@@ -117,11 +117,11 @@ Public Class Conexion
             Me.Cerrar()
         Catch ex As Exception
 
-            'MsgBox("Error al Ejecutar Insert " &
-            '       vbCrLf & vbCrLf & ex.Message,
-            '       MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
+            MsgBox("Error al Ejecutar Insert " &
+                   vbCrLf & vbCrLf & ex.Message,
+                   MsgBoxStyle.OkOnly + MsgBoxStyle.Critical)
 
-            'MsgBox(sql)
+            MsgBox(sql)
 
             Throw
 
@@ -386,8 +386,22 @@ Public Class Conexion
 
     Public Function CrearFactura(ByVal idPersona As Integer, ByVal Monto As Double, ByVal Moneda As String, ByVal Concepto As String) As Integer
         Dim sqlDomicilio As String = "INSERT INTO `Factura`(`Persona`, `Monto`, `Moneda`, `Concepto`) VALUES (" & idPersona & "," & Monto & ",'" & Moneda & "','" & Concepto & "');"
-        Me.ejecutarInsert(sqlDomicilio)
-        Return Me.ultimoIdInsertado()
+        'Me.ejecutarInsert(sqlDomicilio)
+
+
+        Dim sqlid = "SELECT MAX(id) AS id FROM `Factura`"
+
+        Dim tabla As DataTable = ejecutar(sqlid)
+
+
+        Me.conexion_con_transaccion()
+
+        Me.insertar(sqlDomicilio)
+
+        Dim retorno As Integer = Integer.Parse(tabla(0)("id"))
+
+        Return retorno
+        'Return Me.ultimoIdInsertado()
     End Function
 
     Public Sub BorrarFactura(ByVal idFactura As Integer)
@@ -399,11 +413,30 @@ Public Class Conexion
 
     'INSERT INTO `Operacion_Inmobiliaria`(`Inmueble`, `Propiedad`, `Tipo_Operacion`, `Persona_Interviniente`, `Fecha_Operacion`, `Duracion`, `Monto_Mensual`, `Factura`, `Comision_Venta`, `Escribano`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])
 
-    Public Function CrearOperacionInmobiliaria(ByVal idPropiedad As Integer, ByVal TipoOperacion As Integer, ByVal idPersonaInterviniente As Integer, ByVal FechaOperacion As Date, ByVal Duracion As Integer, ByVal MontoMensual As Double, ByVal idFactura As Integer, ByVal Comision As Double, ByVal idEscribano As Integer) As Integer
-        Dim sqlDomicilio As String = "INSERT INTO `Operacion_Inmobiliaria`(`Propiedad`, `Tipo_Operacion`, `Persona_Interviniente`, `Fecha_Operacion`, `Duracion`, `Monto_Mensual`, `Factura`, `Comision_Venta`, `Escribano`) VALUES (" & idPropiedad & "," & TipoOperacion & "," & idPersonaInterviniente & ",'" & FechaOperacion & "', " & Duracion & ", " & MontoMensual & ", " & idFactura & ", " & Comision & "," & idEscribano & ")"
-        Me.ejecutarInsert(sqlDomicilio)
-        Return Me.ultimoIdInsertado()
-    End Function
+    Public Sub CrearOperacionInmobiliaria(ByVal idPropiedad As Integer, ByVal TipoOperacion As Integer, ByVal idPersonaInterviniente As Integer, ByVal FechaOperacion As Date, ByVal Duracion As Integer, ByVal MontoMensual As Double, ByVal idFactura As Integer, ByVal Comision As Double, ByVal idEscribano As Integer)
+
+        Dim separados() As String
+        separados = Split(FechaOperacion, "/")
+
+        Dim dia As Integer = Integer.Parse(separados(0))
+        Dim mes As Integer = Integer.Parse(separados(1))
+        Dim año As Integer = Integer.Parse(separados(2))
+
+        Dim daaaa As New Date(año, mes, dia)
+
+
+        Dim fecha As String = daaaa.ToString("yyyy-MM-dd")
+
+
+        Dim sqlDomicilio As String = "INSERT INTO `Operacion_Inmobiliaria`(`Propiedad`, `Tipo_Operacion`, `Persona_Interviniente`, `Fecha_Operacion`, `Duracion`, `Monto_Mensual`, `Factura`, `Comision_Venta`, `Escribano`) VALUES (" & idPropiedad & "," & TipoOperacion & "," & idPersonaInterviniente & ",'" & fecha & "', " & Duracion & ", " & MontoMensual & ", " & idFactura & ", " & Comision & "," & idEscribano & ")"
+        'Me.ejecutarInsert(sqlDomicilio)
+
+        Me.insertar(sqlDomicilio)
+
+        ' MsgBox(sqlDomicilio)
+
+        ' Return Me.ultimoIdInsertado()
+    End Sub
 
     Public Sub ActualizarOperacionInmobiliaria(ByVal idOperacionInmobiliaria As Integer, ByVal idPropiedad As Integer, ByVal TipoOperacion As Integer, ByVal idPersonaInterviniente As Integer, ByVal FechaOperacion As Date, ByVal Duracion As Integer, ByVal MontoMensual As Double, ByVal idFactura As Integer, ByVal Comision As Double, ByVal idEscribano As Integer)
         Dim sqlDomicilio As String = "UPDATE `Operacion_Inmobiliaria` SET `Propiedad`=" & idPropiedad & ",`Tipo_Operacion`=" & TipoOperacion & ",`Persona_Interviniente`=" & idPersonaInterviniente & ",`Fecha_Operacion`= '" & FechaOperacion & "',`Duracion`= " & Duracion & ",`Monto_Mensual`=" & MontoMensual & ",`Factura`= " & idFactura & ",`Comision_Venta`= " & Comision & ",`Escribano`=" & idEscribano & " WHERE `id` = " & idOperacionInmobiliaria & ";"
@@ -489,15 +522,15 @@ Public Class Conexion
     'byval toma el valor en la posicion del objeto 
     'byref toma en lugar de el valor enviado, la posicion del objeto
     Public Function Consulta2(ByVal sql As String) As DataTable
-        Return ejecutar(sql)
+        Return ejecutar2(sql)
     End Function
 
     Public Function leo_tabla() As DataTable
-        Return ejecutar("SELECT * FROM " & Me.nombre_tabla)
+        Return ejecutar2("SELECT * FROM " & Me.nombre_tabla)
     End Function
 
     Public Function leo_tabla(ByVal nombre_tabla As String) As DataTable
-        Return ejecutar("SELECT * FROM " & nombre_tabla)
+        Return ejecutar2("SELECT * FROM " & nombre_tabla)
     End Function
 
     Private Function ejecutar2(ByRef sql As String) As DataTable
@@ -526,52 +559,18 @@ Public Class Conexion
     End Sub
 
     Public Function insertar(ByVal datos As String) As resultado
-        Dim igual, coma, columna As Integer
         Dim txt_datos As String = datos.ToUpper 'transfiere los datos todos a mayuscula
         Dim tabla As New DataTable
-        Dim nom_col As String
-        Dim valor As String
+
         Dim cabecera As String = ""
         Dim paquete_datos As String = ""
         Dim tipoDato As String = ""
         Dim sqlinsert As String = ""
 
-        tabla = Me.estructura_tabla()
+        sqlinsert = datos
 
-        Dim c As Integer
+        'MessageBox.Show(sqlinsert)
 
-        For c = 0 To tabla.Columns.Count - 1
-            nom_col = tabla.Columns(c).Caption.ToUpper
-            columna = txt_datos.IndexOf(nom_col)
-            If columna = -1 Then
-                Continue For
-            End If
-            igual = txt_datos.IndexOf("=", columna) 'se busca una porcion de texto dentro del string con el indexof
-            coma = txt_datos.IndexOf(",", columna)
-            'Soluciona el tema de la ultima coma 
-            If coma = -1 Then
-                valor = txt_datos.Substring(igual + 1)
-            Else
-                valor = txt_datos.Substring(igual + 1, coma - igual - 1)
-            End If
-            'fin
-
-            tipoDato = tabla.Columns(c).DataType.Name
-
-            If cabecera.Length = 0 Then
-                cabecera = cabecera + nom_col
-                paquete_datos = paquete_datos + Me.formatear(valor, tipoDato)
-
-            Else
-                cabecera = cabecera + ", " + nom_col
-                paquete_datos = paquete_datos + ", " + Me.formatear(valor, tipoDato)
-            End If
-
-        Next
-
-        sqlinsert = "INSERT INTO " & Me.nombre_tabla & "(" & cabecera & ") VALUES (" & paquete_datos & ")"
-
-        MessageBox.Show(sqlinsert)
         If resultado._ok = Me.conectar2 Then
             Me.conectar2()
             Me.cmd.CommandText = sqlinsert
@@ -583,7 +582,7 @@ Public Class Conexion
                 Cerrar()
                 Return resultado._error
             End Try
-            Me.Cerrar()
+            'Me.Cerrar()
             Return resultado._ok
 
             Return True
