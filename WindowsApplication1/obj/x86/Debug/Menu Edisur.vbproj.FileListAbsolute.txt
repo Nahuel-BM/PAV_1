@@ -158,3 +158,4 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grup
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Listado_Proveedores.resources
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\RdlCompile.cache
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Condicion_listado_Proveedores.resources

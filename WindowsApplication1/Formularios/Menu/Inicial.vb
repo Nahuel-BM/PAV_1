@@ -96,8 +96,8 @@
     End Sub
 
     Private Sub ListarProvedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarProvedoresToolStripMenuItem.Click
-        Dim frm As New Listado_Proveedores()
-        Funciones.AbrirFormulario("Listado_Proveedores", frm)
+        Dim frm As New Condicion_listado_Proveedores()
+        Funciones.AbrirFormulario("Condicion_listado_Proveedores", frm)
     End Sub
 
     Private Sub ListarDueñosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDueñosToolStripMenuItem.Click
