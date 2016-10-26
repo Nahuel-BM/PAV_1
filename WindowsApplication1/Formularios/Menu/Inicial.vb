@@ -106,7 +106,7 @@
     End Sub
 
     Private Sub ListarInteresadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarInteresadosToolStripMenuItem.Click
-        Dim frm As New Listado_OperacionesInmobiliarias()
-        Funciones.AbrirFormulario("Listado_OperacionesInmobiliarias", frm)
+        Dim frm As New Condicion_listado_operacionInmobiliaria()
+        Funciones.AbrirFormulario("Condicion_listado_operacionInmobiliaria", frm)
     End Sub
 End Class

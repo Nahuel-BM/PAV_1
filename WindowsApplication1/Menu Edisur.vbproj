@@ -215,10 +215,16 @@
     <Compile Include="Formularios\Proveedores\BajaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Condicion_listado_Proveedores.Designer.vb">
+    <Compile Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.Designer.vb">
+      <DependentUpon>Condicion_listado_operacionInmobiliaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\Condiciones\Condicion_listado_Proveedores.Designer.vb">
       <DependentUpon>Condicion_listado_Proveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Condicion_listado_Proveedores.vb">
+    <Compile Include="Listados\Condiciones\Condicion_listado_Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listados\DataSet1.Designer.vb">
@@ -316,7 +322,10 @@
     <EmbeddedResource Include="Formularios\Proveedores\BajaProveedor.resx">
       <DependentUpon>BajaProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Condicion_listado_Proveedores.resx">
+    <EmbeddedResource Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.resx">
+      <DependentUpon>Condicion_listado_operacionInmobiliaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Condiciones\Condicion_listado_Proveedores.resx">
       <DependentUpon>Condicion_listado_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\Listado_Dueños.resx">
