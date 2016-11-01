@@ -162,3 +162,5 @@ C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\RdlC
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.exe
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.xml
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.pdb
+C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Condicion_Propiedad_por_Dueño.resources
+C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Form_propiedades_por_dueño.resources

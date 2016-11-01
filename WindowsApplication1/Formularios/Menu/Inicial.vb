@@ -105,4 +105,13 @@
     Private Sub ListarPropiedadesPorLocalidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarPropiedadesPorLocalidadToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub ListarPropiedadesPorDueñoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarPropiedadesPorDueñoToolStripMenuItem.Click
+        Dim frm As New Condicion_Propiedad_por_Dueño()
+        Funciones.AbrirFormulario("Condicion_Propiedad_por_Dueño", frm)
+    End Sub
+
+    Private Sub Inicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

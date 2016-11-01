@@ -227,6 +227,12 @@
     <Compile Include="Listados\Condiciones\Condicion_listado_Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.Designer.vb">
+      <DependentUpon>Condicion_Propiedad_por_Dueño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +240,12 @@
     </Compile>
     <Compile Include="Listados\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Form_propiedades_por_dueño.Designer.vb">
+      <DependentUpon>Form_propiedades_por_dueño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Form_propiedades_por_dueño.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listados\Listado_Dueños.Designer.vb">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
@@ -328,6 +340,12 @@
     <EmbeddedResource Include="Listados\Condiciones\Condicion_listado_Proveedores.resx">
       <DependentUpon>Condicion_listado_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.resx">
+      <DependentUpon>Condicion_Propiedad_por_Dueño.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Form_propiedades_por_dueño.resx">
+      <DependentUpon>Form_propiedades_por_dueño.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\Listado_Dueños.resx">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +360,7 @@
     <EmbeddedResource Include="Listados\Lista_PropiedadxTipo.rdlc" />
     <EmbeddedResource Include="Listados\Lista_Proveedores.rdlc" />
     <EmbeddedResource Include="Listados\Lista_PropiedadxProvincia.rdlc" />
+    <EmbeddedResource Include="Listados\Reporte_propiedades_por_dueño.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -401,6 +420,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Listados\Personas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
