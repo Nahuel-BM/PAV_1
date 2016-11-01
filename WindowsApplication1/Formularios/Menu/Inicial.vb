@@ -87,26 +87,22 @@
         Funciones.AbrirFormulario("BuscarEscribano", frm)
     End Sub
 
-    Private Sub PersonasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonasToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub Inicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub ListarProvedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarProvedoresToolStripMenuItem.Click
-        Dim frm As New Condicion_listado_Proveedores()
-        Funciones.AbrirFormulario("Condicion_listado_Proveedores", frm)
-    End Sub
-
-    Private Sub ListarDueñosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDueñosToolStripMenuItem.Click
+    Private Sub ListarDueñosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ListarDueñosToolStripMenuItem1.Click
         Dim frm As New Listado_Dueños()
         Funciones.AbrirFormulario("Listado_Dueños", frm)
     End Sub
 
-    Private Sub ListarInteresadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarInteresadosToolStripMenuItem.Click
+    Private Sub ListarProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarProveedoresToolStripMenuItem.Click
+        Dim frm As New Condicion_listado_Proveedores()
+        Funciones.AbrirFormulario("Condicion_listado_Proveedores", frm)
+    End Sub
+
+    Private Sub ListarOperacionesInmobiliariasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarOperacionesInmobiliariasToolStripMenuItem.Click
         Dim frm As New Condicion_listado_operacionInmobiliaria()
         Funciones.AbrirFormulario("Condicion_listado_operacionInmobiliaria", frm)
+    End Sub
+
+    Private Sub ListarPropiedadesPorLocalidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarPropiedadesPorLocalidadToolStripMenuItem.Click
+
     End Sub
 End Class
