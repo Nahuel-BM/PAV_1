@@ -63,6 +63,7 @@ Partial Class Condicion_listado_operacionInmobiliaria
         Me.txt_condicionMonto.Name = "txt_condicionMonto"
         Me.txt_condicionMonto.Size = New System.Drawing.Size(104, 20)
         Me.txt_condicionMonto.TabIndex = 3
+        Me.txt_condicionMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Comision
         '
@@ -71,6 +72,7 @@ Partial Class Condicion_listado_operacionInmobiliaria
         Me.txt_Comision.Name = "txt_Comision"
         Me.txt_Comision.Size = New System.Drawing.Size(104, 20)
         Me.txt_Comision.TabIndex = 4
+        Me.txt_Comision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Condicion_listado_operacionInmobiliaria
         '
