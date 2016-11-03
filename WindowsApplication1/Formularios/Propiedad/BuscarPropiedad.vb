@@ -76,7 +76,6 @@
 
                 If Edicion Then
                     Dim frm As New AltaPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
-                    'Dim frm As New AltaPropiedad()
                     frm.Show()
                     Me.Close()
                 Else
