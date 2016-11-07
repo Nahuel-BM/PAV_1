@@ -101,6 +101,20 @@
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\Form_con_Pantalla_de_Carga_Incluida.vb" />
     <Compile Include="Clases\FuncionesUtiles.vb" />
+    <Compile Include="Estadisticas\DataSetEstadisticas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\DataSetEstadisticas.vb">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Estadisticas.Designer.vb">
+      <DependentUpon>Estadisticas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Estadisticas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Escribano\AltaEscribano.Designer.vb">
       <DependentUpon>AltaEscribano.vb</DependentUpon>
     </Compile>
@@ -286,6 +300,13 @@
     <EmbeddedResource Include="Clases\Form_con_Pantalla_de_Carga_Incluida.resx">
       <DependentUpon>Form_con_Pantalla_de_Carga_Incluida.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Estadisticas.resx">
+      <DependentUpon>Estadisticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Estadistica_OpInmobiliariaxComision.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Estadistica_OpInmobiliariaxMontoMensual.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Estadistica_PropiedadxSuperficie.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Estadistica_PropiedadxMonto.rdlc" />
     <EmbeddedResource Include="Formularios\Escribano\AltaEscribano.resx">
       <DependentUpon>AltaEscribano.vb</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +390,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Estadisticas\DataSetEstadisticas.xsc">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DataSetEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEstadisticas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\DataSetEstadisticas.xss">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </None>
     <None Include="Listados\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -399,7 +431,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -421,9 +453,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Listados\Personas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
