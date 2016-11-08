@@ -126,4 +126,10 @@
         Funciones.AbrirFormulario("Interesados", frm)
 
     End Sub
+
+    Private Sub ListarPropiedadesPorInteresadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarPropiedadesPorInteresadosToolStripMenuItem.Click
+        Dim frm As New InteresadosPorNombre()
+
+        Funciones.AbrirFormulario("InteresadosPorNombre", frm)
+    End Sub
 End Class

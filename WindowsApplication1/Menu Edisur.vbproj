@@ -267,6 +267,12 @@
     <Compile Include="Listados\Interesados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\InteresadosPorNombre.Designer.vb">
+      <DependentUpon>InteresadosPorNombre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\InteresadosPorNombre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\Listado_Dueños.Designer.vb">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </Compile>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\Interesados.resx">
       <DependentUpon>Interesados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\InteresadosPorNombre.resx">
+      <DependentUpon>InteresadosPorNombre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\Listado_Dueños.resx">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
