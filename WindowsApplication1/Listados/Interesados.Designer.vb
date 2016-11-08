@@ -54,6 +54,7 @@ Partial Class Interesados
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(788, 543)
         Me.ReportViewer1.TabIndex = 0
+        Me.ReportViewer1.TabStop = False
         '
         'Button1
         '
@@ -79,7 +80,7 @@ Partial Class Interesados
         Me.MaskedTextBox1.Mask = "9999999999999999"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(162, 20)
-        Me.MaskedTextBox1.TabIndex = 3
+        Me.MaskedTextBox1.TabIndex = 0
         '
         'Interesados
         '

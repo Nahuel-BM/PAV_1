@@ -6,9 +6,9 @@
     End Sub
     Private Sub impresion()
         Dim tabla As New DataTable
-        Dim sql As String = "select * from interesados p inner join persona on persona.id = p.interesado inner join propiedad on propiedad.id= p.propiedad where propiedad.id = " & MaskedTextBox1.Text
+        Dim sql As String = "SELECT CONCAT(  `Persona`.`Apellido` ,  ', ',  `Persona`.`Nombre` ) AS  `interesados` , CONCAT(  `Propiedad`.`Monto` ,  ' ', `Propiedad`.`Moneda` ) AS  `propiedad` ,  `p`.`id` FROM  `Interesados` AS  `p` INNER JOIN  `Persona` ON  `Persona`.`id` =  `p`.`Interesado`  INNER JOIN  `Propiedad` ON  `Propiedad`.`id` =  `p`.`Propiedad` JOIN  `Inmueble` ON  `Propiedad`.`id_Inmueble` =  `Inmueble`.`id` WHERE  `Inmueble`.`Designacion_Catastral` =  '" & MaskedTextBox1.Text & "'; "
 
-        MsgBox(sql)
+        ' MsgBox(sql)
 
         tabla = Conexion.Consulta(sql)
         InteresadosBindingSource.DataSource = tabla

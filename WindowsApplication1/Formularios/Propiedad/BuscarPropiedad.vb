@@ -56,34 +56,40 @@
 
     Private Sub EventoEliminarPropietario(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_resultadosBusqueda.CellClick
         ' elimino la fila
-        If e.ColumnIndex = 5 Then
-            Dim result As Integer = 0
-            If Edicion Then
-                result = MessageBox.Show("¿Realmente desea Editar la Propiedad?", "Alerta", MessageBoxButtons.OKCancel)
-            Else
-                result = MessageBox.Show("¿Realmente desea Eliminar la Propiedad?", "Alerta", MessageBoxButtons.OKCancel)
-            End If
 
-            If result = DialogResult.OK Then
+        If Me.grid_resultadosBusqueda.Rows.Count > 0 Then
 
-                'Elimiar Propiedad, Eliminar Referencia en dueños, 
-                'Comprobar si es departamento si es depto fijarse si hay otro 
-                'que apunte a inmueble.
-                '
-                Dim Id_Domicilio As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(0).Value.ToString)
-                Dim Id_Inmueble As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(1).Value.ToString)
-                Dim Id_Propiedad As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(2).Value.ToString)
 
+
+            If e.ColumnIndex = 5 Then
+                Dim result As Integer = 0
                 If Edicion Then
-                    Dim frm As New AltaPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
-                    frm.Show()
-                    Me.Close()
+                    result = MessageBox.Show("¿Realmente desea Editar la Propiedad?", "Alerta", MessageBoxButtons.OKCancel)
                 Else
-                    Me.BorrarPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
-                    Me.grid_resultadosBusqueda.Rows.RemoveAt(e.RowIndex)
+                    result = MessageBox.Show("¿Realmente desea Eliminar la Propiedad?", "Alerta", MessageBoxButtons.OKCancel)
                 End If
 
+                If result = DialogResult.OK Then
 
+                    'Elimiar Propiedad, Eliminar Referencia en dueños, 
+                    'Comprobar si es departamento si es depto fijarse si hay otro 
+                    'que apunte a inmueble.
+                    '
+                    Dim Id_Domicilio As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(0).Value.ToString)
+                    Dim Id_Inmueble As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(1).Value.ToString)
+                    Dim Id_Propiedad As Integer = Integer.Parse(Me.grid_resultadosBusqueda.Rows(e.RowIndex).Cells(2).Value.ToString)
+
+                    If Edicion Then
+                        Dim frm As New AltaPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
+                        frm.Show()
+                        Me.Close()
+                    Else
+                        Me.BorrarPropiedad(Id_Domicilio, Id_Inmueble, Id_Propiedad)
+                        Me.grid_resultadosBusqueda.Rows.RemoveAt(e.RowIndex)
+                    End If
+
+
+                End If
             End If
         End If
     End Sub

@@ -89,21 +89,21 @@
 
         Try
 
-        If e.ColumnIndex = 3 Then
+            If e.ColumnIndex = 3 And Me.DataGridView1.Rows.Count > 0 Then
 
-            btn_buscar.Enabled = False
-            Me.cmb_tipoPropiedad.Enabled = False
-            Me.txt_designacion.Enabled = False
-            Datos_Transaccion_AltaOperacion.lbl_idprop.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(0).Value
-            Me.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
-            Me.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.Text
-            Datos_Transaccion_AltaOperacion.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
-            Datos_Transaccion_AltaOperacion.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.Text
-            Me.lbl_superficie.Text = "54.654 Km2"
+                btn_buscar.Enabled = False
+                Me.cmb_tipoPropiedad.Enabled = False
+                Me.txt_designacion.Enabled = False
+                Datos_Transaccion_AltaOperacion.lbl_idprop.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(0).Value
+                Me.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
+                Me.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.Text
+                Datos_Transaccion_AltaOperacion.lbl_domicilio.Text = Me.grid_Busqueda.Rows(e.RowIndex).Cells(2).Value
+                Datos_Transaccion_AltaOperacion.lbl_tipo_propiedad.Text = Me.cmb_tipoPropiedad.Text
+                Me.lbl_superficie.Text = "54.654 Km2"
 
-            Me.txt_docPersona.Enabled = True
-            Me.btn_buscar_persona.Enabled = True
-            Me.DataGridView1.Enabled = True
+                Me.txt_docPersona.Enabled = True
+                Me.btn_buscar_persona.Enabled = True
+                Me.DataGridView1.Enabled = True
             End If
         Catch ex As Exception
 

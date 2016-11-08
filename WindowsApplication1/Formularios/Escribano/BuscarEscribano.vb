@@ -71,7 +71,7 @@
 
     Private Sub EventoEliminarEscribano(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_busqueda.CellClick
         ' elimino la fila
-        If e.ColumnIndex = 2 Then
+        If e.ColumnIndex = 2 And Me.grid_busqueda.Rows.Count > 0 Then
             Dim result As Integer = 0
             If EsEdicion Then
                 result = MessageBox.Show("¿Realmente desea Editar el Escribano?", "Alerta", MessageBoxButtons.OKCancel)
