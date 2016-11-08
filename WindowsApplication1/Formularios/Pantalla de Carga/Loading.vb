@@ -4,7 +4,7 @@ Public Class Loading
 
     Dim valorProgressBar As Integer = 0
     Dim intTotalPartes As Integer = 1
-    Dim aumento As Integer = 0
+    Dim aumento As Double = 0
     Dim leyenda As String = "Iniciando.."
     Dim SegundosTranscurridos As Double = 0
 

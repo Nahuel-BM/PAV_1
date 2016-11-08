@@ -18,7 +18,7 @@
 
 
 
-    Public Sub setTotalDeEventos(ByVal valor As Integer)
+    Public Sub setTotalDeEventos(ByVal valor As Double)
         Me.PantallaDeCarga._totalPartes = valor
     End Sub
 
@@ -64,7 +64,7 @@
 
         Dim suma As Integer = Me.PantallaDeCarga.prgb_carga.Value + Me.PantallaDeCarga._aumento
 
-        If suma >= 99 Then
+        If suma >= 98 Then
             Me.PantallaDeCarga.prgb_carga.Value = 100
         Else
             Me.PantallaDeCarga.prgb_carga.Value += Me.PantallaDeCarga._aumento

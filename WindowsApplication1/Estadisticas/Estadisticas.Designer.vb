@@ -47,9 +47,6 @@ Partial Class Estadisticas
         Me.ReportViewer6 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.ReportViewer7 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.TabPage9 = New System.Windows.Forms.TabPage()
-        Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.EstadisticaStringBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PropiedadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.EstadisticasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,9 +82,6 @@ Partial Class Estadisticas
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
-        Me.TabControl1.Controls.Add(Me.TabPage8)
-        Me.TabControl1.Controls.Add(Me.TabPage9)
-        Me.TabControl1.Controls.Add(Me.TabPage10)
         Me.TabControl1.Location = New System.Drawing.Point(4, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -248,36 +242,6 @@ Partial Class Estadisticas
         Me.ReportViewer7.Size = New System.Drawing.Size(789, 504)
         Me.ReportViewer7.TabIndex = 0
         '
-        'TabPage8
-        '
-        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(804, 513)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "TabPage8"
-        Me.TabPage8.UseVisualStyleBackColor = True
-        '
-        'TabPage9
-        '
-        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(804, 513)
-        Me.TabPage9.TabIndex = 8
-        Me.TabPage9.Text = "TabPage9"
-        Me.TabPage9.UseVisualStyleBackColor = True
-        '
-        'TabPage10
-        '
-        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(804, 513)
-        Me.TabPage10.TabIndex = 9
-        Me.TabPage10.Text = "TabPage10"
-        Me.TabPage10.UseVisualStyleBackColor = True
-        '
         'EstadisticaStringBindingSource
         '
         Me.EstadisticaStringBindingSource.DataMember = "EstadisticaString"
@@ -319,9 +283,6 @@ Partial Class Estadisticas
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage9 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage10 As System.Windows.Forms.TabPage
     Friend WithEvents PropiedadBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSetEstadisticas As Grupo_Edisur.DataSetEstadisticas
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer

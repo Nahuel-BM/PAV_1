@@ -1,13 +1,33 @@
 ﻿Public Class Estadisticas
     Dim Conexion As Conexion = Constantes.accesoMySQL
+    Dim Carga As New Form_con_Pantalla_de_Carga_Incluida
+
     Private Sub Estadisticas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.Carga.setTotalDeEventos(7)
+
+        Me.Carga.Run()
+
         Me.impresionPropiedadxSuperficie()
+        Me.Carga.actualizarLoading("Propiedades por Superficie.")
+
         Me.impresionPropiedadxMonto()
+        Me.Carga.actualizarLoading("Propiedades por Monto.")
+
         Me.impresionOpInmobiliariaxMontoMensual()
+        Me.Carga.actualizarLoading("Operacion inmobiliaria Mensual.")
+
         Me.impresionOpInmobiliariaxComision()
+        Me.Carga.actualizarLoading("Operacion Inmobiliaria Comision.")
+
         Me.impresionOpInmobiliariaxduracion()
+        Me.Carga.actualizarLoading("Operacion Inmobiliaria Duracion.")
+
         Me.impresionGastosxImporte()
+        Me.Carga.actualizarLoading("Gastos por Importe.")
+
         Me.impresionFacturaxMonto()
+        Me.Carga.actualizarLoading("Factura por Monto.")
 
     End Sub
     Private Sub impresionPropiedadxSuperficie()
