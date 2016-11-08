@@ -229,22 +229,22 @@
     <Compile Include="Formularios\Proveedores\BajaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.Designer.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_listado_operacionInmobiliaria.Designer.vb">
       <DependentUpon>Condicion_listado_operacionInmobiliaria.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_listado_operacionInmobiliaria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_listado_Proveedores.Designer.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_listado_Proveedores.Designer.vb">
       <DependentUpon>Condicion_listado_Proveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_listado_Proveedores.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_listado_Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.Designer.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_Propiedad_por_Dueño.Designer.vb">
       <DependentUpon>Condicion_Propiedad_por_Dueño.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.vb">
+    <Compile Include="Listados\Formularios\Condiciones\Condicion_Propiedad_por_Dueño.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listados\DataSet1.Designer.vb">
@@ -255,40 +255,40 @@
     <Compile Include="Listados\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Form_propiedades_por_dueño.Designer.vb">
+    <Compile Include="Listados\Formularios\Form_propiedades_por_dueño.Designer.vb">
       <DependentUpon>Form_propiedades_por_dueño.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Form_propiedades_por_dueño.vb">
+    <Compile Include="Listados\Formularios\Form_propiedades_por_dueño.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Interesados.Designer.vb">
+    <Compile Include="Listados\Formularios\Interesados.Designer.vb">
       <DependentUpon>Interesados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Interesados.vb">
+    <Compile Include="Listados\Formularios\Interesados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\InteresadosPorNombre.Designer.vb">
+    <Compile Include="Listados\Formularios\InteresadosPorNombre.Designer.vb">
       <DependentUpon>InteresadosPorNombre.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\InteresadosPorNombre.vb">
+    <Compile Include="Listados\Formularios\InteresadosPorNombre.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Listado_Dueños.Designer.vb">
+    <Compile Include="Listados\Formularios\Listado_Dueños.Designer.vb">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Listado_Dueños.vb">
+    <Compile Include="Listados\Formularios\Listado_Dueños.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Listado_OperacionesInmobiliarias.Designer.vb">
+    <Compile Include="Listados\Formularios\Listado_OperacionesInmobiliarias.Designer.vb">
       <DependentUpon>Listado_OperacionesInmobiliarias.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Listado_OperacionesInmobiliarias.vb">
+    <Compile Include="Listados\Formularios\Listado_OperacionesInmobiliarias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\Listado_Proveedores.Designer.vb">
+    <Compile Include="Listados\Formularios\Listado_Proveedores.Designer.vb">
       <DependentUpon>Listado_Proveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Listado_Proveedores.vb">
+    <Compile Include="Listados\Formularios\Listado_Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Constantes.vb" />
@@ -370,31 +370,31 @@
     <EmbeddedResource Include="Formularios\Proveedores\BajaProveedor.resx">
       <DependentUpon>BajaProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Condiciones\Condicion_listado_operacionInmobiliaria.resx">
+    <EmbeddedResource Include="Listados\Formularios\Condiciones\Condicion_listado_operacionInmobiliaria.resx">
       <DependentUpon>Condicion_listado_operacionInmobiliaria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Condiciones\Condicion_listado_Proveedores.resx">
+    <EmbeddedResource Include="Listados\Formularios\Condiciones\Condicion_listado_Proveedores.resx">
       <DependentUpon>Condicion_listado_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Condiciones\Condicion_Propiedad_por_Dueño.resx">
+    <EmbeddedResource Include="Listados\Formularios\Condiciones\Condicion_Propiedad_por_Dueño.resx">
       <DependentUpon>Condicion_Propiedad_por_Dueño.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Form_propiedades_por_dueño.resx">
+    <EmbeddedResource Include="Listados\Formularios\Form_propiedades_por_dueño.resx">
       <DependentUpon>Form_propiedades_por_dueño.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Interesados.resx">
+    <EmbeddedResource Include="Listados\Formularios\Interesados.resx">
       <DependentUpon>Interesados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\InteresadosPorNombre.resx">
+    <EmbeddedResource Include="Listados\Formularios\InteresadosPorNombre.resx">
       <DependentUpon>InteresadosPorNombre.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Listado_Dueños.resx">
+    <EmbeddedResource Include="Listados\Formularios\Listado_Dueños.resx">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Listado_OperacionesInmobiliarias.resx">
+    <EmbeddedResource Include="Listados\Formularios\Listado_OperacionesInmobiliarias.resx">
       <DependentUpon>Listado_OperacionesInmobiliarias.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Listado_Proveedores.resx">
+    <EmbeddedResource Include="Listados\Formularios\Listado_Proveedores.resx">
       <DependentUpon>Listado_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\Lista_OperacionesInmobiliarias.rdlc" />
