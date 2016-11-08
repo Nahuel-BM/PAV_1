@@ -303,6 +303,9 @@
     <EmbeddedResource Include="Estadisticas\Estadisticas.resx">
       <DependentUpon>Estadisticas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Estadistica_FacturaxMonto.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Estadistica_GastosxImporte.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Estadistica_OperacioxPropiedad.rdlc" />
     <EmbeddedResource Include="Estadisticas\Estadistica_OpInmobiliariaxComision.rdlc" />
     <EmbeddedResource Include="Estadisticas\Estadistica_OpInmobiliariaxMontoMensual.rdlc" />
     <EmbeddedResource Include="Estadisticas\Estadistica_PropiedadxSuperficie.rdlc" />

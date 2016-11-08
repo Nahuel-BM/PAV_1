@@ -496,6 +496,9 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
+            <ChartThreeDProperties>
+              <Enabled>true</Enabled>
+            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -521,14 +524,13 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Propiedad por Superficie</Caption>
+            <Caption>Gastos por Importe</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
-            <DockOutsideChartArea>true</DockOutsideChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
@@ -549,9 +551,9 @@
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.6cm</Top>
-        <Left>6.82308cm</Left>
-        <Height>8.28083cm</Height>
-        <Width>9.88125cm</Width>
+        <Left>5.55308cm</Left>
+        <Height>8.06917cm</Height>
+        <Width>10.43688cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -563,10 +565,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>3.70833in</Height>
+    <Height>3.65625in</Height>
     <Style />
   </Body>
-  <Width>6.85776in</Width>
+  <Width>6.53509in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -580,7 +582,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Propiedad por Superficie</Value>
+                  <Value>Gastos por Importe</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Comic Sans MS</FontFamily>
@@ -595,10 +597,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.53639cm</Top>
-          <Left>4.07269cm</Left>
+          <Top>0.68474cm</Top>
+          <Left>4.5212cm</Left>
           <Height>1.25554cm</Height>
-          <Width>9.88188cm</Width>
+          <Width>8.02979cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -609,17 +611,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Line Name="Line1">
-          <Top>2.2329cm</Top>
-          <Height>0cm</Height>
-          <Width>17.41871cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -643,7 +634,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b7f5fa44-2294-4672-8042-a2c56b5fc628</rd:DataSourceID>
+      <rd:DataSourceID>1748fe34-f010-4390-a53f-beb364f37438</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -673,5 +664,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>49841dc2-8559-4450-9ea9-01c326a10075</rd:ReportID>
+  <rd:ReportID>5d1c998f-04c5-4a4b-ba94-fd25882308c2</rd:ReportID>
 </Report>

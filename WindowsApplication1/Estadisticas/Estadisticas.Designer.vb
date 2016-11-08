@@ -27,9 +27,11 @@ Partial Class Estadisticas
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource5 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource6 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource7 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.EstadisticasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetEstadisticas = New Grupo_Edisur.DataSetEstadisticas()
-        Me.EstadisticaStringBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -40,20 +42,27 @@ Partial Class Estadisticas
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ReportViewer4 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.ReportViewer5 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.ReportViewer6 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.ReportViewer7 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.EstadisticaStringBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PropiedadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.EstadisticasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetEstadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EstadisticaStringBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.EstadisticaStringBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PropiedadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -66,11 +75,6 @@ Partial Class Estadisticas
         '
         Me.DataSetEstadisticas.DataSetName = "DataSetEstadisticas"
         Me.DataSetEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EstadisticaStringBindingSource
-        '
-        Me.EstadisticaStringBindingSource.DataMember = "EstadisticaString"
-        Me.EstadisticaStringBindingSource.DataSource = Me.DataSetEstadisticas
         '
         'TabControl1
         '
@@ -180,33 +184,69 @@ Partial Class Estadisticas
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.ReportViewer5)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage5.Size = New System.Drawing.Size(804, 513)
         Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "TabPage5"
+        Me.TabPage5.Text = "OperacionInmobiliariaxDuracion"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'ReportViewer5
+        '
+        ReportDataSource5.Name = "DataSet1"
+        ReportDataSource5.Value = Me.EstadisticasBindingSource
+        Me.ReportViewer5.LocalReport.DataSources.Add(ReportDataSource5)
+        Me.ReportViewer5.LocalReport.ReportEmbeddedResource = "Grupo_Edisur.Estadistica_OperacioxPropiedad.rdlc"
+        Me.ReportViewer5.Location = New System.Drawing.Point(6, 6)
+        Me.ReportViewer5.Name = "ReportViewer5"
+        Me.ReportViewer5.Size = New System.Drawing.Size(791, 501)
+        Me.ReportViewer5.TabIndex = 0
         '
         'TabPage6
         '
+        Me.TabPage6.Controls.Add(Me.ReportViewer6)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage6.Size = New System.Drawing.Size(804, 513)
         Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "TabPage6"
+        Me.TabPage6.Text = "GastosxImporte"
         Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'ReportViewer6
+        '
+        ReportDataSource6.Name = "DataSet1"
+        ReportDataSource6.Value = Me.EstadisticasBindingSource
+        Me.ReportViewer6.LocalReport.DataSources.Add(ReportDataSource6)
+        Me.ReportViewer6.LocalReport.ReportEmbeddedResource = "Grupo_Edisur.Estadistica_GastosxImporte.rdlc"
+        Me.ReportViewer6.Location = New System.Drawing.Point(0, 6)
+        Me.ReportViewer6.Name = "ReportViewer6"
+        Me.ReportViewer6.Size = New System.Drawing.Size(801, 501)
+        Me.ReportViewer6.TabIndex = 0
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.ReportViewer7)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage7.Size = New System.Drawing.Size(804, 513)
         Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "TabPage7"
+        Me.TabPage7.Text = "FacturaxImporte"
         Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'ReportViewer7
+        '
+        ReportDataSource7.Name = "DataSet1"
+        ReportDataSource7.Value = Me.EstadisticasBindingSource
+        Me.ReportViewer7.LocalReport.DataSources.Add(ReportDataSource7)
+        Me.ReportViewer7.LocalReport.ReportEmbeddedResource = "Grupo_Edisur.Estadistica_FacturaxMonto.rdlc"
+        Me.ReportViewer7.Location = New System.Drawing.Point(12, 6)
+        Me.ReportViewer7.Name = "ReportViewer7"
+        Me.ReportViewer7.Size = New System.Drawing.Size(789, 504)
+        Me.ReportViewer7.TabIndex = 0
         '
         'TabPage8
         '
@@ -238,6 +278,11 @@ Partial Class Estadisticas
         Me.TabPage10.Text = "TabPage10"
         Me.TabPage10.UseVisualStyleBackColor = True
         '
+        'EstadisticaStringBindingSource
+        '
+        Me.EstadisticaStringBindingSource.DataMember = "EstadisticaString"
+        Me.EstadisticaStringBindingSource.DataSource = Me.DataSetEstadisticas
+        '
         'PropiedadBindingSource
         '
         Me.PropiedadBindingSource.DataMember = "Propiedad"
@@ -253,12 +298,15 @@ Partial Class Estadisticas
         Me.Text = "Estadisticas"
         CType(Me.EstadisticasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetEstadisticas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EstadisticaStringBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        CType(Me.EstadisticaStringBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PropiedadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -282,4 +330,7 @@ Partial Class Estadisticas
     Friend WithEvents EstadisticaStringBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ReportViewer3 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents ReportViewer4 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents ReportViewer5 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents ReportViewer6 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents ReportViewer7 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

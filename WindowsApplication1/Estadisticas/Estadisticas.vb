@@ -5,6 +5,9 @@
         Me.impresionPropiedadxMonto()
         Me.impresionOpInmobiliariaxMontoMensual()
         Me.impresionOpInmobiliariaxComision()
+        Me.impresionOpInmobiliariaxduracion()
+        Me.impresionGastosxImporte()
+        Me.impresionFacturaxMonto()
 
     End Sub
     Private Sub impresionPropiedadxSuperficie()
@@ -37,8 +40,29 @@
         Me.ReportViewer4.RefreshReport()
     End Sub
 
-    
+    Private Sub impresionOpInmobiliariaxduracion()
+        Dim tabla As New DataTable
+        Dim sql As String = "SELECT `Operacion_Inmobiliaria`.`id` AS ID ,SUM(`Duracion`) AS TOTAL FROM `Operacion_Inmobiliaria` GROUP BY `Operacion_Inmobiliaria`.`id`"
+        tabla = Conexion.Consulta(sql)
+        Me.EstadisticasBindingSource.DataSource = tabla
+        Me.ReportViewer5.RefreshReport()
+    End Sub
   
+    Private Sub impresionGastosxImporte()
+        Dim tabla As New DataTable
+        Dim sql As String = "SELECT `Gastos`.`id` AS ID ,SUM(`Importe`) AS TOTAL FROM `Gastos` GROUP BY `Gastos`.`id`"
+        tabla = Conexion.Consulta(sql)
+        Me.EstadisticasBindingSource.DataSource = tabla
+        Me.ReportViewer6.RefreshReport()
+    End Sub
     
+    Private Sub impresionFacturaxMonto()
+        Dim tabla As New DataTable
+        Dim sql As String = "SELECT `Factura`.`id` AS ID ,SUM(`Monto`) AS TOTAL FROM `Factura` GROUP BY `Factura`.`id`"
+        tabla = Conexion.Consulta(sql)
+        Me.EstadisticasBindingSource.DataSource = tabla
+        Me.ReportViewer7.RefreshReport()
+    End Sub
+   
     
 End Class

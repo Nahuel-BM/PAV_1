@@ -316,8 +316,6 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
-                    <UseValueAsLabel>true</UseValueAsLabel>
-                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -326,7 +324,6 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Shape</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -337,6 +334,12 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <CustomProperties>
+                <CustomProperty>
+                  <Name>DrawingStyle</Name>
+                  <Value>Cylinder</Value>
+                </CustomProperty>
+              </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -496,6 +499,10 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
+            <ChartThreeDProperties>
+              <Enabled>true</Enabled>
+              <Clustered>true</Clustered>
+            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -521,14 +528,13 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Propiedad por Superficie</Caption>
+            <Caption>Factura por importe</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
-            <DockOutsideChartArea>true</DockOutsideChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
@@ -548,10 +554,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.6cm</Top>
-        <Left>6.82308cm</Left>
-        <Height>8.28083cm</Height>
-        <Width>9.88125cm</Width>
+        <Top>0.29104cm</Top>
+        <Left>5.31495cm</Left>
+        <Height>8.67771cm</Height>
+        <Width>10.83375cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -563,42 +569,42 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>3.70833in</Height>
+    <Height>3.72917in</Height>
     <Style />
   </Body>
-  <Width>6.85776in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox7">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Propiedad por Superficie</Value>
+                  <Value>Factura por Importe</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Comic Sans MS</FontFamily>
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <TextDecoration>Underline</TextDecoration>
-                    <Color>Maroon</Color>
+                    <Color>Brown</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.53639cm</Top>
-          <Left>4.07269cm</Left>
-          <Height>1.25554cm</Height>
-          <Width>9.88188cm</Width>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>0.7112cm</Top>
+          <Left>3.43641cm</Left>
+          <Height>1.20854cm</Height>
+          <Width>9.00875cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -610,9 +616,9 @@
           </Style>
         </Textbox>
         <Line Name="Line1">
-          <Top>2.2329cm</Top>
+          <Top>2.34307cm</Top>
           <Height>0cm</Height>
-          <Width>17.41871cm</Width>
+          <Width>16.51cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -643,7 +649,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b7f5fa44-2294-4672-8042-a2c56b5fc628</rd:DataSourceID>
+      <rd:DataSourceID>e3135ea1-40b2-4fd4-9a06-c206feac7513</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -673,5 +679,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>49841dc2-8559-4450-9ea9-01c326a10075</rd:ReportID>
+  <rd:ReportID>928c3fd2-2cd8-4997-86c5-e6c9e7a8672f</rd:ReportID>
 </Report>
