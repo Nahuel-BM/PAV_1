@@ -31,11 +31,9 @@ Partial Class Inicial
         Me.ListarPropiedadesPorLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPropiedadesPorTipoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarPropiedadesPorDueñoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-<<<<<<< Updated upstream
-=======
+
         Me.ListarInteresadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
->>>>>>> Stashed changes
+        ' Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -127,8 +125,8 @@ Partial Class Inicial
         Me.ListarPropiedadesPorDueñoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ListarPropiedadesPorDueñoToolStripMenuItem.Text = "Listar Propiedades Por Dueño"
         '
-<<<<<<< Updated upstream
-=======
+
+        '=======
         'ListarInteresadosToolStripMenuItem
         '
         Me.ListarInteresadosToolStripMenuItem.Name = "ListarInteresadosToolStripMenuItem"
@@ -137,11 +135,11 @@ Partial Class Inicial
         '
         'EstadisticasToolStripMenuItem
         '
-        Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
-        Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
+        ' Me.EstadisticasToolStripMenuItem.Name = "EstadisticasToolStripMenuItem"
+        '  Me.EstadisticasToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        '  Me.EstadisticasToolStripMenuItem.Text = "Estadisticas"
         '
->>>>>>> Stashed changes
+        '>>>>>>> Stashed changes
         'PersonasToolStripMenuItem
         '
         Me.PersonasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaPersonaToolStripMenuItem, Me.BajaPersonaToolStripMenuItem, Me.ModificarPersonaToolStripMenuItem, Me.ListadosToolStripMenuItem3})
@@ -380,11 +378,9 @@ Partial Class Inicial
     Friend WithEvents ListadosToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarOperacionesInmobiliariasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarPropiedadesPorDueñoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-<<<<<<< Updated upstream
+
     Friend WithEvents EstadisticasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-=======
+
     Friend WithEvents ListarInteresadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
->>>>>>> Stashed changes
-    '=======
-    '>>>>>>> master
+
 End Class

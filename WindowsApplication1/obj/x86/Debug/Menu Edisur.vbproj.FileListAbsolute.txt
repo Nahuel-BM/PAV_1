@@ -170,7 +170,6 @@ C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Estadisticas.resources
 C:\Users\Giga\Desktop\Facu\PAV l\PAV_1-master\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbprojResolveAssemblyReference.cache
 C:\Users\PC-LIS-10\Downloads\Nahuel\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Estadisticas.resources
-=======
 D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\Menu Edisur.vbprojResolveAssemblyReference.cache
 D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Datos_Transaccion_AltaOperacion.resources
 D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Condicion_listado_operacionInmobiliaria.resources
@@ -184,3 +183,4 @@ D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x8
 D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\RdlCompile.compiled
 D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Interesados.resources
 >>>>>>> Stashed changes
+D:\DATOS\Documentos\Visual Studio 2013\Projects\PAV_1\WindowsApplication1\obj\x86\Debug\Grupo_Edisur.Estadisticas.resources

@@ -115,15 +115,15 @@
 
     End Sub
 
-<<<<<<< Updated upstream
+
     Private Sub EstadisticasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EstadisticasToolStripMenuItem1.Click
         Dim frm As New Estadisticas()
         Funciones.AbrirFormulario("Estadisticas", frm)
-=======
+    End Sub
     Private Sub ListarInteresadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarInteresadosToolStripMenuItem.Click
         Dim frm As New Interesados()
 
         Funciones.AbrirFormulario("Interesados", frm)
->>>>>>> Stashed changes
+
     End Sub
 End Class
