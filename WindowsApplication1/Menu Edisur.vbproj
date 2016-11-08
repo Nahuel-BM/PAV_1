@@ -261,6 +261,12 @@
     <Compile Include="Listados\Form_propiedades_por_dueño.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\Interesados.Designer.vb">
+      <DependentUpon>Interesados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Interesados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\Listado_Dueños.Designer.vb">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </Compile>
@@ -370,6 +376,9 @@
     <EmbeddedResource Include="Listados\Form_propiedades_por_dueño.resx">
       <DependentUpon>Form_propiedades_por_dueño.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Interesados.resx">
+      <DependentUpon>Interesados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\Listado_Dueños.resx">
       <DependentUpon>Listado_Dueños.vb</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +393,7 @@
     <EmbeddedResource Include="Listados\Lista_PropiedadxTipo.rdlc" />
     <EmbeddedResource Include="Listados\Lista_Proveedores.rdlc" />
     <EmbeddedResource Include="Listados\Lista_PropiedadxProvincia.rdlc" />
+    <EmbeddedResource Include="Listados\reporteInteresados.rdlc" />
     <EmbeddedResource Include="Listados\Reporte_propiedades_por_dueño.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
